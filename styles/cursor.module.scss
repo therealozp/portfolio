@@ -1,0 +1,35 @@
+.cursorWrapper {
+	height: 30px;
+	width: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	z-index: 10000;
+	pointer-events: none;
+}
+
+.cursor {
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+	position: absolute;
+	border: 6px solid salmon;
+	opacity: 0.5;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: transform 200ms ease, border 200ms ease;
+}
+
+.cursor::after {
+	content: '';
+	display: block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	border: 2px rgba(253, 247, 188, 0.959) solid;
+	background-color: rgba(253, 247, 188, 0.959);
+	position: absolute;
+	// top: 0.5px;
+}

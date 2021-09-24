@@ -1,16 +1,33 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 * {
-  box-sizing: border-box;
+	cursor: none;
+}
+
+body {
+	overflow-x: hidden;
+	background-color: rgb(27, 27, 27);
+}
+
+.hoveredCursor {
+	border: 6px solid rgb(177, 114, 250) !important;
+}
+
+.clickCursor {
+	border: 6px solid rgb(114, 146, 250) !important;
+	transform: scale(0.75);
+}
+
+.hide {
+	visibility: hidden;
+}
+
+button:hover {
+	cursor: none !important;
+}
+
+a:hover {
+	cursor: none !important;
+}
+
+input:hover {
+	cursor: none !important;
 }
