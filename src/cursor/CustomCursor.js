@@ -58,7 +58,7 @@ const CustomCursor = () => {
 		});
 	}, []);
 	return (
-		<div ref={primaryCursor}>
+		<div ref={primaryCursor} style={{ position: 'fixed', zIndex: 10000 }}>
 			<div className={styles.cursor} ref={primaryInnerCursor} />
 		</div>
 	);

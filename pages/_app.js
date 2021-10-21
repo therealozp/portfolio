@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 // non nextjs imports
 import { CssBaseline } from '@mui/material';
+import CustomCursor from '../src/cursor/CustomCursor';
+import { ThemeProvider } from '@mui/system';
+import myTheme from '../src/themes';
 import '../styles/globals.css';
 export default function MyApp(props) {
 	const { Component, pageProps } = props;
@@ -26,7 +29,10 @@ export default function MyApp(props) {
 			</Head>
 			{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
 			<CssBaseline />
-			<Component {...pageProps} />
+			<ThemeProvider theme={myTheme}>
+				<CustomCursor />
+				<Component {...pageProps} />
+			</ThemeProvider>
 		</React.Fragment>
 	);
 }

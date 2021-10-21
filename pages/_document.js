@@ -16,19 +16,7 @@ export default class MyDocument extends Document {
 						rel="stylesheet"
 					/>
 					<link
-						href="https://fonts.googleapis.com/css2?family=Abel&display=swap"
-						rel="stylesheet"
-					/>
-					<link
-						href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800;900&display=swap"
-						rel="stylesheet"
-					/>
-					<link
-						href="https://fonts.googleapis.com/css2?family=Abel&display=swap"
-						rel="stylesheet"
-					/>
-					<link
-						href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800&display=swap"
+						href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@200;300;400;500&family=Nunito:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap"
 						rel="stylesheet"
 					/>
 				</Head>
