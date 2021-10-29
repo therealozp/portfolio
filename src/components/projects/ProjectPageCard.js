@@ -32,7 +32,6 @@ const ProjectPageCard = ({
 					<Typography className={styles.cardDesc}>{description}</Typography>
 					<a
 						href={href}
-						passHref
 						target="_blank"
 						rel="noopener noreferrer"
 						style={{

@@ -94,6 +94,7 @@ const ProjectPage = () => {
 									miniTitle={d.subtitle}
 									href={d.href}
 									status={d.status}
+									key={`projectPageCard-${i}`}
 								/>
 							);
 						}
@@ -118,6 +119,7 @@ const ProjectPage = () => {
 									miniTitle={d.subtitle}
 									href={d.href}
 									status={d.status}
+									key={`projectPageCard-${i}`}
 								/>
 							);
 						}
