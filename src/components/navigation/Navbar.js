@@ -1,8 +1,9 @@
 import React from 'react';
+import Link from 'next/link';
 import { AppBar, Toolbar, Typography } from '@mui/material';
 import { Box, styled } from '@mui/system';
 import styles from '../../../styles/navbar.module.scss';
-import Link from 'next/link';
+
 const Mixin = styled('div')(({ theme }) => theme.mixins.toolbar);
 
 const AppBarTile = ({ children, href }) => {

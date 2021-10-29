@@ -1,7 +1,7 @@
 import React from 'react';
+import Navbar from '../components/navigation/navbar';
 import { Box } from '@mui/system';
 import ProjectPageCard from '../components/projects/ProjectPageCard';
-import Navbar from '../components/navigation/navbar';
 
 const projects = [
 	{
