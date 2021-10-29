@@ -68,7 +68,7 @@ const ProjectBlock = () => {
 					toggleActions: 'play none play reset',
 				},
 				x: -1150,
-				duration: 1.4,
+				duration: 1.1,
 			});
 			gsap.to(innerContent[i], {
 				scrollTrigger: {
