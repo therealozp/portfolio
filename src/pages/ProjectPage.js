@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../components/navigation/navbar';
+import Navbar from '../components/navigation/Navbar';
 import { Box } from '@mui/system';
 import ProjectPageCard from '../components/projects/ProjectPageCard';
 
