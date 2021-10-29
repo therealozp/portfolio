@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box } from '@mui/system';
 import ProjectPageCard from '../components/projects/ProjectPageCard';
+import Navbar from '../components/navigation/navbar';
 
 const projects = [
 	{
@@ -66,49 +67,64 @@ const projects = [
 
 const ProjectPage = () => {
 	return (
-		<Box
-			sx={{ padding: '32px', display: 'grid', gridTemplateColumns: '50% 50%' }}
-		>
+		<>
+			<Navbar />
 			<Box
-				sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+				sx={{
+					padding: '32px',
+					display: 'grid',
+					gridTemplateColumns: '50% 50%',
+				}}
 			>
-				{projects.map((d, i) => {
-					if (i % 2 == 0) {
-						return (
-							<ProjectPageCard
-								name={d.name}
-								description={d.description}
-								src={d.src}
-								buttonText={d.button}
-								miniTitle={d.subtitle}
-								href={d.href}
-								status={d.status}
-							/>
-						);
-					}
-				})}
+				<Box
+					sx={{
+						display: 'flex',
+						flexDirection: 'column',
+						alignItems: 'center',
+					}}
+				>
+					{projects.map((d, i) => {
+						if (i % 2 == 0) {
+							return (
+								<ProjectPageCard
+									name={d.name}
+									description={d.description}
+									src={d.src}
+									buttonText={d.button}
+									miniTitle={d.subtitle}
+									href={d.href}
+									status={d.status}
+								/>
+							);
+						}
+					})}
+				</Box>
+				<Box
+					sx={{
+						display: 'flex',
+						flexDirection: 'column',
+						alignItems: 'center',
+					}}
+				>
+					<Box id="spacer" sx={{ height: 200 }} />
+					{projects.map((d, i) => {
+						if (i % 2 == 1) {
+							return (
+								<ProjectPageCard
+									name={d.name}
+									description={d.description}
+									src={d.src}
+									buttonText={d.button}
+									miniTitle={d.subtitle}
+									href={d.href}
+									status={d.status}
+								/>
+							);
+						}
+					})}
+				</Box>
 			</Box>
-			<Box
-				sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-			>
-				<Box id="spacer" sx={{ height: 200 }} />
-				{projects.map((d, i) => {
-					if (i % 2 == 1) {
-						return (
-							<ProjectPageCard
-								name={d.name}
-								description={d.description}
-								src={d.src}
-								buttonText={d.button}
-								miniTitle={d.subtitle}
-								href={d.href}
-								status={d.status}
-							/>
-						);
-					}
-				})}
-			</Box>
-		</Box>
+		</>
 	);
 };
 
