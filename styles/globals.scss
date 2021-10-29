@@ -3,7 +3,6 @@
 	color: #faf0f1;
 }
 
-html,
 body {
 	overflow-x: hidden;
 	background: rgb(20, 19, 19);
@@ -11,7 +10,9 @@ body {
 		cursor: none;
 	}
 }
-
+html {
+	background: rgb(20, 19, 19);
+}
 .hoveredCursor {
 	border: 6px solid rgb(177, 114, 250) !important;
 }

@@ -8,7 +8,6 @@ const myTheme = createTheme({
 		primary: {
 			main: '#fa8072',
 		},
-
 		secondary: {
 			main: '#7729d1',
 		},
