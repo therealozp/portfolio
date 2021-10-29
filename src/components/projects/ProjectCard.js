@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Box } from '@mui/system';
 import { Button, Typography, Tooltip } from '@mui/material';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
-const ProjectCard = ({ imgSrc, name, description, index, status }) => {
+const ProjectCard = ({ name, description, index, status }) => {
 	return (
 		<Box
 			sx={{
