@@ -12,21 +12,18 @@ const myTheme = createTheme({
 		secondary: {
 			main: '#7729d1',
 		},
-		themeBlack: {
-			main: '#02120D',
-			viridian: '#063828',
-			sacrGreen: '#35876E',
-		},
-		themeWhite: {
-			main: '#FAF0F1',
-		},
 		blue: {
 			light: '#7292fa',
 			main: '#4264d4',
 		},
+		green: {
+			main: '#9CDE9F',
+		},
+		yellow: {
+			main: '#FABC3C',
+		},
 		text: {
 			primary: '#FAF0F1',
-			secondary: '#FAF0F1',
 		},
 	},
 });

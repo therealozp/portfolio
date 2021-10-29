@@ -6,7 +6,7 @@ import { CssBaseline } from '@mui/material';
 import CustomCursor from '../src/cursor/CustomCursor';
 import { ThemeProvider } from '@mui/system';
 import myTheme from '../src/themes';
-import '../styles/globals.css';
+import '../styles/globals.scss';
 export default function MyApp(props) {
 	const { Component, pageProps } = props;
 
@@ -21,7 +21,7 @@ export default function MyApp(props) {
 	return (
 		<React.Fragment>
 			<Head>
-				<title>Rice-Powered Queb</title>
+				<title>This is Khang</title>
 				<meta
 					name="viewport"
 					content="minimum-scale=1, initial-scale=1, width=device-width"

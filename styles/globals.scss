@@ -3,9 +3,13 @@
 	color: #faf0f1;
 }
 
+html,
 body {
 	overflow-x: hidden;
 	background-color: rgb(20, 19, 19);
+	* {
+		cursor: none;
+	}
 }
 
 .hoveredCursor {
@@ -21,6 +25,9 @@ body {
 	visibility: hidden;
 }
 
+cursor {
+	z-index: 10001;
+}
 button:hover {
 	cursor: none !important;
 }

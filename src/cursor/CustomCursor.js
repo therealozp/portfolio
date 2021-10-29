@@ -1,20 +1,9 @@
 import React, { useRef, useEffect } from 'react';
 import styles from '../../styles/cursor.module.scss';
-import anime from 'animejs';
 
 const CustomCursor = () => {
 	const primaryCursor = useRef(null);
 	const primaryInnerCursor = useRef(null);
-	useEffect(() => {
-		anime({
-			targets: '.wrapper',
-			keyframes: [{ scale: 1 }, { scale: 0.9 }],
-			duration: 1000,
-			easing: 'easeInOut',
-			loop: true,
-			direction: 'alternate',
-		});
-	}, []);
 	useEffect(() => {
 		document.addEventListener('mousemove', (event) => {
 			const { clientX, clientY } = event;
