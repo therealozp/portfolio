@@ -175,7 +175,7 @@ const PersonalBlock = () => {
 			</Box>
 			<Box sx={{ marginBottom: '-100px' }}>
 				<Block
-					imgSrc="/khang4.jpg"
+					imgSrc="/khang4.jpeg"
 					imgHeight={1398}
 					imgWidth={2048}
 					description="Sports Competition - Basketball"
@@ -185,7 +185,7 @@ const PersonalBlock = () => {
 			</Box>
 			<Box sx={{ marginBottom: '-100px' }}>
 				<Block
-					imgSrc="/khang1.jpg"
+					imgSrc="/khang1.jpeg"
 					imgHeight={1536}
 					imgWidth={1048.5}
 					description="Oddball PE - Nerf Sniper"
@@ -195,7 +195,7 @@ const PersonalBlock = () => {
 			</Box>
 			<Box sx={{ marginBottom: '-100px' }}>
 				<Block
-					imgSrc="/khang2.jpg"
+					imgSrc="/khang2.jpeg"
 					imgHeight={1398}
 					imgWidth={2048}
 					description="Regional Olympics - Medalists"
