@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 // non nextjs imports
 import { CssBaseline } from '@mui/material';
-import CustomCursor from '../src/cursor/CustomCursor';
+// import CustomCursor from '../src/cursor/CustomCursor';
 import { ThemeProvider } from '@mui/system';
 import myTheme from '../src/themes';
 import '../styles/globals.scss';
