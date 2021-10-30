@@ -21,10 +21,10 @@ const Navbar = () => {
 		<>
 			<AppBar elevation={0} color="transparent">
 				<Toolbar>
-					<AppBarTile href="/">About</AppBarTile>
+					<AppBarTile href="/">Home</AppBarTile>
 					<AppBarTile href="/projects">Projects</AppBarTile>
-					<AppBarTile href="/moreaboutme">More!</AppBarTile>
-					<AppBarTile href="/contact">Contact</AppBarTile>
+					<AppBarTile href="/moreaboutme">About</AppBarTile>
+					{/* <AppBarTile href="/contact">Contact</AppBarTile> */}
 				</Toolbar>
 			</AppBar>
 			<Mixin />

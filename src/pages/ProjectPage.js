@@ -49,7 +49,7 @@ const projects = [
 		description:
 			'Diagnose your symptoms, find local medicine and nearby pharmacies for illnesses commonly come across',
 		status: 'prototype',
-		href: 'https://lexi.vercel.app/',
+		href: 'https://cureator.care/',
 		src: '/cureator.png',
 		subtitle: 'Stay safe, stay healthy',
 		button: 'preview',
@@ -59,8 +59,8 @@ const projects = [
 		description:
 			'Where students can become tutors, and where learners can become students! ...wait, something is still off...',
 		status: 'prototype',
-		href: 'https://lexi.vercel.app/',
-		src: '/noen',
+		href: 'https://the-rice-powered-queb.vercel.app/',
+		src: '/2chool.png',
 		subtitle: 'School is 2cool',
 		button: 'preview',
 	},

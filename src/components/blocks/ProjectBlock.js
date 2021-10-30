@@ -40,14 +40,14 @@ const projects = [
 		description:
 			'A medical website, displays symptoms and curates medicine, built-in pharmacy locator',
 		status: 'prototype',
-		href: 'https://lexi.vercel.app/',
+		href: 'https://cureator.care/',
 	},
 	{
 		name: '2SchoolQueb',
 		description:
 			'Tutor-matching website, matches learners to tutors on subjects they need, machine-learning powered recommendation system in development ',
 		status: 'prototype',
-		href: 'https://lexi.vercel.app/',
+		href: 'https://the-rice-powered-queb.vercel.app/',
 	},
 ];
 

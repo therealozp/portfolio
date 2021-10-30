@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@mui/system';
 import { Button, Typography, Tooltip } from '@mui/material';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
-const ProjectCard = ({ name, description, index, status }) => {
+const ProjectCard = ({ name, description, index, status, href }) => {
 	return (
 		<Box
 			sx={{
@@ -60,9 +60,18 @@ const ProjectCard = ({ name, description, index, status }) => {
 				}}
 				className={`buttonBox ${index}`}
 			>
-				<Button variant="outlined" color="primary">
-					Visit
-				</Button>
+				<a
+					href={href}
+					target="_blank"
+					rel="noopener noreferrer"
+					style={{
+						textDecoration: 'none',
+					}}
+				>
+					<Button variant="outlined" color="primary">
+						Visit
+					</Button>
+				</a>
 			</Box>
 			<Box
 				sx={{
@@ -91,7 +100,7 @@ const ProjectCard = ({ name, description, index, status }) => {
 				<Tooltip
 					arrow
 					title="Currently In Development!"
-					sx={{ backgroundColor: 'black' }}
+					sx={{ backgroundColor: 'transparent' }}
 				>
 					<ErrorOutlineIcon style={{ fill: '#FABC3C' }} />
 				</Tooltip>
