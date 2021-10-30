@@ -10,7 +10,7 @@ const S = styled('span')(({ theme }) => ({
 const AboutBlock = () => {
 	return (
 		<>
-			<Box sx={{ display: 'flex', width: '100vw' }}>
+			<Box sx={{ display: 'flex' }}>
 				<Box
 					sx={{
 						width: '57vw',

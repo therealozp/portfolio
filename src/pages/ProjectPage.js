@@ -2,7 +2,8 @@ import React from 'react';
 import Navbar from '../components/navigation/Navbar';
 import { Box } from '@mui/system';
 import ProjectPageCard from '../components/projects/ProjectPageCard';
-
+import Image from 'next/image';
+import { Typography } from '@mui/material';
 const projects = [
 	{
 		name: 'ChanceMap',
@@ -67,7 +68,7 @@ const projects = [
 
 const ProjectPage = () => {
 	return (
-		<>
+		<Box sx={{ padding: '0 64px' }}>
 			<Navbar />
 			<Box
 				sx={{
@@ -107,7 +108,22 @@ const ProjectPage = () => {
 						alignItems: 'center',
 					}}
 				>
-					<Box id="spacer" sx={{ height: 200 }} />
+					<Box id="spacer" sx={{ height: 200, position: 'relative' }}>
+						<Box sx={{ transform: 'rotate(100deg)' }}>
+							<Image src="/arrow.png" height={190} width={200} />
+						</Box>
+						<Typography
+							sx={{
+								position: 'absolute',
+								top: 40,
+								right: -150,
+								fontFamily: 'Indie Flower',
+								fontSize: '1.5em',
+							}}
+						>
+							Hover over me!
+						</Typography>
+					</Box>
 					{projects.map((d, i) => {
 						if (i % 2 == 1) {
 							return (
@@ -126,7 +142,7 @@ const ProjectPage = () => {
 					})}
 				</Box>
 			</Box>
-		</>
+		</Box>
 	);
 };
 

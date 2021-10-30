@@ -1,0 +1,13 @@
+<svg width="337" height="320" viewBox="0 0 337 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g >
+<path d="M2 318C2.56243 281.711 15.4704 248.27 33.1992 216.397C63.1993 162.463 109.876 115.42 161.367 79.4639C196.533 54.9071 236.057 37.7191 279.343 31.7864C297.728 29.2667 316.474 30.1501 335 30.1501" stroke="#FAF0F1" stroke-width="5" stroke-linecap="round" stroke-dasharray="15 14"/>
+</g>
+<g >
+<path d="M279 2C291.942 12.6268 308.973 22.8833 335 26" stroke="#FAF0F1" stroke-width="5" stroke-linecap="round" stroke-dasharray="15 14"/>
+</g>
+<g >
+<path d="M279 55C291.942 46.1444 308.973 37.5973 335 35" stroke="#FAF0F1" stroke-width="5" stroke-linecap="round" stroke-dasharray="15 14"/>
+</g>
+<defs>
+</defs>
+</svg>

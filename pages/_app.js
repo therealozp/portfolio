@@ -30,7 +30,7 @@ export default function MyApp(props) {
 			{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
 			<CssBaseline />
 			<ThemeProvider theme={myTheme}>
-				<CustomCursor />
+				{/* <CustomCursor /> */}
 				<Component {...pageProps} />
 			</ThemeProvider>
 		</React.Fragment>

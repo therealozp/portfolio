@@ -1,13 +1,14 @@
 import React from 'react';
 import { Box } from '@mui/system';
-import { Typography } from '@mui/material';
+import { Typography, Avatar } from '@mui/material';
+import Image from 'next/image';
 
 const IntroBlock = () => {
 	return (
 		<Box
 			sx={{
 				height: '100vh',
-				padding: '32px',
+				padding: '32px 0',
 				display: 'grid',
 				gridTemplateColumns: '50% 50%',
 			}}
@@ -30,13 +31,31 @@ const IntroBlock = () => {
 				</Typography>
 			</Box>
 			<Box
-				sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+				sx={{
+					display: 'flex',
+					justifyContent: 'center',
+					alignItems: 'center',
+					marginTop: '-10vh',
+					flexDirection: 'column',
+					position: 'relative',
+				}}
 			>
-				<Box
-					sx={{ outline: '2px solid white', height: '200px', width: '400px' }}
+				<Avatar
+					sx={{
+						transform: 'scale(0.8)',
+						position: 'absolute',
+						height: '650px',
+						width: '650px',
+					}}
 				>
-					Image
-				</Box>
+					<Image
+						src="/KhangProfileSquare.jpg"
+						alt="Khang Sports Photo"
+						height={1106}
+						width={1078}
+					/>
+				</Avatar>
+				{/* </Box> */}
 			</Box>
 		</Box>
 	);

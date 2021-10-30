@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from '@mui/system';
-import ProjectPageCard from '../src/components/projects/ProjectPageCard';
+import Image from 'next/image';
 const testpage = () => {
 	return (
 		<Box
@@ -12,12 +12,7 @@ const testpage = () => {
 				alignItems: 'center',
 			}}
 		>
-			<ProjectPageCard
-				description="this is my desc"
-				name="superepicproject"
-				miniTitle="Always be better"
-				src="/chancemap.png"
-			/>
+			<Image src="/arrow.svg" height={320} width={337} />
 		</Box>
 	);
 };

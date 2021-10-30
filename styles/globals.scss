@@ -1,5 +1,5 @@
 * {
-	cursor: none;
+	// cursor: none;
 	color: #faf0f1;
 }
 
@@ -7,38 +7,38 @@ html,
 body {
 	overflow-x: hidden;
 	background: rgb(20, 19, 19) !important;
-	* {
-		cursor: none;
-	}
+	// * {
+	// 	cursor: none;
+	// }
 }
 
-.hoveredCursor {
-	border: 6px solid rgb(177, 114, 250) !important;
-}
+// .hoveredCursor {
+// 	border: 6px solid rgb(177, 114, 250) !important;
+// }
 
-.clickCursor {
-	border: 6px solid rgb(114, 146, 250) !important;
-	transform: scale(0.75);
-}
+// .clickCursor {
+// 	border: 6px solid rgb(114, 146, 250) !important;
+// 	transform: scale(0.75);
+// }
 
-.hide {
-	visibility: hidden;
-}
+// .hide {
+// 	visibility: hidden;
+// }
 
-cursor {
-	z-index: 10001;
-}
-button:hover {
-	cursor: none !important;
-}
+// cursor {
+// 	z-index: 10001;
+// }
+// button:hover {
+// 	cursor: none !important;
+// }
 
-a:hover {
-	cursor: none !important;
-}
+// a:hover {
+// 	cursor: none !important;
+// }
 
-input:hover {
-	cursor: none !important;
-}
+// input:hover {
+// 	cursor: none !important;
+// }
 ::-webkit-scrollbar {
 	width: 0.4rem;
 }

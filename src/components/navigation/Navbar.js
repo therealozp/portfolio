@@ -19,7 +19,7 @@ const AppBarTile = ({ children, href }) => {
 const Navbar = () => {
 	return (
 		<>
-			<AppBar elevation={0} sx={{ backgroundColor: '#141313' }}>
+			<AppBar elevation={0} color="transparent">
 				<Toolbar>
 					<AppBarTile href="/">About</AppBarTile>
 					<AppBarTile href="/projects">Projects</AppBarTile>
