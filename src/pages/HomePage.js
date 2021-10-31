@@ -15,7 +15,7 @@ const HomePage = () => {
 			y: -100,
 			opacity: 0,
 			duration: 0.5,
-			delay: 0.75,
+			delay: 0.5,
 			ease: Expo.easeInOut,
 		});
 		tl.from('.ga', {
@@ -24,7 +24,6 @@ const HomePage = () => {
 			duration: 0.5,
 			ease: Expo.easeInOut,
 		});
-
 		tl.from('.khang', {
 			y: -100,
 			opacity: 0,
@@ -43,13 +42,6 @@ const HomePage = () => {
 			duration: 0.25,
 			ease: Expo.easeInOut,
 		});
-		tl.from('.dot3', {
-			y: -100,
-			opacity: 0,
-			duration: 0.25,
-			ease: Expo.easeInOut,
-			delay: 0.25,
-		});
 		tl.from('.da', {
 			y: -100,
 			opacity: 0,
@@ -60,7 +52,7 @@ const HomePage = () => {
 			y: '-100%',
 			opacity: 0,
 			duration: 0.5,
-			delay: 1,
+			delay: 0.75,
 			ease: Power1.easeInOut,
 		});
 	}, []);
@@ -132,16 +124,6 @@ const HomePage = () => {
 							marginRight: '24px',
 						}}
 						className="dot2"
-					>
-						。
-					</Typography>
-					<Typography
-						variant="h1"
-						sx={{
-							color: 'black',
-							marginRight: '32px',
-						}}
-						className="dot3"
 					>
 						。
 					</Typography>
