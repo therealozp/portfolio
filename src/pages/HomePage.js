@@ -50,7 +50,7 @@ const HomePage = () => {
 		});
 		tl.to('.overlay', {
 			y: '-100%',
-			opacity: 0,
+			// opacity: 0,
 			duration: 0.5,
 			delay: 0.75,
 			ease: Power1.easeInOut,

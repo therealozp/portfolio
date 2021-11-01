@@ -1,8 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box } from '@mui/system';
 import { Typography, Divider } from '@mui/material';
+import gsap, { Power2 } from 'gsap';
 
 const SchoolBlock = () => {
+	useEffect(() => {
+		const timeline = gsap.timeline();
+		timeline.from('.edu', {
+			x: 100,
+			opacity: 0,
+			duration: 0.7,
+			// ease: Power2.easeInOut,
+		});
+		timeline.from(
+			'.suppText',
+			{
+				x: -100,
+				duration: 0.7,
+				opacity: 0,
+				ease: Power2.easeInOut,
+			},
+			'-=0.3'
+		);
+	}, []);
 	return (
 		<Box>
 			<Box sx={{ position: 'relative' }}>
@@ -33,6 +53,7 @@ const SchoolBlock = () => {
 									fontWeight: 'bold',
 								}}
 								variant="h1"
+								className="edu"
 							>
 								Education
 							</Typography>
@@ -46,6 +67,7 @@ const SchoolBlock = () => {
 										width: '100%',
 										textAlign: 'left',
 									}}
+									className="suppText"
 								>
 									where it all began
 								</Typography>
