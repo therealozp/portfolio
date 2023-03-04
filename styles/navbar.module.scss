@@ -23,3 +23,104 @@
 	transform-origin: bottom left;
 	transform: scaleX(1);
 }
+
+.navIcon {
+	width: 27px;
+	height: 21px;
+	position: relative;
+	/* margin: 50px auto; */
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: 0.5s ease-in-out;
+	-moz-transition: 0.5s ease-in-out;
+	-o-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
+	cursor: pointer;
+	margin-left: -10px;
+}
+.navIcon span {
+	display: block;
+	position: absolute;
+	height: 3px;
+	width: 100%;
+	background: #d6d6d6;
+	border-radius: 9px;
+	opacity: 1;
+	left: 0;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: 0.25s ease-in-out;
+	-moz-transition: 0.25s ease-in-out;
+	-o-transition: 0.25s ease-in-out;
+	transition: 0.25s ease-in-out;
+}
+.navIcon span:nth-child(1) {
+	top: 0px;
+	-webkit-transform-origin: left center;
+	-moz-transform-origin: left center;
+	-o-transform-origin: left center;
+	transform-origin: left center;
+}
+.navIcon span:nth-child(2) {
+	top: 9px;
+	-webkit-transform-origin: left center;
+	-moz-transform-origin: left center;
+	-o-transform-origin: left center;
+	transform-origin: left center;
+}
+
+.navIcon span:nth-child(3) {
+	top: 18px;
+	-webkit-transform-origin: left center;
+	-moz-transform-origin: left center;
+	-o-transform-origin: left center;
+	transform-origin: left center;
+}
+.navIcon span:nth-child(4) {
+	top: 0px;
+	opacity: 0;
+	-webkit-transform-origin: right center;
+	-moz-transform-origin: right center;
+	-o-transform-origin: right center;
+	transform-origin: right center;
+}
+.navIcon span:nth-child(5) {
+	top: 18px;
+	-webkit-transform-origin: right center;
+	-moz-transform-origin: right center;
+	-o-transform-origin: right center;
+	transform-origin: right center;
+	opacity: 0;
+}
+.open span:nth-child(1) {
+	width: 85%;
+}
+
+.open span:nth-child(2) {
+	width: 50%;
+	opacity: 1;
+}
+
+.open span:nth-child(3) {
+	width: 85%;
+}
+
+.open span:nth-child(4) {
+	top: 10%;
+	width: 40%;
+	transform: rotate(-45deg);
+	left: 55%;
+	opacity: 1;
+}
+
+.open span:nth-child(5) {
+	top: 77%;
+	width: 40%;
+	left: 55%;
+	transform: rotate(45deg);
+	opacity: 1;
+}

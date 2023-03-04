@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import Navbar from '../components/navigation/Navbar';
 import IntroBlock from '../components/blocks/IntroBlock';
 import ProjectBlock from '../components/blocks/ProjectBlock';
 import AboutBlock from '../components/blocks/AboutBlock';
@@ -8,7 +7,8 @@ import { Typography } from '@mui/material';
 import gsap, { Expo, Power1 } from 'gsap';
 
 // import { Timeline } from 'gsap/all';
-const HomePage = () => {
+
+const AnimatedBlock = () => {
 	useEffect(() => {
 		const tl = gsap.timeline();
 		tl.from('.kore', {
@@ -154,8 +154,14 @@ const HomePage = () => {
 					</Typography>
 				</Box>
 			</Box>
+		</>
+	);
+};
+
+const HomePage = () => {
+	return (
+		<>
 			<Box sx={{ padding: '0 64px' }}>
-				<Navbar />
 				<IntroBlock />
 				<ProjectBlock />
 				<AboutBlock />

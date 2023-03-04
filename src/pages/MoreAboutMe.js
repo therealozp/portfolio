@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../components/navigation/Navbar';
 import { Box } from '@mui/system';
 import SchoolBlock from '../components/blocks/SchoolBlock';
 import PersonalBlock from '../components/blocks/PersonalBlock';
@@ -7,7 +6,6 @@ import { Typography } from '@mui/material';
 const MoreAboutMe = () => {
 	return (
 		<Box>
-			<Navbar />
 			<SchoolBlock />
 			<Box
 				style={{

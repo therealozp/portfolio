@@ -1,6 +1,11 @@
 import React from 'react';
 import { Box } from '@mui/system';
-import Image from 'next/image';
+import dynamic from 'next/dynamic';
+
+const WrapperNoSSR = dynamic(() => import('../src/components/extra/Wrapper'), {
+	ssr: false,
+});
+
 const testpage = () => {
 	return (
 		<Box
@@ -12,7 +17,7 @@ const testpage = () => {
 				alignItems: 'center',
 			}}
 		>
-			<Image src="/arrow.svg" height={320} width={337} />
+			<WrapperNoSSR />
 		</Box>
 	);
 };

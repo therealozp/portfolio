@@ -1,30 +1,31 @@
 import React from 'react';
-import Link from 'next/link';
-import { AppBar, Toolbar, Typography } from '@mui/material';
-import { Box, styled } from '@mui/system';
+import { AppBar, Toolbar, IconButton } from '@mui/material';
+import { styled } from '@mui/system';
+import clsx from 'clsx';
 import styles from '../../../styles/navbar.module.scss';
 
 const Mixin = styled('div')(({ theme }) => theme.mixins.toolbar);
 
-const AppBarTile = ({ children, href }) => {
+const CustomFadeAwayIcon = ({ isnavBarActive }) => {
 	return (
-		<Box sx={{ padding: '10px', margin: '0 10px' }}>
-			<Link href={href} passHref>
-				<Typography className={styles.links}>{children}</Typography>
-			</Link>
-		</Box>
+		<div className={clsx(styles.navIcon, { [styles.open]: isnavBarActive })}>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
 	);
 };
 
-const Navbar = () => {
+const Navbar = ({ open, setOpen }) => {
 	return (
 		<>
 			<AppBar elevation={0} color="transparent">
 				<Toolbar>
-					<AppBarTile href="/">Home</AppBarTile>
-					<AppBarTile href="/projects">Projects</AppBarTile>
-					<AppBarTile href="/moreaboutme">About</AppBarTile>
-					{/* <AppBarTile href="/contact">Contact</AppBarTile> */}
+					<IconButton onClick={setOpen}>
+						<CustomFadeAwayIcon isnavBarActive={open} onClick={setOpen} />
+					</IconButton>
 				</Toolbar>
 			</AppBar>
 			<Mixin />

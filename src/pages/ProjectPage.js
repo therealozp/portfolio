@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../components/navigation/Navbar';
 import { Box } from '@mui/system';
 import ProjectPageCard from '../components/projects/ProjectPageCard';
 import Image from 'next/image';
@@ -69,7 +68,6 @@ const projects = [
 const ProjectPage = () => {
 	return (
 		<Box sx={{ padding: '0 64px' }}>
-			<Navbar />
 			<Box
 				sx={{
 					padding: '32px',
