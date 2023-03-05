@@ -26,7 +26,6 @@ export function loadGLTFModel(
 						child.recieveShadow = recieveShadow;
 						// child.geometry.computeBoundingBox();
 						// child.geometry.boundingBox.expandByScalar(10);
-						child.frustumCulled = false;
 					}
 				});
 
