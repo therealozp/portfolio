@@ -8,32 +8,18 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 const projects = [
 	{
-		name: 'ChanceMap',
-		description:
-			'A social media platform where students can find the extracurriculars that they are truly passionate about and discover new opportunities!',
-		status: 'ready',
-		href: 'https://www.chancemap.com/',
-	},
-	{
-		name: 'VSPACE Marketing Website',
-		description:
-			'A social media platform where students can find the extracurriculars that they are truly passionate about and discover new opportunities!',
-		status: 'ready',
-		href: 'https://www.vspace.org.vn/',
-	},
-	{
-		name: 'Excellaca',
-		description:
-			'Non-profit organization that delivers new knowledge to students through video-based courses.',
-		status: 'ready',
-		href: 'https://excellaca.org/',
-	},
-	{
 		name: 'Lexi',
 		description:
 			'Vocabulary web app, utilizes Dictionary API to help English learners in their vocabulary learning.',
 		status: 'ready',
 		href: 'https://lexi.vercel.app/',
+	},
+	{
+		name: 'VSPACE Marketing Website',
+		description:
+			'A marketing website for VSPACE, an organization that provides English online courses for Vietnamese students.',
+		status: 'ready',
+		href: 'https://www.vspace.org.vn/',
 	},
 	{
 		name: 'Cureator',
@@ -43,11 +29,18 @@ const projects = [
 		href: 'https://cureator.care/',
 	},
 	{
-		name: '2SchoolQueb',
+		name: 'ChanceMap',
 		description:
-			'Tutor-matching website, matches learners to tutors on subjects they need, machine-learning powered recommendation system in development ',
-		status: 'prototype',
-		href: 'https://the-rice-powered-queb.vercel.app/',
+			'A social media platform where students can find the extracurriculars that they are truly passionate about and discover new opportunities!',
+		status: 'unavailable',
+		href: 'https://www.chancemap.com/',
+	},
+	{
+		name: 'Excellaca',
+		description:
+			'Non-profit organization that delivers new knowledge to students through video-based courses.',
+		status: 'unavailable',
+		href: 'https://excellaca.vercel.app/',
 	},
 ];
 

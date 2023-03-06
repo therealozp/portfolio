@@ -4,7 +4,9 @@ import { styled } from '@mui/system';
 import clsx from 'clsx';
 import styles from '../../../styles/navbar.module.scss';
 
-const Mixin = styled('div')(({ theme }) => theme.mixins.toolbar);
+const Mixin = styled('div')({
+	height: '10px',
+});
 
 const CustomFadeAwayIcon = ({ isnavBarActive }) => {
 	return (
@@ -28,7 +30,7 @@ const Navbar = ({ open, setOpen }) => {
 					</IconButton>
 				</Toolbar>
 			</AppBar>
-			<Mixin />
+			{/* <Mixin /> */}
 		</>
 	);
 };

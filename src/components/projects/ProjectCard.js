@@ -11,6 +11,8 @@ const ProjectCard = ({ name, description, index, status, href }) => {
 					`${
 						status == 'prototype'
 							? theme.palette.yellow.main
+							: status == 'unavailable'
+							? theme.palette.red.main
 							: theme.palette.blue.main
 					} 2px solid`,
 				borderRadius: '6px',
@@ -82,15 +84,18 @@ const ProjectCard = ({ name, description, index, status, href }) => {
 						`${
 							status == 'prototype'
 								? theme.palette.yellow.main
+								: status == 'unavailable'
+								? theme.palette.red.main
 								: theme.palette.blue.main
-						}`,
+						} `,
 				}}
 				className={`innerBox ${index}`}
 			/>
 			<Box
 				sx={{
 					position: 'absolute',
-					display: status == 'prototype' ? 'block' : 'none',
+					display:
+						status == 'prototype' || status == 'unavailable' ? 'block' : 'none',
 					right: 15,
 					top: 15,
 					transform: 'translateY(-40px)',
@@ -99,10 +104,26 @@ const ProjectCard = ({ name, description, index, status, href }) => {
 			>
 				<Tooltip
 					arrow
-					title="Currently In Development!"
+					title={
+						status == 'prototype'
+							? 'Currently under development!'
+							: 'Project under maintenance!'
+					}
 					sx={{ backgroundColor: 'transparent' }}
 				>
-					<ErrorOutlineIcon style={{ fill: '#FABC3C' }} />
+					{status == 'prototype' ? (
+						<ErrorOutlineIcon
+							style={{
+								fill: '#FABC3C',
+							}}
+						/>
+					) : (
+						<ErrorOutlineIcon
+							style={{
+								fill: '#F25F5C',
+							}}
+						/>
+					)}
 				</Tooltip>
 			</Box>
 		</Box>

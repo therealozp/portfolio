@@ -14,6 +14,7 @@ const myTheme = createTheme({
 		blue: {
 			light: '#7292fa',
 			main: '#4264d4',
+			dark: '#171C27',
 		},
 		green: {
 			main: '#9CDE9F',
@@ -21,8 +22,12 @@ const myTheme = createTheme({
 		yellow: {
 			main: '#FABC3C',
 		},
+		red: {
+			main: '#F25F5C',
+		},
 		text: {
 			primary: '#FAF0F1',
+			creme: '#ece2d0',
 		},
 	},
 });

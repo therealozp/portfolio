@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import IntroBlock from '../components/blocks/IntroBlock';
 import ProjectBlock from '../components/blocks/ProjectBlock';
 import AboutBlock from '../components/blocks/AboutBlock';
@@ -164,8 +164,16 @@ const VoxelDeskNoSSR = dynamic(() => import('../models/VoxelDesk'), {
 const HomePage = () => {
 	return (
 		<>
-			<Box sx={{ padding: '0 64px' }}>
-				<VoxelDeskNoSSR />
+			<VoxelDeskNoSSR />
+			<Box
+				sx={{
+					padding: '0 64px',
+					display: 'flex',
+					flexDirection: 'column',
+					justifyContent: 'center',
+					alignItems: 'center',
+				}}
+			>
 				<IntroBlock />
 				<ProjectBlock />
 				<AboutBlock />

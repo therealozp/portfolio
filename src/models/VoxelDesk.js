@@ -1,8 +1,11 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Box, CircularProgress } from '@mui/material';
+import { Box, CircularProgress, Typography } from '@mui/material';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { loadGLTFModel } from './model';
+
+// import { RectAreaLightUniformsLib } from 'three/examples/jsm/lights/RectAreaLightUniformsLib.js';
+// import { RectAreaLightHelper } from 'three/addons/helpers/RectAreaLightHelper.js';
 
 function easeOutCircular(x) {
 	return -Math.sqrt(1 - Math.pow(x - 1, 4));
@@ -40,11 +43,11 @@ const VoxelDesk = () => {
 			const target = new THREE.Vector3(-0.5, 1.2, 0);
 			const initialPosition = new THREE.Vector3(
 				20 * Math.sin(Math.PI * 0.2),
-				10,
+				-20,
 				20 * Math.cos(Math.PI * 0.2)
 			);
 
-			const scale = sceneHeight * 0.005 + 4.8;
+			const scale = sceneHeight * 0.007 + 4.8;
 			const camera = new THREE.OrthographicCamera(
 				-scale,
 				scale,
@@ -59,9 +62,39 @@ const VoxelDesk = () => {
 
 			// setCamera(camera);
 
-			const ambientLight = new THREE.AmbientLight(0xcccccc, 1);
-			scene.add(ambientLight);
+			// const axesHelper = new THREE.AxesHelper(5);
+			// scene.add(axesHelper);
 
+			// RectAreaLightUniformsLib.init();
+
+			const ambientLight = new THREE.AmbientLight(0xfffffff, 1);
+
+			// const width = 2;
+			// const height = 5;
+			// const intensity = 3;
+			const rectposX = 3;
+			const rectposZ = -2.3;
+			const rectposY = 10.7;
+			// const rectLight = new THREE.RectAreaLight(
+			// 	0xffffff,
+			// 	intensity,
+			// 	width,
+			// 	height
+			// );
+			// rectLight.position.set(rectposX, 10.7, rectposZ);
+			// rectLight.lookAt(rectposX, 5, rectposZ);
+			// scene.add(rectLight);
+
+			// const rectLightHelper = new RectAreaLightHelper(rectLight);
+			// rectLight.add(rectLightHelper);
+
+			const lampLight = new THREE.PointLight(0xfada4d, 3, 20);
+			lampLight.castShadow = true;
+			lampLight.position.set(rectposX, rectposY, rectposZ);
+			lampLight.lookAt(-5, 0, rectposZ);
+
+			scene.add(ambientLight);
+			scene.add(lampLight);
 			const controls = new OrbitControls(camera, renderer.domElement);
 			controls.autoRotateSpeed = -2;
 			controls.autoRotate = true;
@@ -71,8 +104,8 @@ const VoxelDesk = () => {
 			setLoading(true);
 
 			loadGLTFModel(scene, '/cat.glb', {
-				recieveShadow: false,
-				castShadow: false,
+				recieveShadow: true,
+				castShadow: true,
 			}).then(() => {
 				animate();
 				setLoading(false);
@@ -135,32 +168,74 @@ const VoxelDesk = () => {
 	}, [handleResize]);
 	return (
 		<Box
-			ref={refContainer}
-			sx={{
-				s: {
-					width: 280,
-					height: 280,
-					marginBottom: -40,
-				},
-				m: {
-					width: 720,
-					height: 720,
-					marginBottom: -140,
-				},
-				l: {
-					width: 720,
-					height: 720,
-					marginBottom: -200,
-				},
-				position: 'relative',
-			}}
+			sx={{ width: '100vw', display: 'grid', gridTemplateColumns: '45% 55%' }}
 		>
-			{loading && (
-				<CircularProgress
-					sx={{ position: 'absolute', top: '50%', bottom: '50%' }}
-					size="3rem"
-				/>
-			)}
+			<Box
+				sx={{
+					height: '100vh',
+					display: 'flex',
+					flexDirection: 'column',
+					justifyContent: 'center',
+					alignItems: 'center',
+				}}
+			>
+				<Typography
+					sx={{
+						fontFamily: 'Montserrat',
+						fontSize: '5rem',
+						color: (theme) => theme.palette.text.creme,
+						wordSpacing: 2,
+					}}
+				>
+					HELLO!
+				</Typography>
+				<Typography
+					sx={{
+						fontFamily: 'Montserrat',
+						fontSize: '5rem',
+						color: (theme) => theme.palette.text.creme,
+						wordSpacing: 2,
+					}}
+				>
+					I AM
+				</Typography>
+				<Typography
+					sx={{
+						fontFamily: 'Montserrat',
+						fontSize: '5rem',
+						color: (theme) => theme.palette.text.creme,
+						wordSpacing: 2,
+					}}
+				>
+					KHANG.
+				</Typography>
+			</Box>
+			<Box
+				ref={refContainer}
+				sx={{
+					s: {
+						width: 480,
+						height: 480,
+						marginBottom: -40,
+					},
+					m: {
+						width: '100vh',
+						height: '100vh',
+						// marginBottom: -140,
+					},
+					position: 'relative',
+					'&:hover': {
+						cursor: 'grab',
+					},
+				}}
+			>
+				{loading && (
+					<CircularProgress
+						sx={{ position: 'absolute', top: '25%', right: '50%' }}
+						size="3rem"
+					/>
+				)}
+			</Box>
 		</Box>
 	);
 };

@@ -14,7 +14,7 @@ export function loadGLTFModel(
 				const object = gltf.scene;
 				object.name = 'desk';
 				object.position.x = 0;
-				object.position.y = 0;
+				object.position.y = -4;
 				object.recieveShadow = recieveShadow;
 				object.castShadow = castShadow;
 
