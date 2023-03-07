@@ -11,16 +11,16 @@ function easeOutCircular(x) {
 	return -Math.sqrt(1 - Math.pow(x - 1, 4));
 }
 
-const VoxelDesk = () => {
+const VoxelDesk = ({ animationFinished }) => {
 	const refContainer = useRef();
 	const [loading, setLoading] = useState(true);
 	const refRenderer = useRef();
 	// const [renderer, setRenderer] = useState();
 	// const [camera, setCamera] = useState();
 	// const [controls, setControls] = useState();
-
-	/* eslint-disable react-hooks/exhaustive-deps */
-
+	const awaitLoad =
+		/* eslint-disable react-hooks/exhaustive-deps */
+		console.log('animationFinished', animationFinished);
 	useEffect(() => {
 		const { current: container } = refContainer;
 		if (container) {
@@ -148,7 +148,6 @@ const VoxelDesk = () => {
 			};
 		}
 	}, []);
-
 	const handleResize = useCallback(() => {
 		const { current: renderer } = refRenderer;
 		const { current: container } = refContainer;
@@ -168,74 +167,31 @@ const VoxelDesk = () => {
 	}, [handleResize]);
 	return (
 		<Box
-			sx={{ width: '100vw', display: 'grid', gridTemplateColumns: '45% 55%' }}
-		>
-			<Box
-				sx={{
+			ref={refContainer}
+			sx={{
+				s: {
+					width: 480,
+					height: 480,
+					marginBottom: -40,
+				},
+				m: {
+					width: '100vh',
 					height: '100vh',
-					display: 'flex',
-					flexDirection: 'column',
-					justifyContent: 'center',
-					alignItems: 'center',
-				}}
-			>
-				<Typography
-					sx={{
-						fontFamily: 'Montserrat',
-						fontSize: '5rem',
-						color: (theme) => theme.palette.text.creme,
-						wordSpacing: 2,
-					}}
-				>
-					HELLO!
-				</Typography>
-				<Typography
-					sx={{
-						fontFamily: 'Montserrat',
-						fontSize: '5rem',
-						color: (theme) => theme.palette.text.creme,
-						wordSpacing: 2,
-					}}
-				>
-					I AM
-				</Typography>
-				<Typography
-					sx={{
-						fontFamily: 'Montserrat',
-						fontSize: '5rem',
-						color: (theme) => theme.palette.text.creme,
-						wordSpacing: 2,
-					}}
-				>
-					KHANG.
-				</Typography>
-			</Box>
-			<Box
-				ref={refContainer}
-				sx={{
-					s: {
-						width: 480,
-						height: 480,
-						marginBottom: -40,
-					},
-					m: {
-						width: '100vh',
-						height: '100vh',
-						// marginBottom: -140,
-					},
-					position: 'relative',
-					'&:hover': {
-						cursor: 'grab',
-					},
-				}}
-			>
-				{loading && (
-					<CircularProgress
-						sx={{ position: 'absolute', top: '25%', right: '50%' }}
-						size="3rem"
-					/>
-				)}
-			</Box>
+					// marginBottom: -140,
+				},
+				position: 'relative',
+				'&:hover': {
+					cursor: 'grab',
+				},
+			}}
+			className="voxel-desk"
+		>
+			{loading && (
+				<CircularProgress
+					sx={{ position: 'absolute', top: '25%', right: '50%' }}
+					size="3rem"
+				/>
+			)}
 		</Box>
 	);
 };
