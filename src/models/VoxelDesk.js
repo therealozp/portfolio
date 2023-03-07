@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Box, CircularProgress, Typography } from '@mui/material';
+import { Box, CircularProgress } from '@mui/material';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { loadGLTFModel } from './model';
@@ -13,17 +13,16 @@ function easeOutCircular(x) {
 
 const VoxelDesk = ({ animationFinished }) => {
 	const refContainer = useRef();
-	const [loading, setLoading] = useState(true);
+	const [loading, setLoading] = useState(false);
 	const refRenderer = useRef();
 	// const [renderer, setRenderer] = useState();
 	// const [camera, setCamera] = useState();
 	// const [controls, setControls] = useState();
-	const awaitLoad =
-		/* eslint-disable react-hooks/exhaustive-deps */
-		console.log('animationFinished', animationFinished);
+	/* eslint-disable react-hooks/exhaustive-deps */
+
 	useEffect(() => {
 		const { current: container } = refContainer;
-		if (container) {
+		if (container && animationFinished) {
 			const sceneWidth = container.clientWidth;
 			const sceneHeight = container.clientHeight;
 
@@ -60,36 +59,13 @@ const VoxelDesk = ({ animationFinished }) => {
 			camera.position.copy(initialPosition);
 			camera.lookAt(target);
 
-			// setCamera(camera);
-
-			// const axesHelper = new THREE.AxesHelper(5);
-			// scene.add(axesHelper);
-
-			// RectAreaLightUniformsLib.init();
-
 			const ambientLight = new THREE.AmbientLight(0xfffffff, 1);
 
-			// const width = 2;
-			// const height = 5;
-			// const intensity = 3;
 			const rectposX = 3;
 			const rectposZ = -2.3;
 			const rectposY = 10.7;
-			// const rectLight = new THREE.RectAreaLight(
-			// 	0xffffff,
-			// 	intensity,
-			// 	width,
-			// 	height
-			// );
-			// rectLight.position.set(rectposX, 10.7, rectposZ);
-			// rectLight.lookAt(rectposX, 5, rectposZ);
-			// scene.add(rectLight);
-
-			// const rectLightHelper = new RectAreaLightHelper(rectLight);
-			// rectLight.add(rectLightHelper);
 
 			const lampLight = new THREE.PointLight(0xfada4d, 3, 20);
-			lampLight.castShadow = true;
 			lampLight.position.set(rectposX, rectposY, rectposZ);
 			lampLight.lookAt(-5, 0, rectposZ);
 
@@ -102,7 +78,6 @@ const VoxelDesk = ({ animationFinished }) => {
 			// setControls(controls);
 
 			setLoading(true);
-
 			loadGLTFModel(scene, '/cat.glb', {
 				recieveShadow: true,
 				castShadow: true,
@@ -147,7 +122,8 @@ const VoxelDesk = ({ animationFinished }) => {
 				renderer.dispose();
 			};
 		}
-	}, []);
+	}, [animationFinished]);
+
 	const handleResize = useCallback(() => {
 		const { current: renderer } = refRenderer;
 		const { current: container } = refContainer;

@@ -24,6 +24,9 @@ const HomePage = () => {
 				<IntroBlock setFinished={setFinished} />
 				<VoxelDeskNoSSR animationFinished={finished} />
 			</Box>
+			<Box sx={{ height: '75vh' }} />
+			<AboutBlock />
+
 			<Box
 				sx={{
 					padding: '0 64px',
@@ -34,7 +37,6 @@ const HomePage = () => {
 				}}
 			>
 				<ProjectBlock />
-				<AboutBlock />
 			</Box>
 		</>
 	);

@@ -5,7 +5,12 @@ import gsap, { Expo, Elastic } from 'gsap';
 
 const IntroBlock = ({ setFinished }) => {
 	useEffect(() => {
-		const tline = gsap.timeline();
+		const tline = gsap.timeline({
+			onComplete: () => {
+				setFinished(true);
+				console.log('finished');
+			},
+		});
 		tline.from('.hi', {
 			y: 100,
 			duration: 0.5,
@@ -34,11 +39,11 @@ const IntroBlock = ({ setFinished }) => {
 		});
 		tline.from('.intro', {
 			x: 400,
+			ease: Expo.easeOut,
+			duration: 0.5,
+			delay: 0.5,
 		});
-		return () => {
-			setFinished(true);
-		};
-	});
+	}, []);
 
 	return (
 		<>
