@@ -4,20 +4,30 @@ import { Typography } from '@mui/material';
 import NameTags from '../navigation/NameTags';
 import gsap, { Expo, Power1 } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import TextPlugin from 'gsap/dist/TextPlugin';
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, TextPlugin);
+
 const AboutBlock = () => {
 	const Title = styled(Typography)(({ theme }) => ({
 		fontSize: '1.8rem',
 		lineHeight: '2rem',
 		fontWeight: 'bold',
+		fontFamily: 'Inconsolata',
 	}));
 	const Text = styled(Typography)(({ theme }) => ({
 		fontSize: '1.2rem',
 		lineHeight: '2rem',
 	}));
+
 	useEffect(() => {
+		gsap.to('.cursor', {
+			opacity: 0,
+			ease: Power1.easeInOut,
+			repeat: -1,
+		});
 		const sections = document.querySelectorAll('.about-container');
+
 		sections.forEach((section) => {
 			if (section.classList.contains('left')) {
 				gsap.to(section, {
@@ -62,6 +72,19 @@ const AboutBlock = () => {
 			}
 		});
 	}, []);
+
+	useEffect(() => {
+		const words = ['Who is', 'Abt', 'About Me'];
+
+		let textTL = gsap.timeline({ repeat: -1 });
+
+		words.forEach((word) => {
+			let tl = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1 });
+			tl.to('.text', { duration: 1, text: word });
+			textTL.add(tl);
+		});
+	}, []);
+
 	return (
 		<>
 			<Box sx={{ height: '100px' }} />
@@ -77,6 +100,21 @@ const AboutBlock = () => {
 				className="about-container left"
 			>
 				<Box sx={{ height: '50vh' }} />
+				<Box
+					sx={{
+						position: 'relative',
+						overflow: 'hidden',
+					}}
+				>
+					<Box
+						className="text"
+						sx={{
+							paddingLeft: '1.2vw',
+						}}
+					></Box>
+					<Box className="cursor">_</Box>
+				</Box>
+
 				<Title>Nice to meet you!</Title>
 				<br />
 
@@ -117,7 +155,7 @@ const AboutBlock = () => {
 				<br />
 
 				<Text>
-					When he is not online, he is out venturing with his camera
+					When Khang is not online, he is out adventuring with his camera
 					(conveniently thrifted at the price of $100), speeding down the roads
 					with his sports bike, or jamming in his bedroom with a guitar. Things
 					like these keep him sane until the next session of coding.
