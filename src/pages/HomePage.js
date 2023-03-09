@@ -22,11 +22,11 @@ const HomePage = () => {
 				}}
 			>
 				<IntroBlock setFinished={setFinished} />
-				{/* <VoxelDeskNoSSR animationFinished={finished} /> */}
+				<VoxelDeskNoSSR animationFinished={finished} />
 			</Box>
 			<Box sx={{ height: '75vh' }} />
 			<AboutBlock />
-
+			<Box sx={{ height: '50vh' }} />
 			<Box
 				sx={{
 					padding: '0 64px',
@@ -34,6 +34,7 @@ const HomePage = () => {
 					flexDirection: 'column',
 					justifyContent: 'center',
 					alignItems: 'center',
+					width: '100vw',
 				}}
 			>
 				<ProjectBlock />

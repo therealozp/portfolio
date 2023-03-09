@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import ProjectCard from '../projects/ProjectCard';
 import { Box } from '@mui/material';
-import NameTags from '../navigation/NameTags';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
@@ -100,34 +99,70 @@ const ProjectBlock = () => {
 				duration: 0.4,
 			});
 		});
+
+		gsap.from('.projectContainer', {
+			scrollTrigger: {
+				trigger: '.projectContainer',
+				start: 'top bottom',
+				end: 'top top',
+				scrub: 0.6,
+			},
+			scale: 0.9,
+		});
+
+		gsap.to('.projectContainer', {
+			scrollTrigger: {
+				trigger: '.projectContainer',
+				start: 'top bottom',
+				end: 'top top',
+				scrub: 0.6,
+			},
+			borderTopRightRadius: 10,
+			borderTopLeftRadius: 10,
+		});
+
+		gsap.to('.projectContainer', {
+			scrollTrigger: {
+				trigger: '.projectContainer',
+				start: 'bottom bottom',
+				end: 'bottom top',
+				scrub: 0.6,
+			},
+			borderBottomRightRadius: '100px 100px',
+			borderBottomLeftRadius: '100px 100px',
+		});
 	}, []);
 	return (
 		<Box
 			sx={{
-				// width: '100vw',
-				display: 'flex',
-				flexDirection: 'column',
-				alignItems: 'center',
+				width: '90%',
+				backgroundColor: (theme) => theme.palette.blue.dark,
+				borderRadius: '100px 100px 40px 40px',
 			}}
+			className="projectContainer"
 		>
-			<Box>
-				<NameTags sx={{ marginLeft: '-64px' }}>{'<my-projects>'}</NameTags>
-				<Box>
-					{projects.map((d, i) => (
-						<ProjectCard
-							name={d.name}
-							description={d.description}
-							key={`card-${i}`}
-							href={d.href}
-							status={d.status}
-						/>
-					))}
-				</Box>
-				<NameTags sx={{ marginLeft: '-64px' }}>{'</my-projects>'}</NameTags>
+			<Box sx={{ height: '25vh' }} />
+			<Box
+				sx={{
+					// width: '100vw',
+					display: 'flex',
+					flexDirection: 'column',
+					alignItems: 'center',
+				}}
+			>
+				{projects.map((d, i) => (
+					<ProjectCard
+						name={d.name}
+						description={d.description}
+						key={`card-${i}`}
+						href={d.href}
+						status={d.status}
+					/>
+				))}
 			</Box>
+			<Box sx={{ height: '25vh' }} />
 		</Box>
 	);
 };
 
 export default ProjectBlock;
-``;

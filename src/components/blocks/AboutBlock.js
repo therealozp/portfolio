@@ -26,15 +26,14 @@ const AboutBlock = () => {
 			repeat: -1,
 		});
 
-		const words = ['WHO IS', 'ABT', 'ABOUT ME'];
+		const words = ['WHO IS', 'ABOOT', 'ABOUT ME'];
 
 		let textTL = gsap
 			.timeline({
 				scrollTrigger: {
 					trigger: '.aboutTriggerBox',
-					markers: true,
 				},
-				delay: 1.5,
+				delay: 0.5,
 			})
 			.pause();
 
@@ -50,13 +49,13 @@ const AboutBlock = () => {
 			}
 		});
 
-		gsap.to('divider-about', {
+		gsap.from('.divider-about', {
 			scrollTrigger: {
-				trigger: 'aboutTriggerBox',
-				markers: true,
+				trigger: '.divider-about',
 			},
-			delay: 1.5,
-			width: '100%',
+			x: -1000,
+			ease: Expo.easeInOut,
+			duration: 1,
 		});
 
 		const sections = document.querySelectorAll('.about-container');
@@ -127,7 +126,7 @@ const AboutBlock = () => {
 						fontFamily: 'Montserrat',
 						fontWeight: 200,
 						letterSpacing: '0.1rem',
-						height: '50vh',
+						height: '20vh',
 						alignItems: 'center',
 						justifyContent: 'center',
 					}}
@@ -154,6 +153,7 @@ const AboutBlock = () => {
 						display: 'flex',
 						flexDirection: 'column',
 						justifyContent: 'center',
+						overflow: 'hidden',
 					}}
 				>
 					<Typography
@@ -171,8 +171,9 @@ const AboutBlock = () => {
 						sx={{
 							height: '2px',
 							backgroundColor: 'white',
-							width: '0%',
+							width: '100%',
 							borderRadius: '3px',
+							marginBottom: '6vh',
 						}}
 					/>
 				</Box>

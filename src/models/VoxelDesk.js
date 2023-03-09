@@ -56,35 +56,45 @@ const VoxelDesk = ({ animationFinished }) => {
 				50000
 			);
 
+			renderer.shadowMap.enabled = true;
+			renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
 			camera.position.copy(initialPosition);
 			camera.lookAt(target);
 
 			const ambientLight = new THREE.AmbientLight(0xfffffff, 1);
 
-			const rectposX = 3;
-			const rectposZ = -2.3;
-			const rectposY = 10.7;
+			const rectposX = 4.3;
+			const rectposZ = 0;
+			const rectposY = 6;
 
-			const lampLight = new THREE.PointLight(0xfada4d, 3, 20);
+			const lampLight = new THREE.PointLight(0xfada4d, 2, 20);
 			lampLight.position.set(rectposX, rectposY, rectposZ);
-			lampLight.lookAt(-5, 0, rectposZ);
+			lampLight.shadow.bias = -0.0006;
+			// lampLight.lookAt(-5, 0, rectposZ);
+			lampLight.castShadow = true;
+			// const pointLightHelper = new THREE.PointLightHelper(lampLight, 1);
+			// const axesHelper = new THREE.AxesHelper(5);
 
+			// scene.add(axesHelper);
 			scene.add(ambientLight);
 			scene.add(lampLight);
+			// scene.add(pointLightHelper);
 			const controls = new OrbitControls(camera, renderer.domElement);
+
 			controls.autoRotateSpeed = -2;
 			controls.autoRotate = true;
 			controls.target = target;
 			// setControls(controls);
-
 			setLoading(true);
-			loadGLTFModel(scene, '/cat.glb', {
-				recieveShadow: true,
+			loadGLTFModel(scene, '/myroom.glb', {
+				receiveShadow: true,
 				castShadow: true,
 			}).then(() => {
 				animate();
 				setLoading(false);
 			});
+			console.log(scene);
 
 			let req = null;
 
