@@ -20,10 +20,6 @@ export default class MyDocument extends Document {
 						rel="stylesheet"
 					/>
 					<link
-						href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
-						rel="stylesheet"
-					/>
-					<link
 						href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
 						rel="stylesheet"
 					/>
