@@ -3,6 +3,7 @@ import ProjectCard from '../projects/ProjectCard';
 import { Box } from '@mui/material';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import Typography from '@mui/material/Typography';
 
 gsap.registerPlugin(ScrollTrigger);
 const projects = [
@@ -49,6 +50,24 @@ const ProjectBlock = () => {
 		const innerContent = gsap.utils.toArray('.infoBox');
 		const innerButtons = gsap.utils.toArray('.buttonBox');
 		const innerDev = gsap.utils.toArray('.developing');
+
+		const projectChars = gsap.SplitText('.projectTitle', {
+			type: 'words,chars',
+		});
+		const chars = projectChars.chars;
+
+		chars.forEach((char) => {
+			gsap.to(char, {
+				scrollTrigger: {
+					trigger: char,
+				},
+				duration: 0.5,
+				opacity: 0,
+				y: 80,
+				rotationX: 180,
+				stagger: 0.01,
+			});
+		});
 
 		cards.forEach((card, i) => {
 			gsap.to(card, {
@@ -108,15 +127,6 @@ const ProjectBlock = () => {
 				scrub: 0.6,
 			},
 			scale: 0.9,
-		});
-
-		gsap.to('.projectContainer', {
-			scrollTrigger: {
-				trigger: '.projectContainer',
-				start: 'top bottom',
-				end: 'top top',
-				scrub: 0.6,
-			},
 			borderTopRightRadius: 10,
 			borderTopLeftRadius: 10,
 		});
@@ -135,13 +145,15 @@ const ProjectBlock = () => {
 	return (
 		<Box
 			sx={{
-				width: '90%',
+				width: '100%',
 				backgroundColor: (theme) => theme.palette.blue.dark,
 				borderRadius: '100px 100px 40px 40px',
 			}}
 			className="projectContainer"
 		>
-			<Box sx={{ height: '25vh' }} />
+			<Box sx={{ height: '50vh' }}>
+				<Typography className="projectTitle">SOME OF MY WORKS</Typography>
+			</Box>
 			<Box
 				sx={{
 					// width: '100vw',
