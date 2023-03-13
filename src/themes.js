@@ -21,6 +21,7 @@ const myTheme = createTheme({
 		},
 		yellow: {
 			main: '#FABC3C',
+			cream: '#E2DBBE',
 		},
 		red: {
 			main: '#F25F5C',

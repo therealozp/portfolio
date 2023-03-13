@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Box } from '@mui/system';
-import { Typography, Avatar } from '@mui/material';
+import { Typography } from '@mui/material';
 import gsap, { Expo, Elastic } from 'gsap';
 
 const IntroBlock = ({ setFinished }) => {

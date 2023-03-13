@@ -7,6 +7,7 @@ import { Box } from '@mui/system';
 // import gsap, { Expo, Power1 } from 'gsap';
 // import { Timeline } from 'gsap/all';
 import dynamic from 'next/dynamic';
+import ProjectFiller from '../components/fillers/ProjectFiller';
 const VoxelDeskNoSSR = dynamic(() => import('../models/VoxelDesk'), {
 	ssr: false,
 });
@@ -22,11 +23,21 @@ const HomePage = () => {
 				}}
 			>
 				<IntroBlock setFinished={setFinished} />
-				<VoxelDeskNoSSR animationFinished={finished} />
+				{/* <VoxelDeskNoSSR animationFinished={finished} /> */}
 			</Box>
 			<Box sx={{ height: '75vh' }} />
 			<AboutBlock />
-			<Box sx={{ height: '50vh' }} />
+			<Box
+				sx={{
+					height: '70vh',
+					display: 'flex',
+					justifyContent: 'center',
+					alignItems: 'center',
+				}}
+			>
+				<ProjectFiller />
+			</Box>
+
 			<Box
 				sx={{
 					display: 'flex',

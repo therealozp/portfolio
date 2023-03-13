@@ -51,24 +51,6 @@ const ProjectBlock = () => {
 		const innerButtons = gsap.utils.toArray('.buttonBox');
 		const innerDev = gsap.utils.toArray('.developing');
 
-		const projectChars = gsap.SplitText('.projectTitle', {
-			type: 'words,chars',
-		});
-		const chars = projectChars.chars;
-
-		chars.forEach((char) => {
-			gsap.to(char, {
-				scrollTrigger: {
-					trigger: char,
-				},
-				duration: 0.5,
-				opacity: 0,
-				y: 80,
-				rotationX: 180,
-				stagger: 0.01,
-			});
-		});
-
 		cards.forEach((card, i) => {
 			gsap.to(card, {
 				scrollTrigger: {
@@ -78,8 +60,8 @@ const ProjectBlock = () => {
 					// end: '',
 					toggleActions: 'play none play reset',
 				},
-				x: -1150,
-				duration: 1.1,
+				x: -1800,
+				duration: 1.7,
 			});
 			gsap.to(innerContent[i], {
 				scrollTrigger: {
