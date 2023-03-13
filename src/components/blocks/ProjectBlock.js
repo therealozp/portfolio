@@ -4,6 +4,7 @@ import { Box } from '@mui/material';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Typography from '@mui/material/Typography';
+import anime from 'animejs';
 
 gsap.registerPlugin(ScrollTrigger);
 const projects = [
@@ -50,24 +51,6 @@ const ProjectBlock = () => {
 		const innerContent = gsap.utils.toArray('.infoBox');
 		const innerButtons = gsap.utils.toArray('.buttonBox');
 		const innerDev = gsap.utils.toArray('.developing');
-
-		const projectChars = gsap.SplitText('.projectTitle', {
-			type: 'words,chars',
-		});
-		const chars = projectChars.chars;
-
-		chars.forEach((char) => {
-			gsap.to(char, {
-				scrollTrigger: {
-					trigger: char,
-				},
-				duration: 0.5,
-				opacity: 0,
-				y: 80,
-				rotationX: 180,
-				stagger: 0.01,
-			});
-		});
 
 		cards.forEach((card, i) => {
 			gsap.to(card, {
@@ -129,6 +112,15 @@ const ProjectBlock = () => {
 			scale: 0.9,
 			borderTopRightRadius: 10,
 			borderTopLeftRadius: 10,
+			onComplete: () => {
+				anime.timeline().add({
+					targets: '.projectTitle',
+					translateY: -100,
+					opacity: 1,
+					easing: 'easeOutExpo',
+					delay: (el, i) => 30 * i,
+				});
+			},
 		});
 
 		gsap.to('.projectContainer', {
@@ -142,6 +134,9 @@ const ProjectBlock = () => {
 			borderBottomLeftRadius: '100px 100px',
 		});
 	}, []);
+
+	const title = 'some of my works.js';
+
 	return (
 		<Box
 			sx={{
@@ -151,8 +146,36 @@ const ProjectBlock = () => {
 			}}
 			className="projectContainer"
 		>
-			<Box sx={{ height: '50vh' }}>
-				<Typography className="projectTitle">SOME OF MY WORKS</Typography>
+			<Box sx={{ height: '75vh' }} />
+
+			<Box
+				sx={{
+					height: '50vh',
+					display: 'flex',
+					alignItems: 'center',
+					justifyContent: 'center',
+				}}
+				className="projTitleContainer"
+			>
+				{title.split('').map((char, i) => {
+					console.log(char);
+
+					return (
+						<Typography
+							className={`projectTitle`}
+							key={`projectTitle-${i}`}
+							sx={{
+								fontFamily: 'Montserrat',
+								fontSize: '3rem',
+								letterSpacing: '0.1 rem',
+								opacity: 0,
+								fontWeight: 200,
+							}}
+						>
+							{/\s/.test(char) ? '\xA0' : char}
+						</Typography>
+					);
+				})}
 			</Box>
 			<Box
 				sx={{
