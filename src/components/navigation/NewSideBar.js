@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Drawer, IconButton, Divider } from '@mui/material';
+import { Box, Drawer, IconButton } from '@mui/material';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import Link from 'next/link';
 

@@ -94,7 +94,7 @@ const VoxelDesk = ({ animationFinished }) => {
 				animate();
 				setLoading(false);
 			});
-			console.log(scene);
+			// console.log(scene);
 
 			let req = null;
 

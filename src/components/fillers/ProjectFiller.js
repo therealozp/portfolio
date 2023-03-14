@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback, useState, useRef } from 'react';
 import { Box } from '@mui/material';
 import gsap from 'gsap';
 
@@ -37,9 +37,54 @@ const Vertical = ({ ...props }) => {
 };
 
 const ProjectFiller = () => {
-	const vertcount = Array(30).fill(0);
-	const horizcount = Array(10).fill(0);
+	const [vertCount, setVertCount] = useState(Array(0).fill(0));
+	const [horizCount, setHorizCount] = useState(Array(0).fill(0));
+	const [vertOffset, setVertOffset] = useState(0);
+	const [horizOffset, setHorizOffset] = useState(0);
+
+	const projFillerGridRef = useRef();
+
+	const handleResize = useCallback(() => {
+		let horizLength;
+		let vertLength;
+
+		let containerWidth = projFillerGridRef.current.clientWidth;
+		let containerHeight = projFillerGridRef.current.clientHeight;
+
+		vertLength = Math.floor(containerWidth / 45);
+		horizLength = Math.floor(containerHeight / 44);
+
+		setVertOffset(
+			Math.floor(containerWidth / (Math.floor(containerWidth / 45) - 1) / 2)
+		);
+		setHorizOffset(
+			Math.floor(containerHeight / (Math.floor(containerHeight / 44) - 1) / 2)
+		);
+
+		setVertCount(Array(vertLength - 2).fill(0));
+		setHorizCount(Array(horizLength).fill(0));
+	}, []);
+
 	useEffect(() => {
+		let horizLength;
+		let vertLength;
+
+		let containerWidth = projFillerGridRef.current.clientWidth;
+		let containerHeight = projFillerGridRef.current.clientHeight;
+
+		vertLength = Math.floor(containerWidth / 45);
+		horizLength = Math.floor(containerHeight / 44);
+
+		setVertOffset(
+			Math.floor(containerWidth / (Math.floor(containerWidth / 45) - 1) / 2)
+		);
+		setHorizOffset(
+			Math.floor(containerHeight / (Math.floor(containerHeight / 44) - 1) / 2)
+		);
+
+		setVertCount(Array(vertLength - 2).fill(0));
+		setHorizCount(Array(horizLength).fill(0));
+
 		const trailer = document.getElementById('trailer');
 		const projectFillerGrid = document.getElementById('projFillerGrid');
 
@@ -60,6 +105,14 @@ const ProjectFiller = () => {
 			trailer.style.transform = `translate(${x}px, ${y}px)`;
 		};
 	}, []);
+
+	useEffect(() => {
+		window.addEventListener('resize', handleResize, false);
+		return () => {
+			window.removeEventListener('resize', handleResize, false);
+		};
+	}, [handleResize]);
+
 	return (
 		<>
 			<Box
@@ -74,11 +127,12 @@ const ProjectFiller = () => {
 				}}
 				className="projFillerGrid"
 				id="projFillerGrid"
+				ref={projFillerGridRef}
 			>
-				{horizcount.map((_, i) => (
+				{horizCount.map((_, i) => (
 					<Horizontal key={`horiz-${i}`} sx={{ top: 32 + 44 * i }} />
 				))}
-				{vertcount.map((_, i) => (
+				{vertCount.map((_, i) => (
 					<Vertical key={`vert-${i}`} sx={{ right: 48 + 45 * i }} />
 				))}
 			</Box>
