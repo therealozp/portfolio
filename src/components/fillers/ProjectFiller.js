@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback, useState, useRef } from 'react';
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import gsap from 'gsap';
 
 const Horizontal = ({ ...props }) => {
@@ -61,7 +61,7 @@ const ProjectFiller = () => {
 			Math.floor(containerHeight / (Math.floor(containerHeight / 44) - 1) / 2)
 		);
 
-		setVertCount(Array(vertLength - 2).fill(0));
+		setVertCount(Array(vertLength - 1).fill(0));
 		setHorizCount(Array(horizLength).fill(0));
 	}, []);
 
@@ -82,10 +82,11 @@ const ProjectFiller = () => {
 			Math.floor(containerHeight / (Math.floor(containerHeight / 44) - 1) / 2)
 		);
 
-		setVertCount(Array(vertLength - 2).fill(0));
+		setVertCount(Array(vertLength - 1).fill(0));
 		setHorizCount(Array(horizLength).fill(0));
 
 		const trailer = document.getElementById('trailer');
+		const text = document.getElementById('projFillerGridText');
 		const projectFillerGrid = document.getElementById('projFillerGrid');
 
 		projectFillerGrid.addEventListener('mouseenter', () => {
@@ -101,8 +102,40 @@ const ProjectFiller = () => {
 		const onMouseMove = (event) => {
 			const x = event.clientX - trailer.offsetWidth / 2;
 			const y = event.clientY - trailer.offsetHeight / 2;
-
 			trailer.style.transform = `translate(${x}px, ${y}px)`;
+
+			const textRect = text.getBoundingClientRect();
+			const circleRect = trailer.getBoundingClientRect();
+
+			const overlapRect = {
+				top: Math.max(textRect.top, circleRect.top),
+				bottom: Math.min(textRect.bottom, circleRect.bottom),
+				left: Math.max(textRect.left, circleRect.left),
+				right: Math.min(textRect.right, circleRect.right),
+			};
+
+			if (
+				overlapRect.top < overlapRect.bottom &&
+				overlapRect.left < overlapRect.right
+			) {
+				const overlapHeight = overlapRect.bottom - overlapRect.top;
+				const overlapWidth = overlapRect.right - overlapRect.left;
+				const textHeight = textRect.bottom - textRect.top;
+				const textWidth = textRect.right - textRect.left;
+
+				const topOffset = ((overlapRect.top - textRect.top) / textHeight) * 100;
+				const leftOffset =
+					((overlapRect.left - textRect.left) / textWidth) * 100;
+				const height = (overlapHeight / textHeight) * 100;
+				const width = (overlapWidth / textWidth) * 100;
+
+				// text.style.clipPath = `circle(500px at ${x}px ${y}px)`;
+				text.style.clipPath = `circle(${topOffset}% ${
+					100 - leftOffset - width
+				}% ${100 - topOffset - height}% ${leftOffset}%)`;
+			} else {
+				text.style.clipPath = 'none';
+			}
 		};
 	}, []);
 
@@ -135,6 +168,15 @@ const ProjectFiller = () => {
 				{vertCount.map((_, i) => (
 					<Vertical key={`vert-${i}`} sx={{ right: 48 + 45 * i }} />
 				))}
+				<Box>
+					<Typography
+						id="projFillerGridText"
+						fontSize={30}
+						sx={{ clipPath: 'none' }}
+					>
+						find fun in every little challenge
+					</Typography>
+				</Box>
 			</Box>
 		</>
 	);

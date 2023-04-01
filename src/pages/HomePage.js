@@ -23,7 +23,7 @@ const HomePage = () => {
 				}}
 			>
 				<IntroBlock setFinished={setFinished} />
-				{/* <VoxelDeskNoSSR animationFinished={finished} /> */}
+				<VoxelDeskNoSSR animationFinished={finished} />
 			</Box>
 			<Box sx={{ height: '75vh' }} />
 			<AboutBlock />
