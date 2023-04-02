@@ -67,17 +67,14 @@ const ProfileFiller = () => {
 					position: 'relative',
 				}}
 			>
-				{/* <Box sx={{ position: 'absolute' }}>
-					<Image
-						src="/mainphoto.jpg"
-						alt="profile"
-						objectFit="cover"
-						className="profile"
-						height={500}
-						width={500}
-					/>
-				</Box> */}
-				<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+				<svg
+					viewBox="0 0 200 200"
+					xmlns="http://www.w3.org/2000/svg"
+					style={{
+						position: 'absolute',
+						zIndex: 5,
+					}}
+				>
 					<clipPath id="clip-path">
 						<path
 							fill="#FF0066"
@@ -94,20 +91,24 @@ const ProfileFiller = () => {
 						clipPath='url("#clip-path")'
 					/>
 				</svg>
-				<Box
-					sx={{
+
+				<svg
+					viewBox="0 0 200 200"
+					xmlns="http://www.w3.org/2000/svg"
+					style={{
 						position: 'absolute',
+						zIndex: 4,
+						right: -50,
+						opacity: '0.5',
 					}}
 				>
-					<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-						<path
-							fill="#FF0066"
-							d="M59.3,-43.8C74.9,-27.7,84.3,-3.1,80.6,20.5C76.9,44.1,60,66.8,38.1,76.3C16.1,85.9,-10.9,82.2,-33.7,70.9C-56.6,59.5,-75.4,40.5,-79.7,19C-84,-2.6,-73.8,-26.7,-58.1,-42.8C-42.4,-59,-21.2,-67.2,0.3,-67.4C21.8,-67.7,43.6,-59.9,59.3,-43.8Z"
-							transform="translate(100 100)"
-							className="polymorph-back"
-						/>
-					</svg>
-				</Box>
+					<path
+						fill="#FF0066"
+						d="M59.3,-43.8C74.9,-27.7,84.3,-3.1,80.6,20.5C76.9,44.1,60,66.8,38.1,76.3C16.1,85.9,-10.9,82.2,-33.7,70.9C-56.6,59.5,-75.4,40.5,-79.7,19C-84,-2.6,-73.8,-26.7,-58.1,-42.8C-42.4,-59,-21.2,-67.2,0.3,-67.4C21.8,-67.7,43.6,-59.9,59.3,-43.8Z"
+						transform="translate(100 100)"
+						className="polymorph-back"
+					/>
+				</svg>
 			</Box>
 		</Box>
 	);
