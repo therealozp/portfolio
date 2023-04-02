@@ -47,7 +47,7 @@ const IntroBlock = ({ setFinished }) => {
 
 	return (
 		<>
-			<Box sx={{}}>
+			<Box>
 				<Box
 					sx={{
 						height: '100vh',

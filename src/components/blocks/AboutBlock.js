@@ -104,11 +104,10 @@ const AboutBlock = () => {
 	}, []);
 
 	return (
-		<>
+		<Box>
 			<Box sx={{ height: '100px' }} />
 			<Box
 				sx={{
-					width: '50vw',
 					backgroundColor: '#325886',
 					padding: 5,
 					borderTopRightRadius: '700px 700px',
@@ -227,7 +226,7 @@ const AboutBlock = () => {
 				</Box>
 				<Box sx={{ height: '50vh' }} />
 			</Box>
-		</>
+		</Box>
 	);
 };
 
