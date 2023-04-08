@@ -1,6 +1,5 @@
 import React, { useEffect, useCallback, useState, useRef } from 'react';
 import { Box, Typography } from '@mui/material';
-import gsap from 'gsap';
 
 const Horizontal = ({ ...props }) => {
 	const { sx } = props;

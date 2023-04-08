@@ -7,7 +7,7 @@ import { Box } from '@mui/system';
 // import gsap, { Expo, Power1 } from 'gsap';
 // import { Timeline } from 'gsap/all';
 import dynamic from 'next/dynamic';
-import ProjectFiller from '../components/fillers/ProjectFiller';
+// import ProjectFiller from '../components/fillers/ProjectFiller';
 import ProfileFiller from '../components/fillers/ProfileFiller';
 
 const VoxelDeskNoSSR = dynamic(() => import('../models/VoxelDesk'), {

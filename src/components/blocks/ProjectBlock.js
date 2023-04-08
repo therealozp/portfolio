@@ -4,6 +4,7 @@ import { Box } from '@mui/material';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Typography from '@mui/material/Typography';
+import TitleBackground from '../fillers/TitleBackground';
 import anime from 'animejs';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -143,40 +144,46 @@ const ProjectBlock = () => {
 				width: '100%',
 				backgroundColor: (theme) => theme.palette.blue.dark,
 				borderRadius: '100px 100px 40px 40px',
+				display: 'flex',
+				// justifyContent: 'center',
+				flexDirection: 'column',
+				alignItems: 'center',
+				// padding: '16px',
 			}}
 			className="projectContainer"
 		>
 			<Box sx={{ height: '75vh' }} />
+			<TitleBackground>
+				<Box
+					sx={{
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'center',
+						transform: 'translateY(100px)',
+					}}
+					// className="projTitleContainer"
+				>
+					{title.split('').map((char, i) => {
+						// console.log(char);
 
-			<Box
-				sx={{
-					height: '50vh',
-					display: 'flex',
-					alignItems: 'center',
-					justifyContent: 'center',
-				}}
-				className="projTitleContainer"
-			>
-				{title.split('').map((char, i) => {
-					console.log(char);
-
-					return (
-						<Typography
-							className={`projectTitle`}
-							key={`projectTitle-${i}`}
-							sx={{
-								fontFamily: 'Montserrat',
-								fontSize: '3rem',
-								letterSpacing: '0.1 rem',
-								opacity: 0,
-								fontWeight: 200,
-							}}
-						>
-							{/\s/.test(char) ? '\xA0' : char}
-						</Typography>
-					);
-				})}
-			</Box>
+						return (
+							<Typography
+								className={`projectTitle`}
+								key={`projectTitle-${i}`}
+								sx={{
+									fontFamily: 'Inconsolata',
+									fontSize: '3rem',
+									letterSpacing: '0.1 rem',
+									opacity: 0,
+									// fontWeight: 200,
+								}}
+							>
+								{/\s/.test(char) ? '\xA0' : char}
+							</Typography>
+						);
+					})}
+				</Box>
+			</TitleBackground>
 			<Box
 				sx={{
 					// width: '100vw',

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import StatBar from './StatBar';
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import anime from 'animejs';
-import Image from 'next/image';
+import { gsap, Power2 } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 const paths = [
 	'M52.6,-67C63.5,-53.5,64.5,-32.5,64.3,-14.3C64,4,62.5,19.6,55.2,31.7C48,43.8,35.1,52.4,21.8,55.1C8.6,57.8,-5.1,54.6,-18.2,49.9C-31.4,45.2,-44.1,39,-53.8,28.2C-63.4,17.3,-70.1,1.9,-70.7,-15.6C-71.3,-33,-65.8,-52.5,-53,-65.7C-40.3,-78.8,-20.1,-85.7,0.3,-86.1C20.8,-86.5,41.6,-80.5,52.6,-67Z',
@@ -23,8 +23,22 @@ const mainpaths = [
 	'M33,-57C43.3,-51.2,52.6,-43.5,60.2,-33.6C67.7,-23.8,73.5,-11.9,74.1,0.3C74.6,12.5,69.9,25.1,62.6,35.3C55.2,45.5,45.3,53.4,34.5,59.3C23.6,65.2,11.8,69,-1.8,72.2C-15.4,75.3,-30.9,77.8,-45,73.8C-59.1,69.8,-71.8,59.3,-80.3,45.9C-88.8,32.5,-93.1,16.3,-91.1,1.2C-89.1,-14,-80.8,-27.9,-72.4,-41.5C-64,-55.1,-55.5,-68.2,-43.4,-73C-31.3,-77.8,-15.7,-74.3,-2.2,-70.6C11.3,-66.8,22.7,-62.8,33,-57Z',
 	'M42.3,-69.8C55.1,-65.9,66,-55.1,73.6,-42.4C81.2,-29.6,85.5,-14.8,87,0.8C88.4,16.4,86.9,32.9,79.5,45.9C72,59,58.6,68.6,44.4,71.9C30.1,75.1,15.1,72,0,72C-15.1,72,-30.1,75.1,-42,70.5C-53.9,65.9,-62.7,53.6,-69,40.6C-75.4,27.5,-79.2,13.8,-81.5,-1.3C-83.8,-16.4,-84.5,-32.8,-78.4,-46.2C-72.2,-59.5,-59.2,-69.8,-45,-73C-30.8,-76.1,-15.4,-72.1,-0.3,-71.6C14.7,-71,29.5,-73.8,42.3,-69.8Z',
 ];
-const ProfileFiller = () => {
+
+gsap.registerPlugin(ScrollTrigger);
+
+const MainPhotoBlob = () => {
 	useEffect(() => {
+		gsap.to('.profileBlob', {
+			scrollTrigger: {
+				trigger: '.blobTrigger',
+				start: 'top bottom',
+				end: 'top top',
+			},
+			opacity: 1,
+			y: '90vh',
+			ease: Power2.easeOut,
+			duration: 1,
+		});
 		anime({
 			targets: '.polymorph-back',
 			d: [
@@ -57,59 +71,85 @@ const ProfileFiller = () => {
 			direction: 'alternate',
 		});
 	});
+
 	return (
-		<Box>
-			<StatBar color="red" stat="React" percentage="70" />
-			<Box
-				sx={{
-					height: '700px',
-					width: '700px',
-					position: 'relative',
+		<Box
+			sx={{
+				height: '700px',
+				width: '700px',
+				position: 'relative',
+			}}
+		>
+			<svg
+				viewBox="0 0 200 200"
+				xmlns="http://www.w3.org/2000/svg"
+				style={{
+					position: 'absolute',
+					zIndex: 5,
 				}}
 			>
-				<svg
-					viewBox="0 0 200 200"
-					xmlns="http://www.w3.org/2000/svg"
-					style={{
-						position: 'absolute',
-						zIndex: 5,
-					}}
-				>
-					<clipPath id="clip-path">
-						<path
-							fill="#FF0066"
-							d="M34.8,-62.6C46.5,-53.6,58.1,-46.9,62.7,-36.9C67.3,-26.8,64.9,-13.4,67.3,1.4C69.6,16.1,76.8,32.3,73.7,45C70.7,57.8,57.4,67.2,43.4,71.7C29.5,76.3,14.7,76.1,-0.4,76.8C-15.5,77.4,-31,78.9,-43.3,73.4C-55.7,67.9,-65,55.4,-70.2,42C-75.5,28.6,-76.8,14.3,-77.2,-0.2C-77.6,-14.7,-77.1,-29.5,-69.9,-39.6C-62.8,-49.8,-49,-55.4,-36.3,-63.8C-23.5,-72.1,-11.8,-83,-0.1,-82.9C11.6,-82.8,23.2,-71.6,34.8,-62.6Z"
-							transform="translate(100 100)"
-							className="polymorph"
-						/>
-					</clipPath>
-					<image
-						href="/mainphoto.jpg"
-						height="220"
-						width="178"
-						preserveAspectRatio="xMidYMid slice"
-						clipPath='url("#clip-path")'
-					/>
-				</svg>
-
-				<svg
-					viewBox="0 0 200 200"
-					xmlns="http://www.w3.org/2000/svg"
-					style={{
-						position: 'absolute',
-						zIndex: 4,
-						right: -50,
-						opacity: '0.5',
-					}}
-				>
+				<clipPath id="clip-path">
 					<path
 						fill="#FF0066"
-						d="M59.3,-43.8C74.9,-27.7,84.3,-3.1,80.6,20.5C76.9,44.1,60,66.8,38.1,76.3C16.1,85.9,-10.9,82.2,-33.7,70.9C-56.6,59.5,-75.4,40.5,-79.7,19C-84,-2.6,-73.8,-26.7,-58.1,-42.8C-42.4,-59,-21.2,-67.2,0.3,-67.4C21.8,-67.7,43.6,-59.9,59.3,-43.8Z"
+						d="M34.8,-62.6C46.5,-53.6,58.1,-46.9,62.7,-36.9C67.3,-26.8,64.9,-13.4,67.3,1.4C69.6,16.1,76.8,32.3,73.7,45C70.7,57.8,57.4,67.2,43.4,71.7C29.5,76.3,14.7,76.1,-0.4,76.8C-15.5,77.4,-31,78.9,-43.3,73.4C-55.7,67.9,-65,55.4,-70.2,42C-75.5,28.6,-76.8,14.3,-77.2,-0.2C-77.6,-14.7,-77.1,-29.5,-69.9,-39.6C-62.8,-49.8,-49,-55.4,-36.3,-63.8C-23.5,-72.1,-11.8,-83,-0.1,-82.9C11.6,-82.8,23.2,-71.6,34.8,-62.6Z"
 						transform="translate(100 100)"
-						className="polymorph-back"
+						className="polymorph"
 					/>
-				</svg>
+				</clipPath>
+				<image
+					href="/mainphoto.jpg"
+					height="220"
+					width="178"
+					preserveAspectRatio="xMidYMid slice"
+					clipPath='url("#clip-path")'
+				/>
+			</svg>
+
+			<svg
+				viewBox="0 0 200 200"
+				xmlns="http://www.w3.org/2000/svg"
+				style={{
+					position: 'absolute',
+					zIndex: 4,
+					right: -50,
+					opacity: '0.5',
+				}}
+			>
+				<path
+					fill="#d8d0ec"
+					d="M59.3,-43.8C74.9,-27.7,84.3,-3.1,80.6,20.5C76.9,44.1,60,66.8,38.1,76.3C16.1,85.9,-10.9,82.2,-33.7,70.9C-56.6,59.5,-75.4,40.5,-79.7,19C-84,-2.6,-73.8,-26.7,-58.1,-42.8C-42.4,-59,-21.2,-67.2,0.3,-67.4C21.8,-67.7,43.6,-59.9,59.3,-43.8Z"
+					transform="translate(100 100)"
+					className="polymorph-back"
+				/>
+			</svg>
+		</Box>
+	);
+};
+
+const ProfileFiller = () => {
+	return (
+		<Box
+			sx={{
+				width: '100%',
+				display: 'flex',
+				justifyContent: 'center',
+				// backgroundColor: 'white',
+			}}
+		>
+			<Box
+				sx={{
+					opacity: '0',
+				}}
+				className="profileBlob"
+			>
+				<MainPhotoBlob />
 			</Box>
+			<Box
+				sx={{
+					transform: 'translateY(150vh)',
+				}}
+				className="blobTrigger"
+			/>
 		</Box>
 	);
 };
