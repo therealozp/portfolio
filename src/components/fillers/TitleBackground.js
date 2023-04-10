@@ -51,7 +51,7 @@ const TitleBackground = ({ children }) => {
 				backgroundColor: 'transparent',
 				borderRadius: '10px',
 				border: (theme) => `4px solid ${theme.palette.text.creme}`,
-				height: '200px',
+				height: '250px',
 				width: '90%',
 				overflow: 'hidden',
 			}}

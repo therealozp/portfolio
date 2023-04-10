@@ -17,6 +17,7 @@ const AboutBlock = () => {
 	const Text = styled(Typography)(() => ({
 		fontSize: '1.2rem',
 		lineHeight: '2rem',
+		fontWeight: '400',
 	}));
 
 	useEffect(() => {
@@ -26,7 +27,7 @@ const AboutBlock = () => {
 			repeat: -1,
 		});
 
-		const words = ['WHO IS', 'ABOOT', 'ABOUT ME'];
+		const words = ['aboot', 'about me'];
 
 		let textTL = gsap
 			.timeline({
@@ -108,7 +109,7 @@ const AboutBlock = () => {
 			<Box sx={{ height: '100px' }} />
 			<Box
 				sx={{
-					backgroundColor: '#325886',
+					backgroundColor: '#444c33',
 					padding: 5,
 					borderTopRightRadius: '700px 700px',
 					borderBottomRightRadius: '0 0',
@@ -120,10 +121,10 @@ const AboutBlock = () => {
 					sx={{
 						position: 'relative',
 						overflow: 'hidden',
-						fontSize: '3rem',
+						fontSize: '4.5rem',
 						display: 'flex',
 						fontFamily: 'Montserrat',
-						fontWeight: 200,
+						fontWeight: '800',
 						letterSpacing: '0.1rem',
 						height: '20vh',
 						alignItems: 'center',

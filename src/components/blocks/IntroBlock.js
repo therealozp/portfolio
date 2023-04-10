@@ -46,82 +46,85 @@ const IntroBlock = ({ setFinished }) => {
 	}, []);
 
 	return (
-		<>
-			<Box>
+		<Box>
+			<Box
+				sx={{
+					height: '100vh',
+					display: 'flex',
+					flexDirection: 'column',
+					justifyContent: 'center',
+					alignItems: 'center',
+				}}
+				className="intro"
+			>
+				<Typography
+					sx={{
+						fontFamily: 'Rubik',
+						fontSize: '6rem',
+						color: (theme) => theme.palette.text.greenCream,
+						letterSpacing: 2,
+						fontWeight: '900',
+					}}
+					className="hi"
+				>
+					hello !
+				</Typography>
 				<Box
 					sx={{
-						height: '100vh',
+						width: '100%',
 						display: 'flex',
-						flexDirection: 'column',
 						justifyContent: 'center',
 						alignItems: 'center',
 					}}
-					className="intro"
 				>
 					<Typography
 						sx={{
-							fontFamily: 'Montserrat',
-							fontSize: '5rem',
-							color: (theme) => theme.palette.text.creme,
-							wordSpacing: 2,
+							fontFamily: 'Rubik',
+							fontSize: '6rem',
+							color: (theme) => theme.palette.text.greenCream,
+							letterSpacing: 2,
+							fontWeight: '900',
 						}}
-						className="hi"
+						className="i"
 					>
-						HELLO!
+						i
 					</Typography>
-					<Box
-						sx={{
-							width: '100%',
-							display: 'flex',
-							justifyContent: 'center',
-							alignItems: 'center',
-						}}
-					>
-						<Typography
-							sx={{
-								fontFamily: 'Montserrat',
-								fontSize: '5rem',
-								color: (theme) => theme.palette.text.creme,
-								wordSpacing: 2,
-							}}
-							className="i"
-						>
-							I
-						</Typography>
-						<Typography
-							sx={{
-								fontFamily: 'Montserrat',
-								fontSize: '5rem',
-							}}
-						>
-							&nbsp;
-						</Typography>
-						<Typography
-							sx={{
-								fontFamily: 'Montserrat',
-								fontSize: '5rem',
-								color: (theme) => theme.palette.text.creme,
-								wordSpacing: 2,
-							}}
-							className="am"
-						>
-							AM
-						</Typography>
-					</Box>
 					<Typography
 						sx={{
-							fontFamily: 'Montserrat',
-							fontSize: '5rem',
-							color: (theme) => theme.palette.text.creme,
-							wordSpacing: 2,
+							fontFamily: 'Rubik',
+							fontSize: '6rem',
+							fontWeight: '900',
 						}}
-						className="khang"
 					>
-						KHANG.
+						&nbsp;
+					</Typography>
+					<Typography
+						sx={{
+							fontFamily: 'Rubik',
+							fontSize: '6rem',
+							color: (theme) => theme.palette.text.greenCream,
+							letterSpacing: 2,
+							fontWeight: '900',
+						}}
+						className="am"
+					>
+						am
 					</Typography>
 				</Box>
+				<Typography
+					sx={{
+						fontFamily: 'Rubik',
+						fontSize: '6rem',
+						color: (theme) => theme.palette.text.greenCream,
+						letterSpacing: 2,
+						fontWeight: '900',
+					}}
+					className="khang"
+				>
+					khang.
+				</Typography>
 			</Box>
-		</>
+		</Box>
 	);
 };
 

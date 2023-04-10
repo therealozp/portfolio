@@ -156,13 +156,13 @@ const VoxelDesk = ({ animationFinished }) => {
 			ref={refContainer}
 			sx={{
 				s: {
-					width: 480,
-					height: 480,
+					width: '480px',
+					height: '480px',
 					marginBottom: -40,
 				},
 				m: {
-					width: '100vh',
-					height: '100vh',
+					width: '560px',
+					height: '560px',
 					// marginBottom: -140,
 				},
 				position: 'relative',

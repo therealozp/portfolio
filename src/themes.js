@@ -2,7 +2,7 @@ import { createTheme } from '@mui/material';
 
 const myTheme = createTheme({
 	typography: {
-		fontFamily: ['"Nunito"', 'Calibri', 'sans-serif'].join(','),
+		fontFamily: ['"Satoshi"', 'Calibri', 'sans-serif'].join(','),
 	},
 	palette: {
 		primary: {
@@ -18,6 +18,7 @@ const myTheme = createTheme({
 		},
 		green: {
 			main: '#9CDE9F',
+			dark: '#363627',
 		},
 		yellow: {
 			main: '#FABC3C',
@@ -29,6 +30,7 @@ const myTheme = createTheme({
 		text: {
 			primary: '#FAF0F1',
 			creme: '#ece2d0',
+			greenCream: '#fffeb9',
 		},
 	},
 });

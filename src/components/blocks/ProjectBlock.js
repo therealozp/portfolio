@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ProjectCard from '../projects/ProjectCard';
 import { Box } from '@mui/material';
 import { gsap } from 'gsap';
@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Typography from '@mui/material/Typography';
 import TitleBackground from '../fillers/TitleBackground';
 import anime from 'animejs';
+import RotatingText from '../fillers/RotatingText';
 
 gsap.registerPlugin(ScrollTrigger);
 const projects = [
@@ -47,6 +48,7 @@ const projects = [
 ];
 
 const ProjectBlock = () => {
+	const [rotateShowing, setRotateShowing] = useState(true);
 	useEffect(() => {
 		const cards = gsap.utils.toArray('.innerBox');
 		const innerContent = gsap.utils.toArray('.infoBox');
@@ -103,25 +105,16 @@ const ProjectBlock = () => {
 			});
 		});
 
-		gsap.from('.projectContainer', {
+		gsap.to('.projectContainer', {
 			scrollTrigger: {
 				trigger: '.projectContainer',
 				start: 'top bottom',
 				end: 'top top',
 				scrub: 0.6,
 			},
-			scale: 0.9,
+			scale: 1,
 			borderTopRightRadius: 10,
 			borderTopLeftRadius: 10,
-			onComplete: () => {
-				anime.timeline().add({
-					targets: '.projectTitle',
-					translateY: -100,
-					opacity: 1,
-					easing: 'easeOutExpo',
-					delay: (el, i) => 30 * i,
-				});
-			},
 		});
 
 		gsap.to('.projectContainer', {
@@ -131,19 +124,30 @@ const ProjectBlock = () => {
 				end: 'bottom top',
 				scrub: 0.6,
 			},
-			borderBottomRightRadius: '100px 100px',
-			borderBottomLeftRadius: '100px 100px',
+			borderBottomRightRadius: '200px 200px',
+			borderBottomLeftRadius: '200px 200px',
 		});
 	}, []);
 
-	const title = 'some of my works.js';
+	const title = 'my projects';
 
+	const handleClick = () => {
+		setRotateShowing(false);
+		anime.timeline().add({
+			targets: '.projectTitle',
+			translateY: -100,
+			opacity: 1,
+			easing: 'easeOutExpo',
+			delay: (el, i) => 20 * i,
+		});
+	};
 	return (
 		<Box
 			sx={{
+				scale: '0.9',
 				width: '100%',
 				backgroundColor: (theme) => theme.palette.blue.dark,
-				borderRadius: '100px 100px 40px 40px',
+				borderRadius: '200px 200px 40px 40px',
 				display: 'flex',
 				// justifyContent: 'center',
 				flexDirection: 'column',
@@ -152,7 +156,7 @@ const ProjectBlock = () => {
 			}}
 			className="projectContainer"
 		>
-			<Box sx={{ height: '75vh' }} />
+			<Box sx={{ height: '150vh' }} />
 			<TitleBackground>
 				<Box
 					sx={{
@@ -171,11 +175,11 @@ const ProjectBlock = () => {
 								className={`projectTitle`}
 								key={`projectTitle-${i}`}
 								sx={{
-									fontFamily: 'Inconsolata',
-									fontSize: '3rem',
+									fontFamily: 'Montserrat',
+									fontSize: '4rem',
 									letterSpacing: '0.1 rem',
 									opacity: 0,
-									// fontWeight: 200,
+									fontWeight: '900',
 								}}
 							>
 								{/\s/.test(char) ? '\xA0' : char}
@@ -183,7 +187,15 @@ const ProjectBlock = () => {
 						);
 					})}
 				</Box>
+				{rotateShowing && (
+					<RotatingText
+						text="looking for something? - "
+						radius={75}
+						onClick={handleClick}
+					/>
+				)}
 			</TitleBackground>
+			<Box sx={{ height: '50vh' }} />
 			<Box
 				sx={{
 					// width: '100vw',
@@ -202,7 +214,7 @@ const ProjectBlock = () => {
 					/>
 				))}
 			</Box>
-			<Box sx={{ height: '25vh' }} />
+			<Box sx={{ height: '100vh' }} />
 		</Box>
 	);
 };
