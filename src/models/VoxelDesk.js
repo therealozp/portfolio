@@ -34,6 +34,7 @@ const VoxelDesk = ({ animationFinished }) => {
 			renderer.setPixelRatio(window.devicePixelRatio);
 			renderer.setSize(sceneWidth, sceneHeight);
 			renderer.outputEncoding = THREE.sRGBEncoding;
+			renderer.outputColorSpace = 'srgb';
 			container.appendChild(renderer.domElement);
 			refRenderer.current = renderer;
 			// setRenderer(renderer);

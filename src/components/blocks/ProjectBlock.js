@@ -156,7 +156,42 @@ const ProjectBlock = () => {
 			}}
 			className="projectContainer"
 		>
-			<Box sx={{ height: '150vh' }} />
+			<Box
+				sx={{
+					height: '150vh',
+					display: 'flex',
+					justifyContent: 'center',
+					alignItems: 'center',
+				}}
+			>
+				<Box
+					sx={{
+						width: '35vw',
+						height: '2px',
+						backgroundColor: (theme) => `${theme.palette.text.creme}`,
+					}}
+				/>
+
+				<Typography
+					sx={{
+						// fontFamily: 'Montserrat',
+						fontSize: '4rem',
+						fontWeight: '900',
+						letterSpacing: '0.1rem',
+						color: (theme) => theme.palette.text.creme,
+						margin: '0 3vw',
+					}}
+				>
+					02
+				</Typography>
+				<Box
+					sx={{
+						width: '35vw',
+						height: '2px',
+						backgroundColor: (theme) => `${theme.palette.text.creme}`,
+					}}
+				/>
+			</Box>
 			<TitleBackground>
 				<Box
 					sx={{

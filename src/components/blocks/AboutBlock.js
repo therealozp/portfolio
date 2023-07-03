@@ -182,12 +182,11 @@ const AboutBlock = () => {
 					<br />
 
 					<Text>
-						Khang is a first-year university student @ University of South
-						Florida, majoring in Computer Science, and with a passion for
-						telling stories through front-end web development. He is always
-						looking for new things to learn and experiment with, and is
-						currently in his lab with 3D graphics, animation, and machine
-						learning.
+						I am a first-year university student @ University of South Florida,
+						majoring in Computer Science, and with a passion for telling stories
+						through front-end web development. I am always looking for new
+						things to learn and experiment with, and is currently in his lab
+						with 3D graphics, animation, and machine learning.
 					</Text>
 					<br />
 					<br />
@@ -197,19 +196,19 @@ const AboutBlock = () => {
 					<br />
 
 					<Text>
-						It is a dream, but he wants to become a person who can implement
+						It is a dream, but I want to become a person who can implement
 						machine learning as easily as writing a simple web app. It is all
-						about the journey for him: first, he was given a computer. Then, he
-						discovered Python. And THEN, he discovered HackerRank. And the rest
+						about the journey for me. First, he was given a computer. Then, I
+						discovered Python. And THEN, I discovered HackerRank. And the rest
 						is history.
 						<br />
 					</Text>
 					<br />
 					<Text>
-						For now, web development is more of a hobby, but he is always
-						looking out for new opportunities to explore. His main interests
-						lies in the field of Artificial Intelligence and Machine Learning,
-						and in the age of ChatGPT, he feels the need to learn more about it.
+						For now, web development is more of a hobby, but I am always looking
+						out for new opportunities to explore. My main interests lie in the
+						field of Artificial Intelligence and Machine Learning, and in the
+						age of ChatGPT, I feel the need to learn more about it.
 					</Text>
 					<br />
 					<br />
@@ -219,10 +218,10 @@ const AboutBlock = () => {
 					<br />
 
 					<Text>
-						When Khang is not online, he is out adventuring with his camera
+						When I am not online, I am out adventuring with his camera
 						(conveniently thrifted at the price of $100), speeding down the
-						roads with his sports bike, or jamming in his bedroom with a guitar.
-						Things like these keep him sane until the next session of coding.
+						roads with his sports bike, or jamming in my bedroom with a guitar.
+						Things like these keep me sane until the next session of coding.
 					</Text>
 				</Box>
 				<Box sx={{ height: '50vh' }} />

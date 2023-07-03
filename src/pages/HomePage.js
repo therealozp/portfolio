@@ -11,6 +11,7 @@ import dynamic from 'next/dynamic';
 import ProfileFiller from '../components/fillers/ProfileFiller';
 // import ContactBlock from '../components/blocks/ContactBlock';
 import styles from '../../styles/shootingstars.module.scss';
+import ContactBlock from '../components/blocks/ContactBlock';
 // import styles from '../../styles'
 
 const VoxelDeskNoSSR = dynamic(() => import('../models/VoxelDesk'), {
@@ -28,7 +29,15 @@ const HomePage = () => {
 					gridTemplateColumns: '45% 55%',
 				}}
 			>
-				<IntroBlock setFinished={setFinished} />
+				<Box
+					sx={{
+						display: 'flex',
+						justifyContent: 'center',
+						alignItems: 'center',
+					}}
+				>
+					<IntroBlock setFinished={setFinished} />
+				</Box>
 				<VoxelWrapper finished={finished} setWindowOpened={setVoxOpened}>
 					<VoxelDeskNoSSR animationFinished={voxOpened} />
 				</VoxelWrapper>
@@ -53,7 +62,7 @@ const HomePage = () => {
 			>
 				{/* <ProjectFiller /> */}
 			</Box>
-
+			{/* <QuoteFiller /> */}
 			<Box
 				sx={{
 					display: 'flex',
@@ -66,16 +75,15 @@ const HomePage = () => {
 				<ProjectBlock />
 			</Box>
 			<Box sx={{ height: '25vh' }} />
-
 			<Box
 				sx={{
 					display: 'flex',
 					flexDirection: 'column',
 					justifyContent: 'center',
 					alignItems: 'center',
-					width: '100vw',
-					height: '100vh',
 					overflow: 'hidden',
+					height: '100vh',
+					position: 'relative',
 				}}
 			>
 				<Box className={styles.night}>
@@ -104,6 +112,7 @@ const HomePage = () => {
 				>
 					shoot me a message
 				</Typography>
+				<ContactBlock />
 			</Box>
 		</>
 	);

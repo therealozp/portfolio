@@ -2,10 +2,11 @@ $shooting-time: 2000ms;
 
 .night {
 	position: absolute;
+	top: -10%;
 	width: 100vw;
 	height: 50vh;
-	transform: rotateZ(45deg);
 	// border: 1px solid red;
+	rotate: 30deg;
 }
 
 .shooting_star {
@@ -57,13 +58,13 @@ $shooting-time: 2000ms;
 		transform: translateX(50%) rotateZ(-45deg);
 	}
 
-	@for $i from 1 through 5 {
+	@for $i from 1 through 4 {
 		&:nth-child(#{$i}) {
 			// display: none;
 
 			$delay: random(9999) + 0ms;
-			top: calc(20% - #{random(250) - 0px});
-			left: calc(35% - #{random(200) - 100px});
+			top: calc(120% - #{random(250) - 50px});
+			left: calc(15% - #{random(100) - 10px});
 			animation-delay: $delay;
 
 			&::before,
@@ -72,10 +73,12 @@ $shooting-time: 2000ms;
 			}
 		}
 	}
-	@for $i from 6 through 8 {
+	@for $i from 5 through 8 {
 		&:nth-child(#{$i}) {
+			// display: none;
+
 			$delay: random(9999) + 0ms;
-			top: calc(40% - #{0 - random(150) - 0px});
+			top: calc(20% - #{0 - random(350) + 20px});
 			left: calc(35% - #{random(100) - 10px});
 			animation-delay: $delay;
 
@@ -89,8 +92,8 @@ $shooting-time: 2000ms;
 		&:nth-child(#{$i}) {
 			// display: none;
 			$delay: random(9999) + 0ms;
-			top: calc(100% - #{0 - random(250) - 0px});
-			left: calc(25% - #{random(200) - 100px});
+			top: calc(-20% - #{0 - random(250) - 0px});
+			left: calc(70% - #{random(200) - 9px});
 			animation-delay: $delay;
 
 			&::before,

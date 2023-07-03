@@ -3,12 +3,39 @@ import { Box } from '@mui/system';
 import { Typography } from '@mui/material';
 import gsap, { Expo, Elastic } from 'gsap';
 
+const GreetingText = ({ children, className }) => {
+	return (
+		<Typography
+			sx={{
+				fontFamily: 'Rubik',
+				fontSize: '6rem',
+				fontWeight: '900',
+				color: (theme) => theme.palette.text.greenCream,
+				letterSpacing: 2,
+			}}
+			className={className}
+		>
+			{children}
+		</Typography>
+	);
+};
+
 const IntroBlock = ({ setFinished }) => {
 	useEffect(() => {
+		// dynamically find the offset
+		const intro = document.querySelector('#intro-block');
+		const introRect = intro.getBoundingClientRect();
+		const introCenter = introRect.x + introRect.width / 2;
+		const viewportXCenter = window.innerWidth / 2;
+		const offset = viewportXCenter - introCenter;
+		console.log('center of intro block located at: ', introCenter);
+		console.log('center of viewport located at: ', viewportXCenter);
+		// im not too sure why but the website WILL break without this line
+		console.log('the offset is: ', offset);
 		const tline = gsap.timeline({
 			onComplete: () => {
 				setFinished(true);
-				console.log('finished');
+				// console.log('finished');
 			},
 		});
 		tline.from('.hi', {
@@ -38,92 +65,42 @@ const IntroBlock = ({ setFinished }) => {
 			opacity: 0,
 		});
 		tline.from('.intro', {
-			x: 400,
+			x: offset,
 			ease: Expo.easeOut,
 			duration: 0.5,
 			delay: 0.5,
 		});
 	}, []);
-
+	// useEffect(() => {
+	// 	console.log(screen.width);
+	// 	const center = screen.width / 2;
+	// });
 	return (
-		<Box>
+		<Box
+			sx={{
+				height: '100vh',
+				display: 'flex',
+				flexDirection: 'column',
+				justifyContent: 'center',
+				alignItems: 'center',
+			}}
+			className="intro"
+			id="intro-block"
+		>
+			<GreetingText className="hi">hello ✌️</GreetingText>
 			<Box
 				sx={{
-					height: '100vh',
+					width: '100%',
 					display: 'flex',
-					flexDirection: 'column',
 					justifyContent: 'center',
 					alignItems: 'center',
 				}}
-				className="intro"
 			>
-				<Typography
-					sx={{
-						fontFamily: 'Rubik',
-						fontSize: '6rem',
-						color: (theme) => theme.palette.text.greenCream,
-						letterSpacing: 2,
-						fontWeight: '900',
-					}}
-					className="hi"
-				>
-					hello !
-				</Typography>
-				<Box
-					sx={{
-						width: '100%',
-						display: 'flex',
-						justifyContent: 'center',
-						alignItems: 'center',
-					}}
-				>
-					<Typography
-						sx={{
-							fontFamily: 'Rubik',
-							fontSize: '6rem',
-							color: (theme) => theme.palette.text.greenCream,
-							letterSpacing: 2,
-							fontWeight: '900',
-						}}
-						className="i"
-					>
-						i
-					</Typography>
-					<Typography
-						sx={{
-							fontFamily: 'Rubik',
-							fontSize: '6rem',
-							fontWeight: '900',
-						}}
-					>
-						&nbsp;
-					</Typography>
-					<Typography
-						sx={{
-							fontFamily: 'Rubik',
-							fontSize: '6rem',
-							color: (theme) => theme.palette.text.greenCream,
-							letterSpacing: 2,
-							fontWeight: '900',
-						}}
-						className="am"
-					>
-						am
-					</Typography>
-				</Box>
-				<Typography
-					sx={{
-						fontFamily: 'Rubik',
-						fontSize: '6rem',
-						color: (theme) => theme.palette.text.greenCream,
-						letterSpacing: 2,
-						fontWeight: '900',
-					}}
-					className="khang"
-				>
-					khang.
-				</Typography>
+				<GreetingText className="i">i</GreetingText>
+				<GreetingText>&nbsp;</GreetingText>
+				<GreetingText className="am">am</GreetingText>
 			</Box>
+			<GreetingText className="khang">khang.</GreetingText>
 		</Box>
 	);
 };

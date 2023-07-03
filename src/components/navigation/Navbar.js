@@ -21,7 +21,7 @@ const Navbar = ({ open, setOpen }) => {
 			<AppBar elevation={0} color="transparent">
 				<Toolbar>
 					<IconButton onClick={setOpen}>
-						<CustomFadeAwayIcon isnavBarActive={open} onClick={setOpen} />
+						<CustomFadeAwayIcon isnavBarActive={open} />
 					</IconButton>
 				</Toolbar>
 			</AppBar>

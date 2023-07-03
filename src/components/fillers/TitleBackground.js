@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 const LeftDiagonal = ({ left }) => {
 	return (
@@ -24,7 +24,7 @@ const RightDiagonal = ({ right }) => {
 			sx={{
 				position: 'absolute',
 				top: 2,
-				right: -10 + right,
+				right: -70 + right,
 				width: '2px',
 				height: '300px',
 				backgroundColor: (theme) => `${theme.palette.text.creme}`,
@@ -66,12 +66,30 @@ const TitleBackground = ({ children }) => {
 					color: (theme) => `${theme.palette.blue.dark}`,
 					fontFamily: 'Montserrat',
 					fontWeight: 'bold',
-					alignItems: 'flex-end',
-					justifyContent: 'flex-end',
+					// alignItems: 'flex-start',
+					justifyContent: 'flex-start',
 					paddingRight: '16px',
 				}}
 			>
-				x
+				<Typography
+					sx={{
+						color: (theme) => `${theme.palette.blue.dark}`,
+						zIndex: 5,
+						fontWeight: 'bold',
+						marginBottom: '2px',
+						marginLeft: '8px',
+					}}
+				>
+					projects.exe
+				</Typography>
+				<Typography
+					sx={{
+						color: (theme) => `${theme.palette.blue.dark}`,
+						marginLeft: 'auto',
+					}}
+				>
+					x
+				</Typography>
 			</Box>
 			<LeftDiagonal left={0} />
 			<LeftDiagonal left={spacing * 2} />
