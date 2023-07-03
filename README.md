@@ -1,34 +1,23 @@
-Welcome to [My Portfolio!]
+# Welcome to my Portfolio!
 
-## Getting Started
+## Why this website exists
 
 This website is a passion project that spanned the better part of 2 years, and an experimentation ground for me to explore some of my new interests in web development.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+I have decided to find out some of the more interesting parts of front-end development that **rarely sees the light of production**, and overhaul the UI completely!
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+I hope you enjoy browsing through my website!
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Technologies
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+This website was made with **NextJS, MaterialUI, Three.js, GSAP, and anime.js.**
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- [NextJS](https://nextjs.org/)
+- [MUI](https://mui.com/)
+- [THREE.js](https://threejs.org/)
+- [GSAP](https://greensock.com/gsap/)
+- [animejs](https://animejs.com/)
 
-## Learn More
+## That's it!
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This website is still very much a work in progress, so I hope you enjoyed it! I will be continuously updating the site with new stuff I find interesting, and keep you updated with all of my side projects!
