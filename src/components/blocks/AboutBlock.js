@@ -183,10 +183,11 @@ const AboutBlock = () => {
 
 					<Text>
 						I am a first-year university student @ University of South Florida,
-						majoring in Computer Science, and with a passion for telling stories
-						through front-end web development. I am always looking for new
-						things to learn and experiment with, and is currently in his lab
-						with 3D graphics, animation, and machine learning.
+						majoring in Computer Science. With a passion for telling stories
+						through front-end web development, I am always looking for new
+						things to learn and experiment with. Now, I am currently in my
+						personal lab tinkering with 3D graphics, animation, and machine
+						learning.
 					</Text>
 					<br />
 					<br />
@@ -198,7 +199,7 @@ const AboutBlock = () => {
 					<Text>
 						It is a dream, but I want to become a person who can implement
 						machine learning as easily as writing a simple web app. It is all
-						about the journey for me. First, he was given a computer. Then, I
+						about the journey for me. First, I was given a computer. Then, I
 						discovered Python. And THEN, I discovered HackerRank. And the rest
 						is history.
 						<br />

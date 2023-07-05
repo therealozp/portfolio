@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import ProjectCard from '../projects/ProjectCard';
-import { Box } from '@mui/material';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import Typography from '@mui/material/Typography';
-import TitleBackground from '../fillers/TitleBackground';
 import anime from 'animejs';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { Box, Typography } from '@mui/material';
+import TitleBackground from '../fillers/TitleBackground';
 import RotatingText from '../fillers/RotatingText';
+import ProjectCard from '../projects/ProjectCard';
 
 gsap.registerPlugin(ScrollTrigger);
 const projects = [
@@ -50,61 +49,6 @@ const projects = [
 const ProjectBlock = () => {
 	const [rotateShowing, setRotateShowing] = useState(true);
 	useEffect(() => {
-		const cards = gsap.utils.toArray('.innerBox');
-		const innerContent = gsap.utils.toArray('.infoBox');
-		const innerButtons = gsap.utils.toArray('.buttonBox');
-		const innerDev = gsap.utils.toArray('.developing');
-
-		cards.forEach((card, i) => {
-			gsap.to(card, {
-				scrollTrigger: {
-					trigger: card,
-					// markers: true,
-					// start: '-40 center',
-					// end: '',
-					toggleActions: 'play none play reset',
-				},
-				x: -1800,
-				duration: 1.7,
-			});
-			gsap.to(innerContent[i], {
-				scrollTrigger: {
-					trigger: card,
-					// markers: true,
-					// start: '-40 center',
-					// end: '',
-					toggleActions: 'play none play reset',
-				},
-				y: 0,
-				delay: 0.55,
-				duration: 0.5,
-			});
-			gsap.to(innerButtons[i], {
-				scrollTrigger: {
-					trigger: card,
-					// markers: true,
-					// start: '-40 center',
-					// end: '',
-					toggleActions: 'play none play reset',
-				},
-				y: 0,
-				delay: 0.6,
-				duration: 0.4,
-			});
-			gsap.to(innerDev[i], {
-				scrollTrigger: {
-					trigger: card,
-					// markers: true,
-					// start: '-40 center',
-					// end: '',
-					toggleActions: 'play none play reset',
-				},
-				y: 0,
-				delay: 0.6,
-				duration: 0.4,
-			});
-		});
-
 		gsap.to('.projectContainer', {
 			scrollTrigger: {
 				trigger: '.projectContainer',
@@ -127,6 +71,10 @@ const ProjectBlock = () => {
 			borderBottomRightRadius: '200px 200px',
 			borderBottomLeftRadius: '200px 200px',
 		});
+
+		return () => {
+			ScrollTrigger.getAll().forEach((t) => t.kill());
+		};
 	}, []);
 
 	const title = 'my projects';
@@ -246,6 +194,7 @@ const ProjectBlock = () => {
 						key={`card-${i}`}
 						href={d.href}
 						status={d.status}
+						index={i}
 					/>
 				))}
 			</Box>

@@ -1,7 +1,6 @@
-module.exports = {
-	extends: [
-		//...
-		'plugin:@next/next/recommended',
-		'next/core-web-vitals',
-	],
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+	reactStrictMode: true,
 };
+
+module.exports = nextConfig;
