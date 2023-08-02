@@ -26,7 +26,7 @@ const HomePage = () => {
 			<Box
 				sx={{
 					display: 'grid',
-					gridTemplateColumns: '45% 55%',
+					gridTemplateColumns: '40% 60%',
 				}}
 			>
 				<Box
@@ -38,9 +38,18 @@ const HomePage = () => {
 				>
 					<IntroBlock setFinished={setFinished} />
 				</Box>
-				<VoxelWrapper finished={finished} setWindowOpened={setVoxOpened}>
-					<VoxelDeskNoSSR animationFinished={voxOpened} />
-				</VoxelWrapper>
+				<Box
+					sx={{
+						display: 'flex',
+						justifyContent: 'center',
+						alignItems: 'center',
+						// border: '1px solid red',
+					}}
+				>
+					<VoxelWrapper finished={finished} setWindowOpened={setVoxOpened}>
+						<VoxelDeskNoSSR animationFinished={voxOpened} />
+					</VoxelWrapper>
+				</Box>
 			</Box>
 			<Box sx={{ height: '75vh' }} />
 			<Box

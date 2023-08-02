@@ -123,7 +123,7 @@ const AboutBlock = () => {
 						overflow: 'hidden',
 						fontSize: '4.5rem',
 						display: 'flex',
-						fontFamily: 'Montserrat',
+						fontFamily: 'Rubik',
 						fontWeight: '800',
 						letterSpacing: '0.1rem',
 						height: '20vh',
@@ -193,7 +193,7 @@ const AboutBlock = () => {
 					<br />
 					<br />
 
-					<Title>2b || !2b</Title>
+					<Title>It&apos;s about the journey</Title>
 					<br />
 
 					<Text>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Drawer, IconButton } from '@mui/material';
+import { Box, Drawer, IconButton, Typography } from '@mui/material';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import Link from 'next/link';
 
@@ -25,15 +25,16 @@ const randomShuffle = ({ name, value }) => {
 	}, 30);
 };
 
-const HackerText = ({ name, value }) => {
+const HackerText = ({ name, value, href }) => {
 	return (
-		<Link href="" passHref>
+		<Link href={href} passHref>
 			<Box
 				sx={{
 					display: 'flex',
 					justifyContent: 'center',
 					alignItems: 'center',
 					width: '80%',
+					height: '100px',
 					margin: 2,
 					backgroundColor: 'transparent',
 					borderRadius: '8px',
@@ -47,18 +48,20 @@ const HackerText = ({ name, value }) => {
 				}}
 				onMouseOver={() => randomShuffle({ name, value })}
 			>
-				<p
+				<Typography
 					id={name}
-					style={{
-						fontFamily: 'Major Mono Display, monospace',
-						fontSize: 'clamp(1.5rem, 2vw, 2rem)',
-						fontWeight: '500',
+					sx={{
+						fontFamily: 'Rubik',
+						fontSize: 'clamp(1.5rem, 2vw, 3rem)',
+						// fontWeight: '500',
 						letterSpacing: '5px',
 						color: 'inherit',
+						textTransform: 'lowercase',
+						pointerEvents: 'none',
 					}}
 				>
 					{value}
-				</p>
+				</Typography>
 			</Box>
 		</Link>
 	);
@@ -78,6 +81,7 @@ const NewSideBar = ({ open, setOpen }) => {
 					borderRadius: '8px',
 				},
 			}}
+			disableScrollLock
 		>
 			<IconButton
 				onClick={() => setOpen(false)}
@@ -95,9 +99,9 @@ const NewSideBar = ({ open, setOpen }) => {
 					alignItems: 'center',
 				}}
 			>
-				<HackerText value="HOME" name="test" />
-				<HackerText value="PROJECTS" name="proj" />
-				<HackerText value="ABOUT ME" name="me" />
+				<HackerText value="HOME" name="test" href="/" />
+				<HackerText value="PROJECTS" name="proj" href="/projects" />
+				{/* <HackerText value="ABOUT ME" name="me" href='/about'/> */}
 			</Box>
 		</Drawer>
 	);

@@ -2545,6 +2545,11 @@ react-is@^18.2.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
 
+react-parallax-tilt@^1.7.151:
+  version "1.7.151"
+  resolved "https://registry.yarnpkg.com/react-parallax-tilt/-/react-parallax-tilt-1.7.151.tgz#2310ff602a73558da53450ad62b3a7d60cb3ae8e"
+  integrity sha512-gizWQRbJfsMmQ1NNc6S7bolSnvvopw1YP6Lu04deV3NHDK/XA2M3v0/GkwvVTpOuFTPqcaek4p3PSM8cFezk7g==
+
 react-transition-group@^4.4.5:
   version "4.4.5"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-4.4.5.tgz#e53d4e3f3344da8521489fbef8f2581d42becdd1"

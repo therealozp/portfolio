@@ -10,6 +10,12 @@ import ProjectCard from '../projects/ProjectCard';
 gsap.registerPlugin(ScrollTrigger);
 const projects = [
 	{
+		name: 'ARIS Web Viewer',
+		description:
+			'An AR viewer implemented with model-viewer and AR.js that allows you to view your GLTF models in AR!',
+		status: 'prototype',
+	},
+	{
 		name: 'Lexi',
 		description:
 			'Vocabulary web app, utilizes Dictionary API to help English learners in their vocabulary learning.',
@@ -17,17 +23,10 @@ const projects = [
 		href: 'https://lexi.vercel.app/',
 	},
 	{
-		name: 'VSPACE Marketing Website',
-		description:
-			'A marketing website for VSPACE, an organization that provides English online courses for Vietnamese students.',
-		status: 'ready',
-		href: 'https://www.vspace.org.vn/',
-	},
-	{
 		name: 'Cureator',
 		description:
 			'A medical website, displays symptoms and curates medicine, built-in pharmacy locator',
-		status: 'prototype',
+		status: 'ready',
 		href: 'https://cureator.care/',
 	},
 	{
@@ -35,7 +34,7 @@ const projects = [
 		description:
 			'A social media platform where students can find the extracurriculars that they are truly passionate about and discover new opportunities!',
 		status: 'unavailable',
-		href: 'https://www.chancemap.com/',
+		href: '',
 	},
 	{
 		name: 'Excellaca',
@@ -43,6 +42,13 @@ const projects = [
 			'Non-profit organization that delivers new knowledge to students through video-based courses.',
 		status: 'unavailable',
 		href: 'https://excellaca.vercel.app/',
+	},
+	{
+		name: 'VSPACE Marketing Website',
+		description:
+			'A marketing website for VSPACE, an organization that provides English online courses for Vietnamese students.',
+		status: 'unavailable',
+		href: 'https://www.vspace.org/',
 	},
 ];
 
@@ -158,11 +164,11 @@ const ProjectBlock = () => {
 								className={`projectTitle`}
 								key={`projectTitle-${i}`}
 								sx={{
-									fontFamily: 'Montserrat',
+									fontFamily: 'Rubik',
 									fontSize: '4rem',
 									letterSpacing: '0.1 rem',
 									opacity: 0,
-									fontWeight: '900',
+									fontWeight: '600',
 								}}
 							>
 								{/\s/.test(char) ? '\xA0' : char}

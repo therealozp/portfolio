@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { Box } from '@mui/system';
-import { Button, Typography, Tooltip } from '@mui/material';
+import { Typography, Tooltip } from '@mui/material';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import gsap from 'gsap';
 
-const ProjectCard = ({ name, description, index, status, href }) => {
+const ProjectCard = ({ name, description, index, status }) => {
 	useEffect(() => {
 		// const cards = gsap.utils.toArray(`innerBox-${index}`);
 		// const innerContent = gsap.utils.toArray('.infoBox');
@@ -36,18 +36,18 @@ const ProjectCard = ({ name, description, index, status, href }) => {
 			delay: 0.55,
 			duration: 0.5,
 		});
-		gsap.to(`.buttonBox-${index}`, {
-			scrollTrigger: {
-				trigger: `.innerBox-${index}`,
-				// markers: true,
-				// start: '-40 center',
-				// end: '',
-				toggleActions: 'play none play reset',
-			},
-			y: 0,
-			delay: 0.6,
-			duration: 0.4,
-		});
+		// gsap.to(`.buttonBox-${index}`, {
+		// 	scrollTrigger: {
+		// 		trigger: `.innerBox-${index}`,
+		// 		// markers: true,
+		// 		// start: '-40 center',
+		// 		// end: '',
+		// 		toggleActions: 'play none play reset',
+		// 	},
+		// 	y: 0,
+		// 	delay: 0.6,
+		// 	duration: 0.4,
+		// });
 		gsap.to(`.developing-${index}`, {
 			scrollTrigger: {
 				trigger: `.innerBox-${index}`,
@@ -117,30 +117,7 @@ const ProjectCard = ({ name, description, index, status, href }) => {
 					<Typography sx={{ fontSize: '1.05em' }}>{description}</Typography>
 				</Box>
 			</Box>
-			<Box
-				sx={{
-					willChange: 'transform',
-					display: 'flex',
-					alignItems: 'flex-end',
-					justifyContent: 'flex-end',
-					marginTop: '20px',
-					transform: 'translateY(50px)',
-				}}
-				className={`buttonBox-${index}`}
-			>
-				<a
-					href={href}
-					target="_blank"
-					rel="noopener noreferrer"
-					style={{
-						textDecoration: 'none',
-					}}
-				>
-					<Button variant="outlined" color="primary">
-						Visit
-					</Button>
-				</a>
-			</Box>
+
 			<Box
 				sx={{
 					willChange: 'transform',
@@ -175,7 +152,7 @@ const ProjectCard = ({ name, description, index, status, href }) => {
 					title={
 						status == 'prototype'
 							? 'Currently under development!'
-							: 'Project under maintenance!'
+							: 'This page no longer maintained :('
 					}
 					sx={{ backgroundColor: 'transparent', willChange: 'transform' }}
 				>
