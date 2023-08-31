@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Grid } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import NavigateNextRoundedIcon from '@mui/icons-material/NavigateNextRounded';
@@ -18,7 +18,7 @@ const ContactSites = ({ iconComponent, website, url }) => {
 			<Box
 				sx={{
 					border: '1px solid #242424',
-					width: '300px',
+					// width: '300px',
 					height: '175px',
 					'&:hover': {
 						border: '1px solid #2e2e2e',
@@ -120,7 +120,7 @@ const EmailComponent = () => {
 				/>
 				<Typography
 					sx={{
-						fontSize: '24px',
+						fontSize: 'clamp(1rem, 4vw, 3rem)',
 						fontWeight: '500',
 						transform: textHovered ? 'translateX(-8px)' : 'translateX(-16px)',
 						willChange: 'transform, opacity',
@@ -138,13 +138,8 @@ const EmailComponent = () => {
 
 const ContactBlock = () => {
 	return (
-		<Box
-			sx={{
-				display: 'grid',
-				gridTemplateColumns: '1fr 4fr',
-			}}
-		>
-			<Box>
+		<Grid container>
+			<Grid md={3} xs={12} item>
 				<ContactSites
 					iconComponent={
 						<LinkedInIcon
@@ -169,16 +164,19 @@ const ContactBlock = () => {
 					website="GitHub"
 					url="https://github.com/therealozp"
 				/>
-			</Box>
-			<Box
+			</Grid>
+			<Grid
 				sx={{
 					padding: '16px',
 					paddingLeft: '8px',
 					width: '100%',
 					height: '100%',
 				}}
+				item
+				md={9}
+				xs={12}
 			>
-				<Box
+				<Grid
 					sx={{
 						border: '1px solid #242424',
 						padding: '32px',
@@ -190,7 +188,7 @@ const ContactBlock = () => {
 					<Typography
 						sx={{
 							fontFamily: 'Rubik',
-							fontSize: '56px',
+							fontSize: 'clamp(2rem, 10vw, 6rem)',
 							fontWeight: '600',
 							// color: (theme) => theme.palette.text.greenCream,
 						}}
@@ -201,16 +199,16 @@ const ContactBlock = () => {
 						Feel free to contact me if you have any questions or just want to
 						say hi!
 					</Typography>
-					<Box
+					<Grid
 						sx={{
 							marginTop: '32px',
 						}}
 					>
 						<EmailComponent />
-					</Box>
-				</Box>
-			</Box>
-		</Box>
+					</Grid>
+				</Grid>
+			</Grid>
+		</Grid>
 	);
 };
 

@@ -25,7 +25,9 @@ const HomePage = () => {
 		<>
 			<Box
 				sx={{
-					display: 'grid',
+					display: { sm: 'flex', md: 'grid' },
+					flexDirection: 'column',
+					justifyContent: 'center',
 					gridTemplateColumns: '40% 60%',
 				}}
 			>
@@ -54,7 +56,7 @@ const HomePage = () => {
 			<Box sx={{ height: '75vh' }} />
 			<Box
 				sx={{
-					display: 'grid',
+					display: { sm: 'flex', md: 'grid' },
 					gridTemplateColumns: '50% 50%',
 				}}
 			>
@@ -113,10 +115,11 @@ const HomePage = () => {
 				<Typography
 					sx={{
 						fontFamily: 'Rubik',
-						fontSize: '7rem',
+						fontSize: 'clamp(2rem, 15vw, 7rem)',
 						fontWeight: '900',
 						letterSpacing: 4,
 						color: (theme) => theme.palette.text.greenCream,
+						textAlign: 'center',
 					}}
 				>
 					shoot me a message

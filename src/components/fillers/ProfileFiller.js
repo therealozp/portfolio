@@ -78,6 +78,13 @@ const MainPhotoBlob = () => {
 				height: '700px',
 				width: '700px',
 				position: 'relative',
+				transform: [
+					'scale(0.6) translateY(-100vh)',
+					'scale(0.7) translateY(-100vh)',
+					'scale(1)',
+					'scale(1)',
+					'scale(1)',
+				],
 			}}
 		>
 			<svg

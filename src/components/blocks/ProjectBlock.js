@@ -165,7 +165,7 @@ const ProjectBlock = () => {
 								key={`projectTitle-${i}`}
 								sx={{
 									fontFamily: 'Rubik',
-									fontSize: '4rem',
+									fontSize: 'clamp(2rem, 10vw, 4rem)',
 									letterSpacing: '0.1 rem',
 									opacity: 0,
 									fontWeight: '600',
@@ -185,25 +185,28 @@ const ProjectBlock = () => {
 				)}
 			</TitleBackground>
 			<Box sx={{ height: '50vh' }} />
-			<Box
-				sx={{
-					// width: '100vw',
-					display: 'flex',
-					flexDirection: 'column',
-					alignItems: 'center',
-				}}
-			>
-				{projects.map((d, i) => (
-					<ProjectCard
-						name={d.name}
-						description={d.description}
-						key={`card-${i}`}
-						href={d.href}
-						status={d.status}
-						index={i}
-					/>
-				))}
-			</Box>
+			{!rotateShowing && (
+				<Box
+					sx={{
+						// width: '100vw',
+						display: 'flex',
+						flexDirection: 'column',
+						alignItems: 'center',
+					}}
+				>
+					{projects.map((d, i) => (
+						<ProjectCard
+							name={d.name}
+							description={d.description}
+							key={`card-${i}`}
+							href={d.href}
+							status={d.status}
+							index={i}
+						/>
+					))}
+				</Box>
+			)}
+
 			<Box sx={{ height: '100vh' }} />
 		</Box>
 	);

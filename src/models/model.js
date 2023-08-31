@@ -24,7 +24,7 @@ export function loadGLTFModel(
 					.getSize(new THREE.Vector3());
 				const sizes = [s.x, s.y];
 				const planeSize = Math.max(...sizes);
-				const planeGeo = new THREE.PlaneBufferGeometry(planeSize, planeSize);
+				const planeGeo = new THREE.PlaneGeometry(planeSize, planeSize);
 				const planeMat = new THREE.ShadowMaterial();
 				planeMat.opacity = 0.25;
 				let plane = new THREE.Mesh(planeGeo, planeMat);

@@ -70,7 +70,7 @@ const ProjectCard = ({ name, description, index, status }) => {
 	return (
 		<Box
 			sx={{
-				width: '60vw',
+				width: ['95vw', '80vw', '60vw'],
 				outline: (theme) =>
 					`${
 						status == 'prototype'
@@ -81,7 +81,7 @@ const ProjectCard = ({ name, description, index, status }) => {
 					} 2px solid`,
 				borderRadius: '6px',
 				display: 'grid',
-				gridTemplateColumns: '70% 30%',
+				gridTemplateColumns: { md: '70% 30%' },
 				padding: '12px',
 				margin: '48px',
 				minHeight: '120px',

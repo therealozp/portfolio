@@ -74,12 +74,15 @@ const NewSideBar = ({ open, setOpen }) => {
 			onClose={() => setOpen(false)}
 			PaperProps={{
 				sx: {
-					width: '30vw',
 					height: '95vh',
-					margin: '2.5vh 1vw',
+					margin: ['2.5vh 5vw', '2.5vh 4vw', '2.5vh 1vw'],
 					backgroundColor: '#171C27',
 					borderRadius: '8px',
+					width: ['90vw', '80vw', '60vw', '40vw', '30vw'],
 				},
+			}}
+			ModalProps={{
+				sx: {},
 			}}
 			disableScrollLock
 		>

@@ -8,7 +8,7 @@ const GreetingText = ({ children, className }) => {
 		<Typography
 			sx={{
 				fontFamily: 'Rubik',
-				fontSize: '6rem',
+				fontSize: 'clamp(2rem, 20vw, 6rem)',
 				fontWeight: '900',
 				color: (theme) => theme.palette.text.greenCream,
 				letterSpacing: 2,
@@ -28,8 +28,8 @@ const IntroBlock = ({ setFinished }) => {
 		const introCenter = introRect.x + introRect.width / 2;
 		const viewportXCenter = window.innerWidth / 2;
 		const offset = viewportXCenter - introCenter;
-		console.log('center of intro block located at: ', introCenter);
-		console.log('center of viewport located at: ', viewportXCenter);
+		// console.log('center of intro block located at: ', introCenter);
+		// console.log('center of viewport located at: ', viewportXCenter);
 		// im not too sure why but the website WILL break without this line
 		console.log('the offset is: ', offset);
 		const tline = gsap.timeline({

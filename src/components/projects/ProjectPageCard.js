@@ -42,8 +42,8 @@ const ProjectPageCard = ({
 						borderWidth: '1px',
 						border: (theme) => `1px solid ${theme.palette.blue.dark}`,
 						borderRadius: '16px',
-						width: '47vw',
-						aspectRatio: '19/13',
+						width: { xs: '95vw', md: '47vw' },
+						aspectRatio: { xs: '15/13', md: '19/13' },
 						overflow: 'hidden',
 						margin: '32px 0',
 					}}
@@ -149,7 +149,7 @@ const SmallProjectPageCard = ({ name, year, tags, href }) => {
 					display: 'flex',
 					alignItems: 'center',
 					height: '80px',
-					width: '90vw',
+					width: { xs: '95vw', md: '90vw' },
 					borderBottom: 'double 2px transparent',
 					borderRadius: '16px',
 					padding: '16px',
@@ -175,7 +175,7 @@ const SmallProjectPageCard = ({ name, year, tags, href }) => {
 				>
 					<Typography
 						sx={{
-							fontSize: '1.5rem',
+							fontSize: { xs: '1.2rem', md: '1.5rem' },
 							marginLeft: '8px',
 							color: hover ? '#101312' : '#fafao1',
 							transition: 'color 0.15s ease-in-out',

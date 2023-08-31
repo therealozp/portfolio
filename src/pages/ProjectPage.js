@@ -3,8 +3,9 @@ import {
 	ProjectPageCard,
 	SmallProjectPageCard,
 } from '../components/projects/ProjectPageCard';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Grid } from '@mui/material';
 import ContactBlock from '../components/blocks/ContactBlock';
+import { useRef } from 'react';
 const projects = [
 	{
 		name: 'ARIS Viewer',
@@ -122,10 +123,12 @@ const sides = [
 const MissionStatement = () => {
 	const [scaleFactorX, setScaleFactorX] = useState(1);
 	const [scaleFactorY, setScaleFactorY] = useState(1);
+	const containerRef = useRef(null);
+	const textRef = useRef(null);
 
 	useEffect(() => {
-		const container = document.getElementById('backdrop-container');
-		const text = document.getElementById('backdrop-text');
+		const container = containerRef.current;
+		const text = textRef.current;
 
 		function scaleText() {
 			const containerWidth = container.clientWidth;
@@ -164,12 +167,13 @@ const MissionStatement = () => {
 					alignItems: 'center',
 					padding: '32px',
 					margin: '32px',
-					height: '80%',
+					height: { xs: '50%', md: '80%' },
 					border: '1px solid #4a4a4a',
 					borderRadius: '16px',
 					position: 'relative',
 				}}
 				id="backdrop-container"
+				ref={containerRef}
 			>
 				<Typography
 					sx={{
@@ -177,18 +181,20 @@ const MissionStatement = () => {
 						position: 'absolute',
 						transform: `scale(${scaleFactorX}, ${scaleFactorY})`,
 						opacity: '0.1',
-						lineHeight: '0.75',
+						lineHeight: '0.72',
 						fontWeight: '700',
+						ariaHidden: 'true',
 						// top: '50%',
 						// left: '50%',
 					}}
 					id="backdrop-text"
+					ref={textRef}
 				>
 					PROJECTS
 				</Typography>
 				<Typography
 					sx={{
-						fontSize: '3rem',
+						fontSize: { xs: '1rem', md: '3rem' },
 						fontWeight: '400',
 						marginBottom: '16px',
 						zIndex: '1',
@@ -227,9 +233,10 @@ const MoreProjectsStatement = () => {
 		>
 			<Typography
 				sx={{
-					fontSize: '4rem',
+					fontSize: '3rem',
 					fontFamily: 'Rubik',
 					fontWeight: '900',
+					textAlign: 'center',
 				}}
 			>
 				But why stop there?
@@ -254,23 +261,23 @@ const ProjectPage = () => {
 	return (
 		<>
 			<MissionStatement />
-			<Box
+			<Grid
 				sx={{
 					padding: '16px',
-					display: 'grid',
-					gridTemplateColumns: '1fr 1fr',
 				}}
+				container
 			>
 				{projects.map((project) => (
-					<ProjectPageCard
-						key={project.name}
-						name={project.name}
-						description={project.description}
-						year={project.year}
-						src={project.src}
-					/>
+					<Grid key={project.name} item xs={12} md={6}>
+						<ProjectPageCard
+							name={project.name}
+							description={project.description}
+							year={project.year}
+							src={project.src}
+						/>
+					</Grid>
 				))}
-			</Box>
+			</Grid>
 			<MoreProjectsStatement />
 			<Box
 				sx={{
