@@ -9,6 +9,7 @@ import VoxelWrapper from '../components/extra/VoxelWrapper';
 import dynamic from 'next/dynamic';
 // import ProjectFiller from '../components/fillers/ProjectFiller';
 import ProfileFiller from '../components/fillers/ProfileFiller';
+import ProfileAboutFiller from '../components/fillers/ProfileAboutFiller';
 // import ContactBlock from '../components/blocks/ContactBlock';
 import styles from '../../styles/shootingstars.module.scss';
 import ContactBlock from '../components/blocks/ContactBlock';
@@ -53,7 +54,16 @@ const HomePage = () => {
 					</VoxelWrapper>
 				</Box>
 			</Box>
-			<Box sx={{ height: '75vh' }} />
+			<Box
+				sx={{
+					height: '100vh',
+					display: 'flex',
+					alignItems: 'center',
+					justifyContent: 'center',
+				}}
+			>
+				<ProfileAboutFiller />
+			</Box>
 			<Box
 				sx={{
 					display: { sm: 'flex', md: 'grid' },

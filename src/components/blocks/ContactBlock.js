@@ -120,7 +120,7 @@ const EmailComponent = () => {
 				/>
 				<Typography
 					sx={{
-						fontSize: 'clamp(1rem, 4vw, 3rem)',
+						fontSize: 'clamp(1rem, 4vw, 2rem)',
 						fontWeight: '500',
 						transform: textHovered ? 'translateX(-8px)' : 'translateX(-16px)',
 						willChange: 'transform, opacity',
@@ -188,7 +188,7 @@ const ContactBlock = () => {
 					<Typography
 						sx={{
 							fontFamily: 'Rubik',
-							fontSize: 'clamp(2rem, 10vw, 6rem)',
+							fontSize: 'clamp(2rem, 10vw, 4rem)',
 							fontWeight: '600',
 							// color: (theme) => theme.palette.text.greenCream,
 						}}

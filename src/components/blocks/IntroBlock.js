@@ -8,10 +8,12 @@ const GreetingText = ({ children, className }) => {
 		<Typography
 			sx={{
 				fontFamily: 'Rubik',
-				fontSize: 'clamp(2rem, 20vw, 6rem)',
+				fontSize: 'clamp(2rem, 20vw, 5rem)',
 				fontWeight: '900',
 				color: (theme) => theme.palette.text.greenCream,
 				letterSpacing: 2,
+				maxWidth: '100%',
+				textAlign: 'center',
 			}}
 			className={className}
 		>
@@ -100,7 +102,7 @@ const IntroBlock = ({ setFinished }) => {
 				<GreetingText>&nbsp;</GreetingText>
 				<GreetingText className="am">am</GreetingText>
 			</Box>
-			<GreetingText className="khang">khang.</GreetingText>
+			<GreetingText className="khang">khang</GreetingText>
 		</Box>
 	);
 };

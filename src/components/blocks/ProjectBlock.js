@@ -185,27 +185,25 @@ const ProjectBlock = () => {
 				)}
 			</TitleBackground>
 			<Box sx={{ height: '50vh' }} />
-			{!rotateShowing && (
-				<Box
-					sx={{
-						// width: '100vw',
-						display: 'flex',
-						flexDirection: 'column',
-						alignItems: 'center',
-					}}
-				>
-					{projects.map((d, i) => (
-						<ProjectCard
-							name={d.name}
-							description={d.description}
-							key={`card-${i}`}
-							href={d.href}
-							status={d.status}
-							index={i}
-						/>
-					))}
-				</Box>
-			)}
+			<Box
+				sx={{
+					// width: '100vw',
+					display: 'flex',
+					flexDirection: 'column',
+					alignItems: 'center',
+				}}
+			>
+				{projects.map((d, i) => (
+					<ProjectCard
+						name={d.name}
+						description={d.description}
+						key={`card-${i}`}
+						href={d.href}
+						status={d.status}
+						index={i}
+					/>
+				))}
+			</Box>
 
 			<Box sx={{ height: '100vh' }} />
 		</Box>

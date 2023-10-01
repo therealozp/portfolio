@@ -1,31 +1,32 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Box, Drawer, IconButton, Typography } from '@mui/material';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import Link from 'next/link';
 
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-const randomShuffle = ({ name, value }) => {
-	let iterations = 0;
-	const text = value;
-	const interval = setInterval(() => {
-		document.getElementById(name).innerHTML = document
-			.getElementById(name)
-			.innerHTML.split('')
-			.map((letter, index) => {
-				if (index < iterations) {
-					return text[index];
-				}
-				return letters[Math.floor(Math.random() * 26)];
-			})
-			.join('');
-		if (iterations === text.length) {
-			clearInterval(interval);
-		}
-		iterations += 1 / 2;
-	}, 30);
-};
 
 const HackerText = ({ name, value, href }) => {
+	const textRef = useRef(null);
+	const shuffle = () => {
+		let iterations = 0;
+		const text = value;
+		const interval = setInterval(() => {
+			textRef.current.innerHTML = textRef.current.innerHTML
+				.split('')
+				.map((letter, index) => {
+					if (index < iterations) {
+						return text[index];
+					}
+					return letters[Math.floor(Math.random() * 26)];
+				})
+				.join('');
+			if (iterations === text.length) {
+				clearInterval(interval);
+			}
+			iterations += 1 / 2;
+		}, 30);
+	};
+
 	return (
 		<Link href={href} passHref>
 			<Box
@@ -46,10 +47,11 @@ const HackerText = ({ name, value, href }) => {
 					},
 					transition: 'all 0.3s ease-in-out',
 				}}
-				onMouseOver={() => randomShuffle({ name, value })}
+				onMouseOver={() => shuffle()}
 			>
 				<Typography
 					id={name}
+					ref={textRef}
 					sx={{
 						fontFamily: 'Rubik',
 						fontSize: 'clamp(1.5rem, 2vw, 3rem)',
