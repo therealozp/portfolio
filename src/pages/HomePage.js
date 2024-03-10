@@ -4,16 +4,11 @@ import ProjectBlock from '../components/blocks/ProjectBlock';
 import AboutBlock from '../components/blocks/AboutBlock';
 import { Box, Typography } from '@mui/material';
 import VoxelWrapper from '../components/extra/VoxelWrapper';
-// import gsap, { Expo, Power1 } from 'gsap';
-// import { Timeline } from 'gsap/all';
 import dynamic from 'next/dynamic';
-// import ProjectFiller from '../components/fillers/ProjectFiller';
 import ProfileFiller from '../components/fillers/ProfileFiller';
 import ProfileAboutFiller from '../components/fillers/ProfileAboutFiller';
-// import ContactBlock from '../components/blocks/ContactBlock';
 import styles from '../../styles/shootingstars.module.scss';
 import ContactBlock from '../components/blocks/ContactBlock';
-// import styles from '../../styles'
 
 const VoxelDeskNoSSR = dynamic(() => import('../models/VoxelDesk'), {
 	ssr: false,

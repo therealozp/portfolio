@@ -12,33 +12,6 @@ body {
 	// }
 }
 
-// .hoveredCursor {
-// 	border: 6px solid rgb(177, 114, 250) !important;
-// }
-
-// .clickCursor {
-// 	border: 6px solid rgb(114, 146, 250) !important;
-// 	transform: scale(0.75);
-// }
-
-// .hide {
-// 	visibility: hidden;
-// }
-
-// cursor {
-// 	z-index: 10001;
-// }
-// button:hover {
-// 	cursor: none !important;
-// }
-
-// a:hover {
-// 	cursor: none !important;
-// }
-
-// input:hover {
-// 	cursor: none !important;
-// }
 ::-webkit-scrollbar {
 	width: 0.4rem;
 }
@@ -85,5 +58,31 @@ body {
 	}
 	100% {
 		transform: rotate(0deg);
+	}
+}
+
+.fancyLinkText {
+	--color-one: #ac62c9;
+	--color-two: #69bbcc;
+	background: linear-gradient(
+			90deg,
+			var(--color-one),
+			var(--color-two),
+			var(--color-one)
+		)
+		0 0 / 400% 100%;
+	font-family: Rubik;
+	font-weight: 900;
+	letter-spacing: 2px;
+	font-size: 7vh;
+	color: transparent;
+	background-clip: text;
+	-webkit-background-clip: text;
+	animation: fancyText 10s infinite linear;
+}
+
+@keyframes fancyText {
+	to {
+		background-position: 400% 0;
 	}
 }
