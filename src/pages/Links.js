@@ -28,22 +28,30 @@ const entries = [
 	},
 	{
 		href: 'mailto:anhkhang.le0910@gmail.com',
-		text: 'Contact Information',
+		text: 'Email',
 		description: 'Feel free to reach out to me via email!',
 		icon: <EmailIcon fontSize="large" />,
 	},
 	{
-		href: 'https://www.yourwebsite.com/resume.pdf',
+		href: '/Khang_Le_SWE_Resume_25.pdf',
 		text: 'Resume',
 		description:
 			'Download my resume to get an overview of my educational background, skills, and professional experience.',
 		icon: <PictureAsPdfIcon fontSize="large" />,
+		target: '_blank',
 	},
 ];
 
-const LinkComponents = ({ href, text, backgroundColor, color, icon }) => {
+const LinkComponents = ({
+	href,
+	text,
+	backgroundColor,
+	color,
+	icon,
+	target,
+}) => {
 	return (
-		<Link href={href} passHref>
+		<Link href={href} passHref target={target ? target : null}>
 			<Box
 				sx={{
 					width: '100%',
@@ -75,7 +83,7 @@ const Links = () => {
 				flexDirection: 'column',
 				alignItems: 'center',
 				justifyContent: 'center',
-				height: '100vh',
+				height: '100svh',
 				width: '100vw',
 				padding: '2vh',
 			}}
@@ -83,7 +91,7 @@ const Links = () => {
 			<Box>
 				<h1 className="fancyLinkText">links</h1>
 			</Box>
-			<Grid container spacing={2} sx={{ height: '50vh' }}>
+			<Grid container spacing={2} sx={{ height: '50svh' }}>
 				<Grid item container xs={12} spacing={2}>
 					<Grid item container xs={6} spacing={2}>
 						<Grid item xs={12}>
