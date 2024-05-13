@@ -38,8 +38,8 @@ const VoxelWrapper = ({ children, finished, setWindowOpened }) => {
 					// position: 'absolute',
 					border: (theme) => `3px solid ${theme.palette.blue.dark}`,
 					borderRadius: '10px',
-					height: '640px',
-					width: '750px',
+					height: '85vh',
+					width: '50vw',
 					overflow: 'hidden',
 				}}
 			>
@@ -59,7 +59,7 @@ const VoxelWrapper = ({ children, finished, setWindowOpened }) => {
 							alignSelf: 'center',
 						}}
 					>
-						setup_and_cat.blend
+						cat.blend
 					</Typography>
 					<Typography
 						sx={{

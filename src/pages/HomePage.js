@@ -49,16 +49,8 @@ const HomePage = () => {
 					</VoxelWrapper>
 				</Box>
 			</Box>
-			<Box
-				sx={{
-					height: '100vh',
-					display: 'flex',
-					alignItems: 'center',
-					justifyContent: 'center',
-				}}
-			>
-				<ProfileAboutFiller />
-			</Box>
+
+			<ProfileAboutFiller />
 			<Box
 				sx={{
 					display: { sm: 'flex', md: 'grid' },
@@ -78,7 +70,6 @@ const HomePage = () => {
 			>
 				{/* <ProjectFiller /> */}
 			</Box>
-			{/* <QuoteFiller /> */}
 			<Box
 				sx={{
 					display: 'flex',

@@ -158,9 +158,6 @@ const VoxelDesk = ({ animationFinished }) => {
 			sx={{
 				width: ['100vw', '480px', '560px'],
 				height: ['100vw', '480px', '560px'],
-				// marginBottom: '-40px',
-				// width: '480px',
-				// height: '480px',
 				position: 'relative',
 				'&:hover': {
 					cursor: 'grab',

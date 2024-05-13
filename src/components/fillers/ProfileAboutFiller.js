@@ -1,32 +1,17 @@
 import React from 'react';
 import { Grid, Typography, Box } from '@mui/material';
 
-const AppWindow = ({
-	children,
-	height,
-	width,
-	windowName,
-	zIndex,
-	top,
-	bottom,
-	right,
-	left,
-}) => {
+const AppWindow = ({ children, height, width, windowName }) => {
+	const windowColor = '#8ea4a2';
 	return (
 		<Box
 			sx={{
-				position: 'absolute',
 				backgroundColor: '#101312',
 				borderRadius: '10px',
-				border: (theme) => `4px solid ${theme.palette.text.creme}`,
+				border: `2px solid ${windowColor}`,
 				height: height,
 				width: width,
 				overflow: 'hidden',
-				zIndex: zIndex,
-				top: top,
-				bottom: bottom,
-				right: right,
-				left: left,
 			}}
 			className="titleBackgroundContainer"
 		>
@@ -34,34 +19,26 @@ const AppWindow = ({
 				sx={{
 					display: 'flex',
 					width: '100%',
-					height: '25px',
-					backgroundColor: (theme) => `${theme.palette.text.creme}`,
+					height: '16px',
+					backgroundColor: `${windowColor}`,
 					color: (theme) => `${theme.palette.blue.dark}`,
 					// fontFamily: 'Montserrat',
 					fontWeight: 'bold',
-					// alignItems: 'flex-start',
+					alignItems: 'center',
 					justifyContent: 'flex-start',
-					paddingRight: '16px',
+					padding: '0 16px',
 				}}
 			>
 				<Typography
 					sx={{
 						color: (theme) => `${theme.palette.blue.dark}`,
 						zIndex: 5,
-						fontWeight: 'bold',
 						marginBottom: '2px',
 						marginLeft: '8px',
+						fontFamily: 'monospace',
 					}}
 				>
 					{windowName}
-				</Typography>
-				<Typography
-					sx={{
-						color: (theme) => `${theme.palette.blue.dark}`,
-						marginLeft: 'auto',
-					}}
-				>
-					x
 				</Typography>
 			</Box>
 
@@ -69,10 +46,7 @@ const AppWindow = ({
 				sx={{
 					width: '100%',
 					height: '90%',
-					display: 'flex',
-					alignItems: 'center',
-					justifyContent: 'center',
-					// border: (theme) => `4px solid red`,
+					padding: '16px',
 				}}
 			>
 				{children}
@@ -80,120 +54,79 @@ const AppWindow = ({
 		</Box>
 	);
 };
-
 const ProfileAboutFiller = () => {
-	return (
-		<Grid
-			container
-			sx={{
-				padding: '16px',
-				margin: '32px',
-				position: 'relative',
-				marginTop: '-30vh',
-			}}
-		>
-			<AppWindow
-				height="60vh"
-				width="20vw"
-				windowName="about.exe"
-				zIndex={0}
-				top={-200}
-				right="60vw"
-			>
-				<Box
-					sx={{
-						width: '100%',
-						padding: '32px',
-					}}
-				>
-					<Box
-						sx={{
-							width: '150px',
-						}}
-					>
-						<Typography
-							sx={{
-								fontSize: '3rem',
-								fontWeight: 'bold',
-								fontFamily: 'Rubik',
-								textAlign: 'center',
-							}}
-						>
-							<span
-								style={{
-									fontSize: '2.4rem',
-								}}
-							>
-								{'>'}&nbsp;&nbsp;
-							</span>{' '}
-							i am also:
-						</Typography>
-					</Box>
+	const KeyValue = ({ key_, value }) => {
+		return (
+			<Box display="flex">
+				<Box width="150px">
+					<Typography fontWeight="bold" fontFamily="monospace">
+						{key_}
+					</Typography>
 				</Box>
-			</AppWindow>
-			<AppWindow
-				height="12vw"
-				width="30vw"
-				windowName="about.exe"
-				zIndex={1}
-				// left="10rem"
-				right="calc(35vw)"
-				top={-20}
-			>
-				<Typography sx={{ fontSize: '1.5rem', fontWeight: 'bold' }}>
-					a CS nerd
-				</Typography>
-			</AppWindow>
-			<AppWindow
-				height="33vw"
-				width="30vw"
-				windowName="about.exe"
-				zIndex={0}
-				// left="10rem"
-				right="calc(12vw)"
-				top="-15vh"
-			>
-				<Typography sx={{ fontSize: '1.5rem', fontWeight: 'bold' }}>
-					tinkering with C++
-				</Typography>
-			</AppWindow>
-			<AppWindow
-				height="15vw"
-				width="23vw"
-				windowName="about.exe"
-				zIndex={1}
-				left="5vw"
-				top="30vh"
-			>
-				<Typography sx={{ fontSize: '1.5rem', fontWeight: 'bold' }}>
-					a full stack dev
-				</Typography>
-			</AppWindow>
-			<AppWindow
-				height="12vw"
-				width="33vw"
-				windowName="about.exe"
-				zIndex={1}
-				left="25vw"
-				top="43vh"
-			>
-				<Typography sx={{ fontSize: '1.5rem', fontWeight: 'bold' }}>
-					addicted to caffeine
-				</Typography>
-			</AppWindow>
-			<AppWindow
-				height="12vw"
-				width="20vw"
-				windowName="about.exe"
-				zIndex={1}
-				right="15vw"
-				top="35vh"
-			>
-				<Typography sx={{ fontSize: '1.5rem', fontWeight: 'bold' }}>
-					an Arch fanboy (btw)
-				</Typography>
-			</AppWindow>
-		</Grid>
+				<Box width="300px">
+					<Typography fontFamily="monospace">{value}</Typography>
+				</Box>
+			</Box>
+		);
+	};
+	const windowHeight = 540;
+	const windowPadding = 16;
+	const asciiArt = `      /\\
+     /+o\\
+    / \\++\\
+   /oooooo\\
+  /++;;oo++\\
+ /sss|  |ss-\\
+/_-''    ''-_\\`;
+	return (
+		<Box height="maxcontent">
+			<Grid container spacing={2} padding="16px">
+				<Grid item xs={6}>
+					<AppWindow windowName="About" height={`${windowHeight}px`}>
+						<Box>
+							<Typography fontFamily="monospace">
+								<strong style={{ color: '#649a7b' }}>info@portfolio</strong>:
+								<strong style={{ color: '#8ba4b0' }}>~/home/ozymandio/</strong>$
+								neofetch
+							</Typography>
+						</Box>
+						<Box
+							display="flex"
+							justifyContent="space-evenly"
+							alignItems="baseline"
+						>
+							<Box>
+								<pre style={{ fontFamily: 'monospace', color: '#7fb4ca' }}>
+									{asciiArt}
+								</pre>
+							</Box>
+							<Box width="60%">
+								<KeyValue key_="name" value="John Doe" />
+								<KeyValue
+									key_="interests"
+									value="low level optimization, hardware acceleration"
+								/>
+							</Box>
+						</Box>
+					</AppWindow>
+				</Grid>
+				<Grid item xs={6}>
+					<AppWindow
+						windowName="About"
+						height={`${(windowHeight - windowPadding) / 2}px`}
+					>
+						<Box sx={{ border: '1px solid white' }}></Box>
+					</AppWindow>
+					<Box height={windowPadding} />
+					<AppWindow
+						windowName="About"
+						height={`${(windowHeight - windowPadding) / 2}px`}
+					>
+						<Box sx={{ border: '1px solid white' }}></Box>
+					</AppWindow>
+				</Grid>
+			</Grid>
+		</Box>
 	);
 };
 
