@@ -6,19 +6,12 @@ import gsap from 'gsap';
 
 const ProjectCard = ({ name, description, index, status }) => {
 	useEffect(() => {
-		// const cards = gsap.utils.toArray(`innerBox-${index}`);
-		// const innerContent = gsap.utils.toArray('.infoBox');
-		// const innerButtons = gsap.utils.toArray('.buttonBox');
-		// const innerDev = gsap.utils.toArray('.developing');
 		gsap.config({
 			force3D: true,
 		});
 		gsap.to(`.innerBox-${index}`, {
 			scrollTrigger: {
 				trigger: `.innerBox-${index}`,
-				// markers: true,
-				// start: '-40 center',
-				// end: '',
 				toggleActions: 'play none play reset',
 			},
 			x: '-100%',
@@ -27,9 +20,6 @@ const ProjectCard = ({ name, description, index, status }) => {
 		gsap.to(`.infoBox-${index}`, {
 			scrollTrigger: {
 				trigger: `.innerBox-${index}`,
-				// markers: true,
-				// start: '-40 center',
-				// end: '',
 				toggleActions: 'play none play reset',
 			},
 			y: 0,
@@ -51,9 +41,6 @@ const ProjectCard = ({ name, description, index, status }) => {
 		gsap.to(`.developing-${index}`, {
 			scrollTrigger: {
 				trigger: `.innerBox-${index}`,
-				// markers: true,
-				// start: '-40 center',
-				// end: '',
 				toggleActions: 'play none play reset',
 			},
 			y: 0,

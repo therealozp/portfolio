@@ -17,11 +17,11 @@ const ContactSites = ({ iconComponent, website, url }) => {
 		>
 			<Box
 				sx={{
-					border: '1px solid #242424',
+					border: '2px solid #242424',
 					// width: '300px',
 					height: '175px',
 					'&:hover': {
-						border: '1px solid #2e2e2e',
+						border: '2px solid #2e2e2e',
 						// transform: 'scale(1.05)',
 					},
 					display: 'flex',
@@ -178,7 +178,7 @@ const ContactBlock = () => {
 			>
 				<Grid
 					sx={{
-						border: '1px solid #242424',
+						border: '2px solid #242424',
 						padding: '32px',
 						paddingLeft: '48px',
 						borderRadius: '12px',
