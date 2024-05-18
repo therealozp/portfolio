@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
-import anime from 'animejs';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { Box, Typography } from '@mui/material';
-import TitleBackground from '../fillers/TitleBackground';
-import RotatingText from '../fillers/RotatingText';
 import ProjectCard from '../projects/ProjectCard';
+import ScrollingText from '../fillers/ScrollingText';
 
 gsap.registerPlugin(ScrollTrigger);
 const projects = [
@@ -53,7 +51,6 @@ const projects = [
 ];
 
 const ProjectBlock = () => {
-	const [rotateShowing, setRotateShowing] = useState(true);
 	useEffect(() => {
 		gsap.to('.projectContainer', {
 			scrollTrigger: {
@@ -83,18 +80,6 @@ const ProjectBlock = () => {
 		};
 	}, []);
 
-	const title = 'my projects';
-
-	const handleClick = () => {
-		setRotateShowing(false);
-		anime.timeline().add({
-			targets: '.projectTitle',
-			translateY: -100,
-			opacity: 1,
-			easing: 'easeOutExpo',
-			delay: (el, i) => 20 * i,
-		});
-	};
 	return (
 		<Box
 			sx={{
@@ -116,74 +101,52 @@ const ProjectBlock = () => {
 					display: 'flex',
 					justifyContent: 'center',
 					alignItems: 'center',
+					flexDirection: 'column',
 				}}
 			>
-				<Box
-					sx={{
-						width: '35vw',
-						height: '2px',
-						backgroundColor: (theme) => `${theme.palette.text.creme}`,
-					}}
-				/>
-
-				<Typography
-					sx={{
-						// fontFamily: 'Montserrat',
-						fontSize: '4rem',
-						fontWeight: '900',
-						letterSpacing: '0.1rem',
-						color: (theme) => theme.palette.text.creme,
-						margin: '0 3vw',
-					}}
-				>
-					02
-				</Typography>
-				<Box
-					sx={{
-						width: '35vw',
-						height: '2px',
-						backgroundColor: (theme) => `${theme.palette.text.creme}`,
-					}}
-				/>
-			</Box>
-			<TitleBackground>
-				<Box
-					sx={{
-						display: 'flex',
-						alignItems: 'center',
-						justifyContent: 'center',
-						transform: 'translateY(100px)',
-					}}
-					// className="projTitleContainer"
-				>
-					{title.split('').map((char, i) => {
-						// console.log(char);
-
-						return (
-							<Typography
-								className={`projectTitle`}
-								key={`projectTitle-${i}`}
-								sx={{
-									fontFamily: 'Rubik',
-									fontSize: 'clamp(2rem, 10vw, 4rem)',
-									letterSpacing: '0.1 rem',
-									opacity: 0,
-									fontWeight: '600',
-								}}
-							>
-								{/\s/.test(char) ? '\xA0' : char}
-							</Typography>
-						);
-					})}
-				</Box>
-				{rotateShowing && (
-					<RotatingText
-						text="looking for something? - "
-						radius={75}
-						onClick={handleClick}
+				<Box display={'flex'} alignItems={'center'} mb="20vh">
+					<Box
+						sx={{
+							width: '35vw',
+							height: '2px',
+							backgroundColor: (theme) => `${theme.palette.text.creme}`,
+						}}
 					/>
-				)}
-			</TitleBackground>
+					<Typography
+						sx={{
+							// fontFamily: 'Montserrat',
+							fontSize: '4rem',
+							fontWeight: '900',
+							letterSpacing: '0.1rem',
+							color: (theme) => theme.palette.text.creme,
+							margin: '0 3vw',
+						}}
+					>
+						02
+					</Typography>
+					<Box
+						sx={{
+							width: '35vw',
+							height: '2px',
+							backgroundColor: (theme) => `${theme.palette.text.creme}`,
+						}}
+					/>
+				</Box>
+				<Box>
+					<Typography
+						fontFamily={'monospace'}
+						fontSize={'1.5rem'}
+						sx={{ opacity: 0.7 }}
+					>
+						- so, what do you do in your free time?
+						<br /> - ...what free time?
+					</Typography>
+				</Box>
+			</Box>
+			<ScrollingText reverse />
+			<ScrollingText />
+			<ScrollingText reverse />
+
 			<Box sx={{ height: '50vh' }} />
 			<Box
 				sx={{

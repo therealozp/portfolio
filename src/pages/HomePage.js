@@ -49,8 +49,9 @@ const HomePage = () => {
 					</VoxelWrapper>
 				</Box>
 			</Box>
-
+			<Box height="25vh" />
 			<ProfileAboutFiller />
+			<Box height="25vh" />
 			<Box
 				sx={{
 					display: { sm: 'flex', md: 'grid' },
@@ -114,7 +115,7 @@ const HomePage = () => {
 						fontSize: 'clamp(2rem, 15vw, 7rem)',
 						fontWeight: '900',
 						letterSpacing: 4,
-						color: (theme) => theme.palette.text.greenCream,
+						color: '#f7f4ec',
 						textAlign: 'center',
 					}}
 				>

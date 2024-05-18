@@ -183,35 +183,35 @@ const ProfileAboutFiller = () => {
 	// define uptime clock and counter
 	const [uptime, setUptime] = useState('00:00:00');
 
-	// useEffect(() => {
-	// 	const startTime = Date.now();
+	useEffect(() => {
+		const startTime = Date.now();
 
-	// 	const formatTime = (seconds) => {
-	// 		const hrs = Math.floor(seconds / 3600);
-	// 		const mins = Math.floor((seconds % 3600) / 60);
-	// 		const secs = Math.floor(seconds % 60);
-	// 		return `${hrs.toString().padStart(2, '0')}:${mins
-	// 			.toString()
-	// 			.padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-	// 	};
+		const formatTime = (seconds) => {
+			const hrs = Math.floor(seconds / 3600);
+			const mins = Math.floor((seconds % 3600) / 60);
+			const secs = Math.floor(seconds % 60);
+			return `${hrs.toString().padStart(2, '0')}:${mins
+				.toString()
+				.padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+		};
 
-	// 	const updateUptime = () => {
-	// 		const currentTime = Date.now();
-	// 		const elapsedTime = Math.floor((currentTime - startTime) / 1000);
-	// 		setUptime(formatTime(elapsedTime));
-	// 	};
+		const updateUptime = () => {
+			const currentTime = Date.now();
+			const elapsedTime = Math.floor((currentTime - startTime) / 1000);
+			setUptime(formatTime(elapsedTime));
+		};
 
-	// 	const intervalId = setInterval(updateUptime, 1000);
+		const intervalId = setInterval(updateUptime, 1000);
 
-	// 	return () => clearInterval(intervalId);
-	// }, []);
+		return () => clearInterval(intervalId);
+	}, []);
 
 	// gsap animations
 	useEffect(() => {
 		gsap.to('#neofetch-terminal', {
 			scrollTrigger: {
 				trigger: '#terminal-trigger',
-				markers: true,
+				// markers: true,
 				start: '30 center',
 			},
 			scale: 1,
@@ -311,7 +311,7 @@ const ProfileAboutFiller = () => {
 					</AppWindow>
 					<Box height={windowPadding} />
 					<AppWindow
-						windowName="About"
+						windowName="rotating donut"
 						height={`${(windowHeight - windowPadding) / 2}px`}
 						id="donut-terminal"
 					>
