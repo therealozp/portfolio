@@ -28,7 +28,7 @@ const HackerText = ({ name, value, href }) => {
 	};
 
 	return (
-		<Link href={href} passHref>
+		<Link href={href}>
 			<Box
 				sx={{
 					display: 'flex',
@@ -53,9 +53,9 @@ const HackerText = ({ name, value, href }) => {
 					id={name}
 					ref={textRef}
 					sx={{
-						fontFamily: 'Rubik',
-						fontSize: 'clamp(1.5rem, 2vw, 3rem)',
-						// fontWeight: '500',
+						fontFamily: 'monospace',
+						fontSize: 'clamp(1.5rem, 3vw, 3rem)',
+						// fontWeight: '900',
 						letterSpacing: '5px',
 						color: 'inherit',
 						textTransform: 'lowercase',

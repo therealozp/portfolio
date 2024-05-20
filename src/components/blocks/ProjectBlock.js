@@ -143,9 +143,9 @@ const ProjectBlock = () => {
 					</Typography>
 				</Box>
 			</Box>
-			<ScrollingText reverse />
-			<ScrollingText />
-			<ScrollingText reverse />
+			<ScrollingText reverse text="projects" tapeHeight="150px" />
+			<ScrollingText text="projects" tapeHeight="150px" />
+			<ScrollingText reverse text="projects" tapeHeight="150px" />
 
 			<Box sx={{ height: '50vh' }} />
 			<Box
