@@ -6,8 +6,8 @@
 html,
 body {
 	overflow-x: hidden;
-	// background: #101312 !important;
-	background: #181616 !important;
+	background: #101312 !important;
+	// background: #181616 !important;
 	// * {
 	// 	cursor: none;
 	// }
@@ -91,8 +91,6 @@ body {
 .infinite-scroll {
 	display: flex;
 	position: relative;
-	width: 100%;
-	height: 150px;
 	margin: auto;
 	// background-color: #ece2d0;
 	overflow: hidden;
@@ -115,11 +113,9 @@ body {
 			transition: all 2s ease;
 			font-family: 'Simplon Mono Medium Regular';
 			font-weight: bold;
-			color: #f7f4ec;
 		}
 	}
 }
-
 // div:hover {
 // 	animation-play-state: paused;
 // }
