@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Box, Typography } from '@mui/material';
 import { createNoise3D } from 'simplex-noise';
+import { gsap, Power3 } from 'gsap';
 
 const BACKGROUND_COLOR = 'transparent';
 const FOREGROUND_COLOR = 'rgba(255, 255, 255, 1)';
@@ -94,7 +95,21 @@ const UnknownPleasures = () => {
 
 		step();
 	});
-
+	useEffect(() => {
+		gsap.from('.unknown-pleasures-title', {
+			opacity: 0,
+			y: 100,
+			duration: 1.5,
+			ease: Power3.easeOut,
+		});
+		gsap.from('#unknown-pleasures-subtitle', {
+			opacity: 0,
+			y: 50,
+			duration: 1,
+			ease: Power3.easeOut,
+			delay: 0.5,
+		});
+	});
 	return (
 		<Box
 			sx={{
@@ -126,7 +141,10 @@ const UnknownPleasures = () => {
 				>
 					Projects
 				</Typography>
-				<Typography sx={{ fontFamily: 'monospace', fontSize: '1.2em' }}>
+				<Typography
+					sx={{ fontFamily: 'monospace', fontSize: '1.2em' }}
+					id="unknown-pleasures-subtitle"
+				>
 					because it&apos;s fun to build cool things
 				</Typography>
 			</Box>
