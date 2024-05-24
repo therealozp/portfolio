@@ -7,6 +7,7 @@ import { Box, Typography, Grid } from '@mui/material';
 import ContactBlock from '../components/blocks/ContactBlock';
 import ScrollingText from '../components/fillers/ScrollingText';
 import UnknownPleasures from '../components/fillers/UnknownPleasures';
+import Backdrop from '../components/fillers/Backdrop';
 const projects = [
 	{
 		name: 'ARIS Viewer',
@@ -121,105 +122,6 @@ const sides = [
 	},
 ];
 
-// const MissionStatement = () => {
-// 	const [scaleFactorX, setScaleFactorX] = useState(1);
-// 	const [scaleFactorY, setScaleFactorY] = useState(1);
-// 	const containerRef = useRef(null);
-// 	const textRef = useRef(null);
-
-// 	useEffect(() => {
-// 		const container = containerRef.current;
-// 		const text = textRef.current;
-
-// 		function scaleText() {
-// 			const containerWidth = container.clientWidth;
-// 			const containerHeight = container.clientHeight;
-// 			const textWidth = text.clientWidth;
-// 			const textHeight = text.clientHeight;
-
-// 			setScaleFactorX(containerWidth / textWidth);
-// 			setScaleFactorY(containerHeight / textHeight);
-// 		}
-
-// 		window.addEventListener('resize', scaleText);
-// 		scaleText(); // Call the function initially
-
-// 		return () => {
-// 			// cleanup
-// 			window.removeEventListener('resize', scaleText);
-// 		};
-// 	}, []);
-
-// 	return (
-// 		<Box
-// 			sx={{
-// 				display: 'flex',
-// 				flexDirection: 'column',
-// 				justifyContent: 'center',
-// 				alignItems: 'center',
-// 				height: '100vh',
-// 			}}
-// 		>
-// 			<Box
-// 				sx={{
-// 					display: 'flex',
-// 					flexDirection: 'column',
-// 					justifyContent: 'center',
-// 					alignItems: 'center',
-// 					padding: '32px',
-// 					margin: '32px',
-// 					height: { xs: '50%', md: '80%' },
-// 					border: '1px solid #4a4a4a',
-// 					borderRadius: '16px',
-// 					position: 'relative',
-// 				}}
-// 				id="backdrop-container"
-// 				ref={containerRef}
-// 			>
-// 				<Typography
-// 					sx={{
-// 						fontFamily: 'Rubik',
-// 						position: 'absolute',
-// 						transform: `scale(${scaleFactorX}, ${scaleFactorY})`,
-// 						opacity: '0.1',
-// 						lineHeight: '0.72',
-// 						fontWeight: '700',
-// 						ariaHidden: 'true',
-// 						// top: '50%',
-// 						// left: '50%',
-// 					}}
-// 					id="backdrop-text"
-// 					ref={textRef}
-// 				>
-// 					PROJECTS
-// 				</Typography>
-// 				<Typography
-// 					sx={{
-// 						fontSize: { xs: '1rem', md: '3rem' },
-// 						fontWeight: '400',
-// 						marginBottom: '16px',
-// 						zIndex: '1',
-// 					}}
-// 				>
-// 					&emsp;&emsp;&emsp;&emsp;When it comes to web development and front-end
-// 					design, I have only one core principle:{' '}
-// 					<span
-// 						style={{
-// 							fontFamily: 'Rubik',
-// 							fontSize: '3.1rem',
-// 							letterSpacing: '0.1rem',
-// 						}}
-// 					>
-// 						simplicity.
-// 					</span>{' '}
-// 					From design to code, I keep things minimalistic, so that every single
-// 					element is highlighted.
-// 				</Typography>
-// 			</Box>
-// 		</Box>
-// 	);
-// };
-
 const MoreProjectsStatement = () => {
 	return (
 		<Box
@@ -271,43 +173,40 @@ const ProjectIntro = () => {
 			</Box>
 		);
 	};
-	const textSize = '1.75rem';
+	const textSize = '4vw';
 	const text1 = 'じぎょう';
 	const text3 = 'les projets';
 	const text4 = 'projekte';
 	return (
 		<Box height="100vh" overflow="hidden">
-			<RotationWrapper rot={-20} trY="-200%" trX="-10%">
+			<RotationWrapper rot={-20} trX="-50%" trY="-300%">
 				<ScrollingText
 					text={text1}
 					fontSize={textSize}
-					tapeHeight={'100px'}
 					textColor="#181616"
 					bgColor="#f7f4ec"
-					count={20}
+					count={10}
 					tapeWidth="200vw"
 				/>
 			</RotationWrapper>
-			<RotationWrapper rot={12} trX="-10%" trY="40%">
+			<RotationWrapper rot={12} trX="-10%" trY="100%">
 				<ScrollingText
 					text={text3}
 					fontSize={textSize}
-					tapeHeight={'100px'}
 					textColor="#181616"
 					bgColor="#f7f4ec"
-					count={15}
+					count={7}
 					tapeWidth="200vw"
 					reverse
 				/>
 			</RotationWrapper>
-			<RotationWrapper rot={-5} trX="-10%" trY="200%">
+			<RotationWrapper rot={-5} trX="-10%" trY="500%">
 				<ScrollingText
 					text={text4}
 					fontSize={textSize}
-					tapeHeight={'100px'}
 					textColor="#181616"
 					bgColor="#f7f4ec"
-					count={18}
+					count={9}
 					tapeWidth="200vw"
 					reverse
 				/>
@@ -320,10 +219,11 @@ const ProjectPage = () => {
 	return (
 		<>
 			<Box>
-				<Box position="absolute">
+				<Backdrop />
+				<Box position="absolute" zIndex={2}>
 					<ProjectIntro />
 				</Box>
-				<Box>
+				<Box zIndex={3}>
 					<UnknownPleasures />
 				</Box>
 			</Box>
@@ -357,6 +257,7 @@ const ProjectPage = () => {
 					<SmallProjectPageCard key={project.name} {...project} />
 				))}
 			</Box>
+			<Box height="15vh"></Box>
 			<ContactBlock />
 		</>
 	);

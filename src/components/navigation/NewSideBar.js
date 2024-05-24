@@ -1,3 +1,4 @@
+'use client';
 import React, { useRef } from 'react';
 import { Box, Drawer, IconButton, Typography } from '@mui/material';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
@@ -11,19 +12,21 @@ const HackerText = ({ name, value, href }) => {
 		let iterations = 0;
 		const text = value;
 		const interval = setInterval(() => {
-			textRef.current.innerHTML = textRef.current.innerHTML
-				.split('')
-				.map((letter, index) => {
-					if (index < iterations) {
-						return text[index];
-					}
-					return letters[Math.floor(Math.random() * 26)];
-				})
-				.join('');
-			if (iterations === text.length) {
-				clearInterval(interval);
+			if (textRef && textRef.current) {
+				textRef.current.innerHTML = textRef.current.innerHTML
+					.split('')
+					.map((letter, index) => {
+						if (index < iterations) {
+							return text[index];
+						}
+						return letters[Math.floor(Math.random() * 26)];
+					})
+					.join('');
+				if (iterations === text.length) {
+					clearInterval(interval);
+				}
+				iterations += 1 / 2;
 			}
-			iterations += 1 / 2;
 		}, 30);
 	};
 

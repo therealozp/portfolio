@@ -88,42 +88,222 @@ body {
 	}
 }
 
-.infinite-scroll {
-	display: flex;
+/* Marquee styles */
+.marquee {
+	--gap: 1.5rem;
 	position: relative;
-	margin: auto;
-	// background-color: #ece2d0;
+	display: flex;
+	align-items: center;
 	overflow: hidden;
-	z-index: 1;
+	user-select: none;
+	gap: var(--gap);
+}
 
-	&__title {
-		display: flex;
-		position: absolute;
-		top: 0;
-		left: 0;
-		align-items: center;
-		justify-content: flex-start;
-		width: 100%;
-		height: 100%;
-		white-space: nowrap;
-		transform: scale(2);
-		transition: all 1s ease;
-		h2 {
-			margin: 0;
-			transition: all 2s ease;
-			font-family: 'Simplon Mono Medium Regular';
-			font-weight: bold;
-		}
+.marquee__content {
+	flex-shrink: 0;
+	display: flex;
+	justify-content: space-around;
+	gap: var(--gap);
+	min-width: 100%;
+	h2 {
+		transition: all 2s ease;
+		font-weight: bold;
 	}
 }
-// div:hover {
-// 	animation-play-state: paused;
-// }
-@keyframes scrollText {
+
+@keyframes scroll {
 	from {
-		transform: translateX(0%);
+		transform: translateX(0);
 	}
 	to {
-		transform: translateX(-50%);
+		transform: translateX(calc(-100% - var(--gap)));
 	}
+}
+
+// for glowy backdrop
+
+.backdrop {
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0.6;
+	// overflow: hidden;
+}
+
+.blob {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	filter: blur(250px);
+}
+
+.blob:nth-child(1) {
+	top: 30%;
+	left: 40%;
+}
+
+.blob:nth-child(2) {
+	top: 50%;
+	left: 50%;
+}
+
+.blob:nth-child(3) {
+	top: 70%;
+	left: 30%;
+}
+
+@keyframes move {
+	0% {
+		transform: translate(0, 0) scale(1);
+	}
+	100% {
+		transform: translate(20px, -20px) scale(1.1);
+	}
+}
+
+@font-face {
+	font-family: 'Vanguard';
+	src: url('../public/fonts/vanguard-cf/FONTSPRINGDEMO-VanguardCFBoldItalic.ttf')
+		format('truetype');
+	font-weight: bold;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Vanguard Demi';
+	src: url('../public/fonts/vanguard-cf/FONTSPRINGDEMO-VanguardCFDemiBoldRegular.ttf')
+		format('truetype');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Vanguard';
+	src: url('../public/fonts/vanguard-cf/FONTSPRINGDEMO-VanguardCFBoldRegular.ttf')
+		format('truetype');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Vanguard Demi';
+	src: url('../public/fonts/vanguard-cf/FONTSPRINGDEMO-VanguardCFDemiBoldItalic.ttf')
+		format('truetype');
+	font-weight: 600;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Vanguard Extra';
+	src: url('../public/fonts/vanguard-cf/FONTSPRINGDEMO-VanguardCFExtraBoldRegular.ttf')
+		format('truetype');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Vanguard Extra';
+	src: url('../public/fonts/vanguard-cf/FONTSPRINGDEMO-VanguardCFExtraBoldItalic.ttf')
+		format('truetype');
+	font-weight: bold;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Vanguard';
+	src: url('../public/fonts/vanguard-cf/FONTSPRINGDEMO-VanguardCFHeavyItalic.ttf')
+		format('truetype');
+	font-weight: 900;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Vanguard';
+	src: url('../public/fonts/vanguard-cf/FONTSPRINGDEMO-VanguardCFHeavyRegular.ttf')
+		format('truetype');
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Vanguard';
+	src: url('../public/fonts/vanguard-cf/FONTSPRINGDEMO-VanguardCFMediumRegular.ttf')
+		format('truetype');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Vanguard';
+	src: url('../public/fonts/vanguard-cf/FONTSPRINGDEMO-VanguardCFMediumItalic.ttf')
+		format('truetype');
+	font-weight: 500;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Vanguard';
+	src: url('../public/fonts/vanguard-cf/FONTSPRINGDEMO-VanguardCFItalic.ttf')
+		format('truetype');
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Vanguard';
+	src: url('../public/fonts/vanguard-cf/FONTSPRINGDEMO-VanguardCFLightRegular.ttf')
+		format('truetype');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Vanguard';
+	src: url('../public/fonts/vanguard-cf/FONTSPRINGDEMO-VanguardCFLightItalic.ttf')
+		format('truetype');
+	font-weight: 300;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Vanguard';
+	src: url('../public/fonts/vanguard-cf/FONTSPRINGDEMO-VanguardCFRegular.ttf')
+		format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Vanguard';
+	src: url('../public/fonts/vanguard-cf/FONTSPRINGDEMO-VanguardCFThinRegular.ttf')
+		format('truetype');
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Vanguard';
+	src: url('../public/fonts/vanguard-cf/FONTSPRINGDEMO-VanguardCFThinItalic.ttf')
+		format('truetype');
+	font-weight: 100;
+	font-style: italic;
+	font-display: swap;
 }
