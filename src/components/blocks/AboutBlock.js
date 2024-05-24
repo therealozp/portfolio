@@ -123,7 +123,7 @@ const AboutBlock = () => {
 						overflow: 'hidden',
 						fontSize: '4.5rem',
 						display: 'flex',
-						fontFamily: 'Rubik',
+						fontFamily: 'Simplon Mono Medium Regular',
 						fontWeight: '800',
 						letterSpacing: '0.1rem',
 						height: '20vh',
@@ -180,49 +180,42 @@ const AboutBlock = () => {
 				<Box sx={{ padding: 5 }}>
 					<Title>Nice to meet you!</Title>
 					<br />
-
 					<Text>
-						I am a first-year university student @ University of South Florida,
-						majoring in Computer Science. With a passion for telling stories
-						through front-end web development, I am always looking for new
-						things to learn and experiment with. Now, I am currently in my
-						personal lab tinkering with 3D graphics, animation, and machine
-						learning.
+						I love building cool stuff. Every project is a chance for me to
+						build something that I can be proud of. Doesn&apos;t have to be the
+						most practical of applications, but as long as I am throwing ideas
+						together, I feel alive.
 					</Text>
 					<br />
 					<br />
+					<Title>The best projects are the friends we made along the way</Title>
 					<br />
-
-					<Title>It&apos;s about the journey</Title>
-					<br />
-
 					<Text>
-						It is a dream, but I want to become a person who can implement
-						machine learning as easily as writing a simple web app. It is all
-						about the journey for me. First, I was given a computer. Then, I
-						discovered Python. And THEN, I discovered HackerRank. And the rest
-						is history.
+						Be it front end web development to low-level data processing, I am
+						constantly out exploring new waters. From writing simple Python
+						scripts to automate my Arch (btw) workspace to working on full-blown
+						machine learning models, I am always looking for new ways to
+						challenge myself.
 						<br />
 					</Text>
 					<br />
 					<Text>
-						For now, web development is more of a hobby, but I am always looking
-						out for new opportunities to explore. My main interests lie in the
-						field of Artificial Intelligence and Machine Learning, and in the
-						age of ChatGPT, I feel the need to learn more about it.
+						I am currently in the works at RANCS to make an automated vehicle
+						from scratch, as well as being the data acquisition lead of my
+						university&apos;s racing team. For me, curiosity will always lead
+						the way, and most importantly:{' '}
+						<strong>never letting people know my next move.</strong>
 					</Text>
 					<br />
 					<br />
+					<Title>What&apos;s life without trying?</Title>
 					<br />
-
-					<Title>Even more about me</Title>
-					<br />
-
 					<Text>
-						When I am not online, I am out adventuring with his camera
-						(conveniently thrifted at the price of $100), speeding down the
-						roads with his sports bike, or jamming in my bedroom with a guitar.
-						Things like these keep me sane until the next session of coding.
+						When I am not online, I am out snapping photos of the city on sports
+						bike, or jamming in my bedroom with a guitar. Things gives me the
+						adrenaline I need to keep me sane...
+						<br />
+						...until the next coding session.
 					</Text>
 				</Box>
 				<Box sx={{ height: '50vh' }} />

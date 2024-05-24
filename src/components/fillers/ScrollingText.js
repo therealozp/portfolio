@@ -5,12 +5,15 @@ import '../../../styles/ScrollingText.module.scss';
 const ScrollingText = ({
 	reverse,
 	text,
+	fontFamily = 'Simplon Mono Medium Regular',
 	fontSize = '7vw',
 	textColor,
 	bgColor,
 	tapeHeight = '100%',
 	tapeWidth = '100%',
 	count = 8,
+	padding = '0 0 0 0',
+	...props
 }) => {
 	function getRandomNumber(min, max) {
 		return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -26,6 +29,7 @@ const ScrollingText = ({
 				overflow: 'hidden',
 				position: 'relative',
 				bgcolor: bgColor,
+				padding: padding,
 			}}
 		>
 			<Box
@@ -43,6 +47,8 @@ const ScrollingText = ({
 						fontSize={fontSize}
 						color={textColor || '#f7f4ec'}
 						key={index}
+						fontFamily={fontFamily}
+						{...props}
 					>
 						{text}&nbsp;
 					</Typography>
@@ -64,6 +70,8 @@ const ScrollingText = ({
 						fontSize={fontSize}
 						color={textColor || '#f7f4ec'}
 						key={index}
+						fontFamily={fontFamily}
+						{...props}
 					>
 						{text}&nbsp;
 					</Typography>

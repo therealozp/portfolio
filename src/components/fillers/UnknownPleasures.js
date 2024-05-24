@@ -145,7 +145,7 @@ const UnknownPleasures = () => {
 					sx={{ fontFamily: 'monospace', fontSize: '1.2em' }}
 					id="unknown-pleasures-subtitle"
 				>
-					because it&apos;s fun to build cool things
+					because i like to make cool stuff
 				</Typography>
 			</Box>
 			<Box

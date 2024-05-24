@@ -8,6 +8,13 @@ import ScrollingText from '../fillers/ScrollingText';
 gsap.registerPlugin(ScrollTrigger);
 const projects = [
 	{
+		name: 'the last data structures visualizer you will ever need',
+		description:
+			'a data structures visualizer that is so good, you will never need another one. complete with data visualizers and a pathfinding sandbox!',
+		status: 'ready',
+		href: 'https://visual-dsa-theta.vercel.app/',
+	},
+	{
 		name: 'ARIS Web Viewer',
 		description:
 			'An AR viewer implemented with model-viewer and AR.js that allows you to view your GLTF models in AR!',
@@ -33,20 +40,6 @@ const projects = [
 			'A social media platform where students can find the extracurriculars that they are truly passionate about and discover new opportunities!',
 		status: 'unavailable',
 		href: '',
-	},
-	{
-		name: 'Excellaca',
-		description:
-			'Non-profit organization that delivers new knowledge to students through video-based courses.',
-		status: 'unavailable',
-		href: 'https://excellaca.vercel.app/',
-	},
-	{
-		name: 'VSPACE Marketing Website',
-		description:
-			'A marketing website for VSPACE, an organization that provides English online courses for Vietnamese students.',
-		status: 'unavailable',
-		href: 'https://www.vspace.org/',
 	},
 ];
 
@@ -143,9 +136,38 @@ const ProjectBlock = () => {
 					</Typography>
 				</Box>
 			</Box>
-			<ScrollingText reverse text="projects" tapeHeight="120px" count={4} />
-			<ScrollingText text="projects" tapeHeight="120px" count={4} />
-			<ScrollingText reverse text="projects" tapeHeight="120px" count={4} />
+			<ScrollingText
+				reverse
+				text="projects"
+				tapeHeight="110px"
+				count={4}
+				bgColor={'#a0320c'}
+				fontFamily="Vanguard Extra"
+				textTransform="uppercase"
+				fontSize="max(10vh, 7vw)"
+				padding="0 0 8px 0"
+			/>
+			<ScrollingText
+				text="projects"
+				tapeHeight="max(120px, max-content)"
+				count={4}
+				bgColor={'#a0320c'}
+				fontFamily="Vanguard Extra"
+				textTransform="uppercase"
+				fontSize="max(10vh, 7vw)"
+				padding="0 0 8px 0"
+			/>
+			<ScrollingText
+				reverse
+				text="projects"
+				tapeHeight="max(120px, max-content)"
+				count={4}
+				bgColor={'#a0320c'}
+				fontFamily="Vanguard Extra"
+				textTransform="uppercase"
+				fontSize="max(10vh, 7vw)"
+				padding="0 0 8px 0"
+			/>
 
 			<Box sx={{ height: '50vh' }} />
 			<Box
