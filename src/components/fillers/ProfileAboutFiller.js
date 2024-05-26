@@ -165,12 +165,16 @@ const ProfileAboutFiller = () => {
 	// list items for md terminal
 	const TermListItem = ({ item }) => {
 		return (
-			<Typography fontFamily={'monospace'} padding="2px 2px 2px 16px">
+			<Typography
+				fontFamily={'monospace'}
+				padding="2px 2px 2px 16px"
+				// fontSize="1.3em"
+			>
 				- {item}
 			</Typography>
 		);
 	};
-	const windowHeight = 540;
+	const windowHeight = 80;
 	const windowPadding = 16;
 	const asciiArt = `      /\\
      /+o\\
@@ -236,12 +240,12 @@ const ProfileAboutFiller = () => {
 		});
 	}, []);
 	return (
-		<Box height="maxcontent">
+		<Box height="max-content">
 			<Grid container spacing={2} padding="16px" id="terminal-trigger">
 				<Grid item xs={7}>
 					<AppWindow
 						windowName="terminal"
-						height={`${windowHeight}px`}
+						height={`${windowHeight}vh`}
 						id="neofetch-terminal"
 					>
 						<TerminalCommand
@@ -291,7 +295,7 @@ const ProfileAboutFiller = () => {
 				<Grid item xs={5}>
 					<AppWindow
 						windowName="upcoming.md"
-						height={`${(windowHeight - windowPadding) / 2}px`}
+						height={`calc(${windowHeight / 2}vh - ${windowPadding / 2}px)`}
 						id="plan-terminal"
 					>
 						<Box>
@@ -312,7 +316,7 @@ const ProfileAboutFiller = () => {
 					<Box height={windowPadding} />
 					<AppWindow
 						windowName="rotating donut"
-						height={`${(windowHeight - windowPadding) / 2}px`}
+						height={`calc(${windowHeight / 2}vh - ${windowPadding / 2}px)`}
 						id="donut-terminal"
 					>
 						<Box marginLeft="-30%" marginTop="-12%">
