@@ -132,16 +132,24 @@ const AsciiDonut = () => {
 };
 const ProfileAboutFiller = () => {
 	// neofetch-ish displays
+	const terminalFontSize = 'clamp(1rem, 1vw, 1.2rem)';
 	const KeyValue = ({ key_, value }) => {
 		return (
 			<Box display="flex">
 				<Box width="150px">
-					<Typography fontWeight="bold" fontFamily="monospace" color="#8ba4b0">
+					<Typography
+						fontWeight="bold"
+						fontFamily="monospace"
+						color="#8ba4b0"
+						fontSize={terminalFontSize}
+					>
 						{key_}
 					</Typography>
 				</Box>
 				<Box width="300px">
-					<Typography fontFamily="monospace">{value}</Typography>
+					<Typography fontFamily="monospace" fontSize={terminalFontSize}>
+						{value}
+					</Typography>
 				</Box>
 			</Box>
 		);
@@ -151,7 +159,7 @@ const ProfileAboutFiller = () => {
 	const TerminalCommand = ({ ...props }) => {
 		return (
 			<Box {...props}>
-				<Typography fontFamily="monospace">
+				<Typography fontFamily="monospace" fontSize={terminalFontSize}>
 					<strong style={{ color: '#649a7b' }}>
 						{props.hostname}@{props.user}
 					</strong>
@@ -168,7 +176,7 @@ const ProfileAboutFiller = () => {
 			<Typography
 				fontFamily={'monospace'}
 				padding="2px 2px 2px 16px"
-				// fontSize="1.3em"
+				fontSize={terminalFontSize}
 			>
 				- {item}
 			</Typography>
@@ -260,7 +268,13 @@ const ProfileAboutFiller = () => {
 							alignItems="baseline"
 						>
 							<Box>
-								<pre style={{ fontFamily: 'monospace', color: '#7fb4ca' }}>
+								<pre
+									style={{
+										fontFamily: 'monospace',
+										color: '#7fb4ca',
+										fontSize: 'clamp(1rem, 1vw, 1.2rem)',
+									}}
+								>
 									{asciiArt}
 								</pre>
 							</Box>
@@ -304,6 +318,7 @@ const ProfileAboutFiller = () => {
 								fontWeight={'bold'}
 								color="#c4b28a"
 								marginBottom="12px"
+								fontSize={terminalFontSize}
 							>
 								project plans for this season:
 							</Typography>
