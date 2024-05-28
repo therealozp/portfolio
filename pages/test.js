@@ -1,6 +1,6 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
-import ProfileAboutFiller from '../src/components/fillers/ProfileAboutFiller';
+import DemoLanding from '../src/components/blocks/DemoLanding';
 // import ProjectPageCard from '../src/components/projects/ProjectPageCard';
 // import { Box, Typography } from '@mui/material';
 // import ProjectPage from '../src/pages/ProjectPage';
@@ -11,7 +11,7 @@ const WrapperNoSSR = dynamic(() => import('../src/components/extra/Wrapper'), {
 const testpage = () => {
 	return (
 		<WrapperNoSSR>
-			<ProfileAboutFiller />
+			<DemoLanding />
 		</WrapperNoSSR>
 	);
 };
