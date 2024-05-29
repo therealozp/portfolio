@@ -324,8 +324,9 @@ const ProfileAboutFiller = () => {
 							</Typography>
 							<TermListItem item="AI Intern @ Kyanon Digital" />
 							<TermListItem item="OZ: operating zystem" />
+							<TermListItem item="Advanced DSA @ CodePath" />
 							<TermListItem item="stable diffusion character generator" />
-							<TermListItem item="quantitative trading" />
+							<TermListItem item="C++ for quantitative trading" />
 						</Box>
 					</AppWindow>
 					<Box height={windowPadding} />

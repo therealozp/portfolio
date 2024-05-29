@@ -333,3 +333,13 @@ body {
 	src: local('Avant Garde Demi Oblique BT'),
 		url('../public/fonts/avant-garde/AVGARDDO_2.woff') format('woff');
 }
+
+// credits to Swiss Typefaces and onlinewebfonts
+@font-face {
+	font-family: 'Simplon Mono Medium Regular';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Simplon Mono Medium Regular'),
+		url('../public/fonts/simplon-mono/Simplon\ Mono\ Medium\ Regular.woff')
+			format('woff');
+}

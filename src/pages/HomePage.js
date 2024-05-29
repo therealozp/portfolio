@@ -1,22 +1,15 @@
-import React, { useState } from 'react';
-import IntroBlock from '../components/blocks/IntroBlock';
+import React from 'react';
 import ProjectBlock from '../components/blocks/ProjectBlock';
 import AboutBlock from '../components/blocks/AboutBlock';
 import { Box, Typography } from '@mui/material';
-import VoxelWrapper from '../components/extra/VoxelWrapper';
-import dynamic from 'next/dynamic';
+
 import ProfileFiller from '../components/fillers/ProfileFiller';
 import ProfileAboutFiller from '../components/fillers/ProfileAboutFiller';
 import styles from '../../styles/shootingstars.module.scss';
 import ContactBlock from '../components/blocks/ContactBlock';
-
-const VoxelDeskNoSSR = dynamic(() => import('../models/VoxelDesk'), {
-	ssr: false,
-});
+import DemoLanding from '../components/blocks/DemoLanding';
 
 const HomePage = () => {
-	const [finished, setFinished] = useState(false);
-	const [voxOpened, setVoxOpened] = useState(false);
 	return (
 		<>
 			<Box
@@ -27,27 +20,7 @@ const HomePage = () => {
 					gridTemplateColumns: '40% 60%',
 				}}
 			>
-				<Box
-					sx={{
-						display: 'flex',
-						justifyContent: 'center',
-						alignItems: 'center',
-					}}
-				>
-					<IntroBlock setFinished={setFinished} />
-				</Box>
-				<Box
-					sx={{
-						display: 'flex',
-						justifyContent: 'center',
-						alignItems: 'center',
-						// border: '1px solid red',
-					}}
-				>
-					<VoxelWrapper finished={finished} setWindowOpened={setVoxOpened}>
-						<VoxelDeskNoSSR animationFinished={voxOpened} />
-					</VoxelWrapper>
-				</Box>
+				<DemoLanding />
 			</Box>
 			<Box height="25vh" />
 			<ProfileAboutFiller />
@@ -111,7 +84,7 @@ const HomePage = () => {
 				</Box>
 				<Typography
 					sx={{
-						fontFamily: 'Rubik',
+						fontFamily: 'Simplon Mono Medium Regular',
 						fontSize: 'clamp(2rem, 15vw, 7rem)',
 						fontWeight: '900',
 						letterSpacing: 4,

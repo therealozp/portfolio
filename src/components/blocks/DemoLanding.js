@@ -1,15 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Box, Typography, Grid } from '@mui/material';
 import { gsap } from 'gsap';
 
 const NewLogo = () => {
 	return (
 		<svg
-			width="353"
-			height="351"
 			viewBox="0 0 353 351"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
+			style={{
+				width: '100%',
+				height: 'auto',
+			}}
 		>
 			<circle cx="76" cy="133" r="50" fill="#A39788" />
 			<path
@@ -106,18 +108,19 @@ const BoundedCursorFollower = () => {
 	const pointerRef = useRef(null);
 	const leftEyeRef = useRef(null);
 	const rightEyeRef = useRef(null);
+	const catColor = '#faf0fe';
 
-	const [xPosition, setXPosition] = useState(null);
-	const [yPosition, setYPosition] = useState(null);
-	const [storedXPosition, setStoredXPosition] = useState(null);
-	const [storedYPosition, setStoredYPosition] = useState(null);
-	const catColor = '#faf0f1';
+	const xPositionRef = useRef(null);
+	const yPositionRef = useRef(null);
 
-	const [mapWidth, setMapWidth] = useState(() =>
-		gsap.utils.mapRange(0, window.innerWidth, -50, 50)
+	const storedXPositionRef = useRef(null);
+	const storedYPositionRef = useRef(null);
+
+	const mapWidthRef = useRef(
+		gsap.utils.mapRange(0, window.innerWidth, -25, 25)
 	);
-	const [mapHeight, setMapHeight] = useState(() =>
-		gsap.utils.mapRange(0, window.innerHeight, -50, 50)
+	const mapHeightRef = useRef(
+		gsap.utils.mapRange(0, window.innerHeight, -25, 25)
 	);
 
 	useEffect(() => {
@@ -127,45 +130,106 @@ const BoundedCursorFollower = () => {
 		if (!safeToAnimate) return;
 
 		const updateMaps = () => {
-			setMapWidth(() => gsap.utils.mapRange(0, window.innerWidth, -25, 25));
-			setMapHeight(() => gsap.utils.mapRange(0, window.innerHeight, -25, 25));
+			mapWidthRef.current = gsap.utils.mapRange(0, window.innerWidth, -25, 25);
+			mapHeightRef.current = gsap.utils.mapRange(
+				0,
+				window.innerHeight,
+				-25,
+				25
+			);
 		};
 
 		window.addEventListener('resize', updateMaps);
 		updateMaps();
 
-		const xSet = gsap.quickSetter(pointerRef.current, 'x', '%');
-		const ySet = gsap.quickSetter(pointerRef.current, 'y', '%');
+		// const xSet = gsap.quickSetter(pointerRef.current, 'x', '%');
+		// const ySet = gsap.quickSetter(pointerRef.current, 'y', '%');
 
-		const xSetElement1 = gsap.quickSetter(leftEyeRef.current, 'x', '%');
-		const ySetElement1 = gsap.quickSetter(leftEyeRef.current, 'y', '%');
+		// const element1 = pointerRef.current.querySelector('.svg-element1');
+		// const element2 = pointerRef.current.querySelector('.svg-element2');
 
-		const xSetElement2 = gsap.quickSetter(rightEyeRef.current, 'x', '%');
-		const ySetElement2 = gsap.quickSetter(rightEyeRef.current, 'y', '%');
+		// const xSetElement1 = gsap.quickSetter(element1, 'x', '%');
+		// const ySetElement1 = gsap.quickSetter(element1, 'y', '%');
+
+		// const xSetElement2 = gsap.quickSetter(element2, 'x', '%');
+		// const ySetElement2 = gsap.quickSetter(element2, 'y', '%');
+
+		const xSet = gsap.quickTo(pointerRef.current, 'xPercent', {
+			duration: 0.3,
+			ease: 'ease-in-out',
+		});
+		const ySet = gsap.quickTo(pointerRef.current, 'yPercent', {
+			duration: 0.3,
+			ease: 'ease-in-out',
+		});
+
+		const xSetElement1 = gsap.quickTo(leftEyeRef.current, 'xPercent', {
+			duration: 0.3,
+			ease: 'ease-in-out',
+		});
+		const ySetElement1 = gsap.quickTo(leftEyeRef.current, 'yPercent', {
+			duration: 0.3,
+			ease: 'ease-in-out',
+		});
+
+		const xSetElement2 = gsap.quickTo(rightEyeRef.current, 'xPercent', {
+			duration: 0.3,
+			ease: 'ease-in-out',
+		});
+		const ySetElement2 = gsap.quickTo(rightEyeRef.current, 'yPercent', {
+			duration: 0.3,
+			ease: 'ease-in-out',
+		});
 
 		const movePointer = () => {
+			const xPosition = xPositionRef.current;
+			const yPosition = yPositionRef.current;
+			const storedXPosition = storedXPositionRef.current;
+			const storedYPosition = storedYPositionRef.current;
+
 			if (storedXPosition === xPosition && storedYPosition === yPosition)
 				return;
+
+			// gsap.to(pointerRef.current, {
+			// 	x: `${xPosition}%`,
+			// 	y: `${yPosition}%`,
+			// 	duration: 0.5, // 0.5 seconds duration
+			// 	ease: 'ease-out', // ease out
+			// });
+
+			// // Apply slight shifts for additional elements
+			// gsap.to(leftEyeRef.current, {
+			// 	x: `${xPosition * 0.9}%`,
+			// 	y: `${yPosition * 0.9}%`,
+			// 	duration: 0.5,
+			// 	ease: 'ease-out',
+			// });
+
+			// gsap.to(rightEyeRef.current, {
+			// 	x: `${xPosition * 1.1}%`,
+			// 	y: `${yPosition * 1.1}%`,
+			// 	duration: 0.5,
+			// 	ease: 'ease-out',
+			// });
 
 			xSet(xPosition * 0.5);
 			ySet(yPosition * 0.5);
 
-			// Apply slight shifts for additional elements
 			xSetElement1(xPosition * 1.2);
 			ySetElement1(yPosition * 1.2);
 
 			xSetElement2(xPosition * 1.2);
 			ySetElement2(yPosition * 1.2);
 
-			setStoredXPosition(xPosition);
-			setStoredYPosition(yPosition);
+			storedXPositionRef.current = xPosition;
+			storedYPositionRef.current = yPosition;
 		};
 
 		gsap.ticker.add(movePointer);
 
 		const updateMouseCoords = (event) => {
-			setXPosition(mapWidth(event.clientX));
-			setYPosition(mapHeight(event.clientY));
+			xPositionRef.current = mapWidthRef.current(event.clientX);
+			yPositionRef.current = mapHeightRef.current(event.clientY);
 		};
 
 		window.addEventListener('mousemove', updateMouseCoords);
@@ -175,23 +239,20 @@ const BoundedCursorFollower = () => {
 			window.removeEventListener('mousemove', updateMouseCoords);
 			gsap.ticker.remove(movePointer);
 		};
-	}, [
-		xPosition,
-		yPosition,
-		storedXPosition,
-		storedYPosition,
-		mapWidth,
-		mapHeight,
-	]);
+	}, []);
 
 	return (
-		<Box className="pointer" ref={pointerRef} width="max-content">
+		<Box className="pointer" ref={pointerRef} width="70%">
 			<svg
-				width="417"
-				height="308"
+				// width="417"
+				// height="308"
 				viewBox="0 0 417 308"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
+				style={{
+					width: '100%',
+					height: 'auto',
+				}}
 			>
 				<path
 					d="M208.204 87.0006C291.046 87.1538 358.148 116.919 358.023 184.646C357.898 252.374 290.639 307.153 207.796 307C124.954 306.847 57.8983 251.819 58.0236 184.091C58.1489 116.364 125.361 86.8473 208.204 87.0006Z"
@@ -290,8 +351,10 @@ const DemoLanding = () => {
 			height="100vh"
 			width="100vw"
 			display="flex"
-			padding="64px"
+			padding="8vh"
 			flexDirection={'column'}
+			maxHeight="100vh"
+			overflow="clip"
 		>
 			<Grid container>
 				<Grid xs={7}>
@@ -308,7 +371,7 @@ const DemoLanding = () => {
 							cat.
 						</Typography>
 					</Box>
-					<Box>
+					<Box width={{ md: '15vw', xl: '18vw' }}>
 						<NewLogo />
 					</Box>
 				</Grid>
@@ -316,8 +379,10 @@ const DemoLanding = () => {
 					<Box
 						display="flex"
 						justifyContent="flex-end"
-						alignItems="center"
+						alignItems="flex-start"
 						width="100%"
+						height="100%"
+						// border="1px solid white"
 					>
 						<BoundedCursorFollower />
 					</Box>
@@ -337,6 +402,8 @@ const DemoLanding = () => {
 					height="100%"
 					alignItems="flex-end"
 					marginBottom="-2vw"
+					width={{ md: '48%', xl: '40%' }}
+					justifyContent={'space-between'}
 				>
 					<Typography
 						fontFamily="Simplon Mono Medium Regular"
@@ -345,6 +412,13 @@ const DemoLanding = () => {
 					>
 						27.9517° N, 82.4588° W <br />
 						TAMPA, FL
+					</Typography>
+					<Typography
+						fontFamily="Simplon Mono Medium Regular"
+						fontSize={'1.2rem'}
+						letterSpacing="1px"
+					>
+						(scroll for more)
 					</Typography>
 				</Box>
 				<Box
