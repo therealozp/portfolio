@@ -78,7 +78,7 @@ const ProjectBlock = () => {
 			sx={{
 				scale: '0.9',
 				width: '100%',
-				backgroundColor: (theme) => theme.palette.blue.dark,
+				backgroundColor: '#172d36',
 				borderRadius: '200px 200px 40px 40px',
 				display: 'flex',
 				// justifyContent: 'center',
@@ -141,7 +141,6 @@ const ProjectBlock = () => {
 				text="projects"
 				tapeHeight="110px"
 				count={4}
-				bgColor={'#a0320c'}
 				fontFamily="Vanguard Extra"
 				textTransform="uppercase"
 				fontSize="max(10vh, 7vw)"
@@ -151,7 +150,6 @@ const ProjectBlock = () => {
 				text="projects"
 				tapeHeight="max(120px, max-content)"
 				count={4}
-				bgColor={'#a0320c'}
 				fontFamily="Vanguard Extra"
 				textTransform="uppercase"
 				fontSize="max(10vh, 7vw)"
@@ -162,7 +160,6 @@ const ProjectBlock = () => {
 				text="projects"
 				tapeHeight="max(120px, max-content)"
 				count={4}
-				bgColor={'#a0320c'}
 				fontFamily="Vanguard Extra"
 				textTransform="uppercase"
 				fontSize="max(10vh, 7vw)"

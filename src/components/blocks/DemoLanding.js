@@ -346,6 +346,7 @@ const BoundedCursorFollower = () => {
 };
 
 const DemoLanding = () => {
+	const accentColor = '#ffa987';
 	return (
 		<Box
 			height="100vh"
@@ -365,9 +366,11 @@ const DemoLanding = () => {
 							fontFamily="Avant Garde Demi BT"
 						>
 							I am a programmer that doesn&apos;t hesitate to{' '}
-							<span style={{ color: '#d65d36' }}>turn ideas into reality</span>{' '}
+							<span style={{ color: accentColor }}>
+								turn ideas into reality
+							</span>{' '}
 							- if curiousity{' '}
-							<span style={{ color: '#d65d36' }}>couldn&apos;t</span> kill the
+							<span style={{ color: accentColor }}>couldn&apos;t</span> kill the
 							cat.
 						</Typography>
 					</Box>
@@ -439,7 +442,7 @@ const DemoLanding = () => {
 						textTransform="uppercase"
 						marginBottom="-5vh"
 					>
-						<span style={{ color: '#d65d36' }}>tinkering</span> since &apos;04
+						<span style={{ color: accentColor }}>tinkering</span> since &apos;04
 					</Typography>
 				</Box>
 			</Box>

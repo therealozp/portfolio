@@ -320,7 +320,7 @@ const ProfileAboutFiller = () => {
 								marginBottom="12px"
 								fontSize={terminalFontSize}
 							>
-								project plans for this season:
+								## project plans for this season:
 							</Typography>
 							<TermListItem item="AI Intern @ Kyanon Digital" />
 							<TermListItem item="OZ: operating zystem" />

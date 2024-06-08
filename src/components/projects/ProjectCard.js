@@ -145,14 +145,14 @@ const ProjectCard = ({ name, description, index, status }) => {
 				>
 					{status == 'prototype' ? (
 						<ErrorOutlineIcon
-							style={{
-								fill: '#FABC3C',
+							sx={{
+								fill: (theme) => theme.palette.yellow.main,
 							}}
 						/>
 					) : (
 						<ErrorOutlineIcon
-							style={{
-								fill: '#F25F5C',
+							sx={{
+								fill: (theme) => theme.palette.red.main,
 							}}
 						/>
 					)}
