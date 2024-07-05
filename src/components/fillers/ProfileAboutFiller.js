@@ -132,16 +132,24 @@ const AsciiDonut = () => {
 };
 const ProfileAboutFiller = () => {
 	// neofetch-ish displays
+	const terminalFontSize = 'clamp(1rem, 1vw, 1.2rem)';
 	const KeyValue = ({ key_, value }) => {
 		return (
 			<Box display="flex">
 				<Box width="150px">
-					<Typography fontWeight="bold" fontFamily="monospace" color="#8ba4b0">
+					<Typography
+						fontWeight="bold"
+						fontFamily="monospace"
+						color="#8ba4b0"
+						fontSize={terminalFontSize}
+					>
 						{key_}
 					</Typography>
 				</Box>
 				<Box width="300px">
-					<Typography fontFamily="monospace">{value}</Typography>
+					<Typography fontFamily="monospace" fontSize={terminalFontSize}>
+						{value}
+					</Typography>
 				</Box>
 			</Box>
 		);
@@ -151,7 +159,7 @@ const ProfileAboutFiller = () => {
 	const TerminalCommand = ({ ...props }) => {
 		return (
 			<Box {...props}>
-				<Typography fontFamily="monospace">
+				<Typography fontFamily="monospace" fontSize={terminalFontSize}>
 					<strong style={{ color: '#649a7b' }}>
 						{props.hostname}@{props.user}
 					</strong>
@@ -165,12 +173,16 @@ const ProfileAboutFiller = () => {
 	// list items for md terminal
 	const TermListItem = ({ item }) => {
 		return (
-			<Typography fontFamily={'monospace'} padding="2px 2px 2px 16px">
+			<Typography
+				fontFamily={'monospace'}
+				padding="2px 2px 2px 16px"
+				fontSize={terminalFontSize}
+			>
 				- {item}
 			</Typography>
 		);
 	};
-	const windowHeight = 540;
+	const windowHeight = 80;
 	const windowPadding = 16;
 	const asciiArt = `      /\\
      /+o\\
@@ -236,12 +248,12 @@ const ProfileAboutFiller = () => {
 		});
 	}, []);
 	return (
-		<Box height="maxcontent">
+		<Box height="max-content">
 			<Grid container spacing={2} padding="16px" id="terminal-trigger">
 				<Grid item xs={7}>
 					<AppWindow
 						windowName="terminal"
-						height={`${windowHeight}px`}
+						height={`${windowHeight}vh`}
 						id="neofetch-terminal"
 					>
 						<TerminalCommand
@@ -256,7 +268,13 @@ const ProfileAboutFiller = () => {
 							alignItems="baseline"
 						>
 							<Box>
-								<pre style={{ fontFamily: 'monospace', color: '#7fb4ca' }}>
+								<pre
+									style={{
+										fontFamily: 'monospace',
+										color: '#7fb4ca',
+										fontSize: 'clamp(1rem, 1vw, 1.2rem)',
+									}}
+								>
 									{asciiArt}
 								</pre>
 							</Box>
@@ -291,7 +309,7 @@ const ProfileAboutFiller = () => {
 				<Grid item xs={5}>
 					<AppWindow
 						windowName="upcoming.md"
-						height={`${(windowHeight - windowPadding) / 2}px`}
+						height={`calc(${windowHeight / 2}vh - ${windowPadding / 2}px)`}
 						id="plan-terminal"
 					>
 						<Box>
@@ -300,19 +318,21 @@ const ProfileAboutFiller = () => {
 								fontWeight={'bold'}
 								color="#c4b28a"
 								marginBottom="12px"
+								fontSize={terminalFontSize}
 							>
-								project plans for this season:
+								## project plans for this season:
 							</Typography>
 							<TermListItem item="AI Intern @ Kyanon Digital" />
 							<TermListItem item="OZ: operating zystem" />
+							<TermListItem item="Advanced DSA @ CodePath" />
 							<TermListItem item="stable diffusion character generator" />
-							<TermListItem item="quantitative trading" />
+							<TermListItem item="C++ for quantitative trading" />
 						</Box>
 					</AppWindow>
 					<Box height={windowPadding} />
 					<AppWindow
 						windowName="rotating donut"
-						height={`${(windowHeight - windowPadding) / 2}px`}
+						height={`calc(${windowHeight / 2}vh - ${windowPadding / 2}px)`}
 						id="donut-terminal"
 					>
 						<Box marginLeft="-30%" marginTop="-12%">

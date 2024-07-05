@@ -38,7 +38,7 @@ const VoxelWrapper = ({ children, finished, setWindowOpened }) => {
 					// position: 'absolute',
 					border: (theme) => `3px solid ${theme.palette.blue.dark}`,
 					borderRadius: '10px',
-					height: '85vh',
+					height: 'min(80vh, fit-content)',
 					width: '50vw',
 					overflow: 'hidden',
 				}}
@@ -76,7 +76,7 @@ const VoxelWrapper = ({ children, finished, setWindowOpened }) => {
 				</Box>
 				<Box
 					sx={{
-						height: '610px',
+						height: 'min(75vh, fit-content)',
 						width: '100%',
 						display: 'flex',
 						justifyContent: 'center',

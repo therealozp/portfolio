@@ -156,8 +156,16 @@ const VoxelDesk = ({ animationFinished }) => {
 		<Box
 			ref={refContainer}
 			sx={{
-				width: ['100vw', '480px', '560px'],
-				height: ['100vw', '480px', '560px'],
+				width: {
+					xs: '100vw',
+					md: '480px',
+					xl: '560px',
+				},
+				height: {
+					xs: '100vw',
+					md: '480px',
+					xl: '560px',
+				},
 				position: 'relative',
 				'&:hover': {
 					cursor: 'grab',

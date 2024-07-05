@@ -8,7 +8,7 @@ const GreetingText = ({ children, className }) => {
 		<Typography
 			sx={{
 				fontFamily: 'Rubik',
-				fontSize: 'clamp(2rem, 20vw, 5rem)',
+				fontSize: 'clamp(2rem, 7vw, 7rem)',
 				fontWeight: '900',
 				color: (theme) => theme.palette.text.greenCream,
 				letterSpacing: 2,
