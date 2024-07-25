@@ -25,6 +25,7 @@ export default function MyApp(props) {
 					name="viewport"
 					content="minimum-scale=1, initial-scale=1, width=device-width"
 				/>
+				<meta name="author" content="Khang Le" />
 			</Head>
 			{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
 			<CssBaseline />
