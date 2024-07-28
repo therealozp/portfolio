@@ -25,6 +25,11 @@ export default function MyApp(props) {
 					name="viewport"
 					content="minimum-scale=1, initial-scale=1, width=device-width"
 				/>
+				<meta name="author" content="Khang Le" />
+				<meta
+					name="google-site-verification"
+					content="iFEqvLmzfyfps9JTWDXWagjDL1EqTzG0MCTGs1dutSE"
+				/>
 			</Head>
 			{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
 			<CssBaseline />
