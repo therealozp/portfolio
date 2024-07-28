@@ -20,6 +20,8 @@ const UnknownPleasures = () => {
 	let phase = useRef(0).current;
 	let peakX = useRef(0).current;
 
+	const accentColor = '#ffa987';
+
 	useEffect(() => {
 		const canvas = canvasRef.current;
 		const ctx = canvas.getContext('2d');
@@ -135,17 +137,18 @@ const UnknownPleasures = () => {
 						fontWeight: 'bold',
 						fontFamily: 'Simplon Mono Medium Regular',
 						textTransform: 'uppercase',
-						fontSize: '8rem',
+						fontSize: '9rem',
+						color: accentColor,
 					}}
 					className="unknown-pleasures-title"
 				>
 					Projects
 				</Typography>
 				<Typography
-					sx={{ fontFamily: 'monospace', fontSize: '1.2em' }}
+					sx={{ fontFamily: 'monospace', fontSize: '1.5em' }}
 					id="unknown-pleasures-subtitle"
 				>
-					because i like to make cool stuff
+					the premier selection
 				</Typography>
 			</Box>
 			<Box

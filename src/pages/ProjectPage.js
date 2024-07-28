@@ -234,7 +234,7 @@ const ProjectPage = () => {
 				container
 			>
 				{projects.map((project) => (
-					<Grid key={project.name} item xs={12} md={6}>
+					<Grid key={project.name} item xs={6} md={4}>
 						<ProjectPageCard
 							name={project.name}
 							description={project.description}
