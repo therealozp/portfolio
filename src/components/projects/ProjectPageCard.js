@@ -24,7 +24,7 @@ const ProjectPageCard = ({
 		<Tilt
 			tiltMaxAngleX={5}
 			tiltMaxAngleY={5}
-			// transitionEasing="cubic-bezier(.22,.18,.29,.91)"
+			transitionEasing="cubic-bezier(.22,.18,.29,.91)"
 			perspective={2000}
 		>
 			<Box
@@ -42,8 +42,8 @@ const ProjectPageCard = ({
 						borderWidth: '1px',
 						border: (theme) => `1px solid ${theme.palette.blue.dark}`,
 						borderRadius: '16px',
-						width: { xs: '95vw', md: '47vw' },
-						aspectRatio: { xs: '15/13', md: '19/13' },
+						width: '100%',
+						height: '400px',
 						overflow: 'hidden',
 						margin: '32px 0',
 					}}

@@ -1,92 +1,11 @@
 import React from 'react';
-import {
-	ProjectPageCard,
-	SmallProjectPageCard,
-} from '../components/projects/ProjectPageCard';
-import { Box, Typography, Grid } from '@mui/material';
+import { SmallProjectPageCard } from '../components/projects/ProjectPageCard';
+import { Box, Typography } from '@mui/material';
 import ContactBlock from '../components/blocks/ContactBlock';
 import ScrollingText from '../components/fillers/ScrollingText';
 import UnknownPleasures from '../components/fillers/UnknownPleasures';
 import Backdrop from '../components/fillers/Backdrop';
-const projects = [
-	{
-		name: 'ARIS Viewer',
-		description: 'An AR viewer for your own models!',
-		year: '2023',
-		status: 'development',
-	},
-	{
-		name: 'Dumbull (Mobile)',
-		description: 'A Tinder for Studyding???',
-		year: '2023',
-		src: '/2chool.png',
-	},
-	{
-		name: 'ChanceMap',
-		description:
-			'Extracurriculars are yet to be received by all student communities, and ChanceMap helps you make the transition!',
-		status: 'ready',
-		href: 'https://www.chancemap.com/',
-		src: '/chancemap.png',
-		subtitle: 'Social Media Platform',
-		button: 'visit',
-		year: '2021',
-	},
-	{
-		name: 'VSPACE Education',
-		description: 'Learning English made easy (and affordable too!)',
-		status: 'ready',
-		href: 'https://www.vspace.org.vn',
-		src: '/vspace.png',
-		subtitle: 'Marketing Website',
-		button: 'visit',
-		year: '2021',
-	},
-	{
-		name: 'Excellaca',
-		description:
-			'Interesting knowledge, passed down from one student to the other. After all, why should we be discouraged from trying out new things? ',
-		status: 'ready',
-		href: 'https://excellaca.org',
-		src: '/excellaca.png',
-		subtitle: 'Student-powered Courses',
-		button: 'visit',
-		year: '2021',
-	},
-	{
-		name: 'Lexi',
-		description:
-			'A ready-made quiz app that accompanies you on all your English lexicon pursuits!',
-		status: 'ready',
-		href: 'https://lexi.vercel.app/',
-		src: '/lexi.png',
-		subtitle: 'Got Vocabulary?',
-		button: 'visit',
-		year: '2021',
-	},
-	// {
-	// 	name: 'Cureator',
-	// 	description:
-	// 		'Diagnose your symptoms, find local medicine and nearby pharmacies for illnesses commonly come across',
-	// 	status: 'prototype',
-	// 	href: 'https://cureator.care/',
-	// 	src: '/cureator.png',
-	// 	subtitle: 'Stay safe, stay healthy',
-	// 	button: 'preview',
-	// 	year: '2021',
-	// },
-	// {
-	// 	name: '2SchoolQueb',
-	// 	description:
-	// 		'Where students can become tutors, and where learners can become students! ...wait, something is still off...',
-	// 	status: 'prototype',
-	// 	href: 'https://the-rice-powered-queb.vercel.app/',
-	// 	src: '/queb.png',
-	// 	subtitle: 'School is 2cool',
-	// 	button: 'preview',
-	// 	year: '2021',
-	// },
-];
+import ProjectSection from '../components/projects/ProjectSection_v2';
 
 const sides = [
 	{
@@ -227,23 +146,8 @@ const ProjectPage = () => {
 					<UnknownPleasures />
 				</Box>
 			</Box>
-			<Grid
-				sx={{
-					padding: '16px',
-				}}
-				container
-			>
-				{projects.map((project) => (
-					<Grid key={project.name} item xs={12} md={6}>
-						<ProjectPageCard
-							name={project.name}
-							description={project.description}
-							year={project.year}
-							src={project.src}
-						/>
-					</Grid>
-				))}
-			</Grid>
+			<Box height="50vh" />
+			<ProjectSection />
 			<MoreProjectsStatement />
 			<Box
 				sx={{

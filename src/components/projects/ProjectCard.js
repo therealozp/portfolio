@@ -68,7 +68,7 @@ const ProjectCard = ({ name, description, index, status }) => {
 					} 2px solid`,
 				borderRadius: '6px',
 				display: 'grid',
-				gridTemplateColumns: { md: '70% 30%' },
+				gridTemplateColumns: { md: '90% 10%' },
 				padding: '12px',
 				margin: '48px',
 				minHeight: '120px',
