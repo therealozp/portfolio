@@ -33,6 +33,7 @@ const HackerText = ({ name, value, href }) => {
 	return (
 		<Link href={href}>
 			<Box
+				component={'nav'}
 				sx={{
 					display: 'flex',
 					justifyContent: 'center',

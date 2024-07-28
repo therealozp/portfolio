@@ -438,7 +438,14 @@ const ProjectSection = () => {
 	}, []);
 
 	return (
-		<Grid display="flex" alignItems="center" p={2} height="100vh" container>
+		<Grid
+			display="flex"
+			alignItems="center"
+			p={2}
+			height="90vh"
+			container
+			overflow="hidden"
+		>
 			<Grid
 				sx={{
 					height: '75vh',
@@ -450,8 +457,8 @@ const ProjectSection = () => {
 					sx={{
 						display: 'flex',
 						flexDirection: 'column',
-						height: '75vh',
-						overflowY: 'hidden',
+						height: '80vh',
+						// overflowY: 'hidden',
 					}}
 				>
 					{projects.map((project, index) => (

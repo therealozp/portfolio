@@ -10,7 +10,7 @@ import FullScreenAbout from '../components/blocks/FullScreenAbout';
 
 const HomePage = () => {
 	return (
-		<>
+		<main>
 			<Box
 				sx={{
 					display: { sm: 'flex', md: 'grid' },
@@ -21,77 +21,85 @@ const HomePage = () => {
 			>
 				<DemoLanding />
 			</Box>
-			<Box height="25vh" />
-			<ProfileAboutFiller />
-			<Box height="25vh" />
-			<FullScreenAbout />
+			<section>
+				<Box height="25vh" />
+				<ProfileAboutFiller />
+			</section>
+			<section>
+				<Box height="25vh" />
+				<FullScreenAbout />
+			</section>
 			<Box sx={{ background: 'linear-gradient(#994636 50%, #101312 50%)' }}>
-				<Box
-					sx={{
-						height: '70vh',
-						display: 'flex',
-						justifyContent: 'center',
-						alignItems: 'center',
-					}}
-				>
-					{/* <ProjectFiller /> */}
-				</Box>
-				<Box
-					sx={{
-						display: 'flex',
-						flexDirection: 'column',
-						justifyContent: 'center',
-						alignItems: 'center',
-						width: '100vw',
-					}}
-				>
-					<ProjectBlock />
-				</Box>
-				<Box backgroundColor="#101312">
-					<Box sx={{ height: '25vh' }} />
+				<section>
+					<Box
+						sx={{
+							height: '70vh',
+							display: 'flex',
+							justifyContent: 'center',
+							alignItems: 'center',
+						}}
+					>
+						{/* <ProjectFiller /> */}
+					</Box>
 					<Box
 						sx={{
 							display: 'flex',
 							flexDirection: 'column',
 							justifyContent: 'center',
 							alignItems: 'center',
-							overflow: 'hidden',
-							height: '100vh',
-							position: 'relative',
+							width: '100vw',
 						}}
 					>
-						<Box className={styles.night}>
-							<Box className={styles.shooting_star} />
-							<Box className={styles.shooting_star} />
-							<Box className={styles.shooting_star} />
-							<Box className={styles.shooting_star} />
-							<Box className={styles.shooting_star} />
-							<Box className={styles.shooting_star} />
-							<Box className={styles.shooting_star} />
-							<Box className={styles.shooting_star} />
-							<Box className={styles.shooting_star} />
-							<Box className={styles.shooting_star} />
-							<Box className={styles.shooting_star} />
-							<Box className={styles.shooting_star} />
-							<Box className={styles.shooting_star} />
-						</Box>
-						<Typography
+						<ProjectBlock />
+					</Box>
+				</section>
+				<section>
+					<Box backgroundColor="#101312">
+						<Box sx={{ height: '25vh' }} />
+						<Box
 							sx={{
-								fontFamily: 'Simplon Mono Medium Regular',
-								fontSize: 'clamp(2rem, 15vw, 6rem)',
-								fontWeight: '900',
-								letterSpacing: 4,
-								color: '#f7f4ec',
-								textAlign: 'center',
+								display: 'flex',
+								flexDirection: 'column',
+								justifyContent: 'center',
+								alignItems: 'center',
+								overflow: 'hidden',
+								height: '100vh',
+								position: 'relative',
 							}}
 						>
-							shoot me a message
-						</Typography>
-						<ContactBlock />
+							<Box className={styles.night}>
+								<Box className={styles.shooting_star} />
+								<Box className={styles.shooting_star} />
+								<Box className={styles.shooting_star} />
+								<Box className={styles.shooting_star} />
+								<Box className={styles.shooting_star} />
+								<Box className={styles.shooting_star} />
+								<Box className={styles.shooting_star} />
+								<Box className={styles.shooting_star} />
+								<Box className={styles.shooting_star} />
+								<Box className={styles.shooting_star} />
+								<Box className={styles.shooting_star} />
+								<Box className={styles.shooting_star} />
+								<Box className={styles.shooting_star} />
+							</Box>
+							<Typography
+								sx={{
+									fontFamily: 'Simplon Mono Medium Regular',
+									fontSize: 'clamp(2rem, 15vw, 6rem)',
+									fontWeight: '900',
+									letterSpacing: 4,
+									color: '#f7f4ec',
+									textAlign: 'center',
+								}}
+							>
+								shoot me a message
+							</Typography>
+							<ContactBlock />
+						</Box>
 					</Box>
-				</Box>
+				</section>
 			</Box>
-		</>
+		</main>
 	);
 };
 
