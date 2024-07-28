@@ -1,16 +1,10 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import {
-	Box,
-	Typography,
-	Card,
-	CardContent,
-	CardMedia,
-	Grid,
-} from '@mui/material';
+import { Box, Typography, Grid } from '@mui/material';
 import { gsap } from 'gsap';
 import Draggable from 'gsap/dist/Draggable';
+import Image from 'next/image';
 
 gsap.registerPlugin(Draggable);
 
@@ -19,11 +13,12 @@ const projects = [
 		id: 1,
 		name: 'tldvuwen',
 		fullName: 'the last data structures visualizer you will ever need',
-		image: '/images/dsa-viz/dsa-viz-dir.png',
+		image: '/images/dsa-viz/dsa-viz-astar.gif',
 		description:
-			'Vite + raw data structures knowledge. a data structures visualizer that is actually interactive, and a pathfinder visualizer that I am especially proud of.',
+			'Vite + raw data structures knowledge. a data structures visualizer that is actually interactive, and a pathfinder that I am especially proud of.',
 		status: 'deployed',
 		url: 'https://visual-dsa.vercel.app/',
+		date: '01/2024 - present',
 	},
 	{
 		id: 2,
@@ -34,66 +29,7 @@ const projects = [
 			'an AI retrieval system for legal documents. per-case information retrieval with Chroma and Postgres, complete with a NextJS frontend. runner up for Morgan & Morgan AI challenge.',
 		status: 'github',
 		url: '',
-	},
-	{
-		id: 3,
-		name: 'ARIS',
-		fullName: 'ARIS Platform',
-		image: 'N/A',
-		description:
-			"a custom 3D editor for 3D models using ThreeJS that allows for scene editing. AR viewer created with Google's model-viewer.",
-		status: 'deployed',
-		url: 'https://arisplatform.io/',
-	},
-	{
-		id: 4,
-		name: 'ChanceMap',
-		fullName: 'ChanceMap',
-		image: '/images/chancemap/chancemap.png',
-		description:
-			'a social media for college students and high school students who are looking for extracurricular opportunities. 1000+ users in first iteration.',
-		status: 'down',
-		url: 'https://chancemap.com/',
-	},
-	{
-		id: 5,
-		name: 'Cureator',
-		fullName: 'Cureator',
-		image: '/images/cureator/Cureator.png',
-		description:
-			'a medicine and pharmacy finder for the Vietnamese market. includes local and international medicine, breakdowns of causes and common symptoms. made as a PWA with NextJS and custom backend with GraphQL and Go.',
-		status: 'down',
-		url: 'https://cureator.vercel.app/',
-	},
-	{
-		id: 6,
-		name: 'Excellaca',
-		fullName: 'Excel Academy',
-		image: '/images/excellaca/excellaca-mockup.png',
-		description:
-			'a learning platform that is made by students, for students. includes video courses, a discussion community, and other nifty features. 100+ weekly users when active.',
-		status: 'down',
-		url: 'https://excellaca.org',
-	},
-	{
-		id: 7,
-		name: 'VSPACE Ed',
-		fullName: 'VSPACE Education',
-		image: '/images/vspace/vspace-img.png',
-		description:
-			'marketing website made for an educational institution that provides English courses to students of all abilities. 5000+ visits in first month launch of website. Framer Animations, Figma, and NextJS.',
-		status: 'down',
-		url: 'https://vspace.org.vn',
-	},
-	{
-		id: 8,
-		name: 'Lexi',
-		fullName: 'Lexi',
-		image: '/images/lexi/landing.png',
-		description:
-			'a quiz app that helps you learn English vocabulary. 1000+ users in first month of launch.',
-		status: 'deployed',
-		url: 'https://lexi.vercel.app',
+		date: '10/2023',
 	},
 	{
 		id: 9,
@@ -104,6 +40,73 @@ const projects = [
 			'ShellHacks hackathon submission. a finance literacy app that allows user to pick a theme, and develop 10 section courses on that very theme to learn finance concepts. includes a quiz module.',
 		status: 'github',
 		url: 'https://github.com/therealozp/cash-clams',
+		date: '09/2023',
+	},
+	{
+		id: 3,
+		name: 'ARIS',
+		fullName: 'ARIS Platform',
+		image: 'N/A',
+		description:
+			"a custom 3D editor for 3D models using ThreeJS that allows for scene editing. AR viewer created with Google's model-viewer.",
+		status: 'deployed',
+		url: 'https://arisplatform.io/',
+		date: '06/2023 - present',
+	},
+	{
+		id: 4,
+		name: 'ChanceMap',
+		fullName: 'ChanceMap',
+		image: '/images/chancemap/chancemap.png',
+		description:
+			'a social media for college students and high school students who are looking for extracurricular opportunities. 1000+ users in first iteration.',
+		status: 'down',
+		url: 'https://chancemap.com/',
+		date: '06/2021 - 06/2022',
+	},
+	{
+		id: 5,
+		name: 'Cureator',
+		fullName: 'Cureator',
+		image: '/images/cureator/Cureator.png',
+		description:
+			'a medicine and pharmacy finder for the Vietnamese market. includes local and international medicine, breakdowns of causes and common symptoms. made as a PWA with NextJS and custom backend with GraphQL and Go.',
+		status: 'down',
+		url: 'https://cureator.vercel.app/',
+		date: '06/2021 - 10/2021',
+	},
+	{
+		id: 6,
+		name: 'Excellaca',
+		fullName: 'Excel Academy',
+		image: '/images/excellaca/excellaca-mockup.png',
+		description:
+			'a learning platform that is made by students, for students. includes video courses, a discussion community, and other nifty features. 100+ weekly users when active.',
+		status: 'down',
+		url: 'https://excellaca.org',
+		date: '06/2021 - 10/2022',
+	},
+	{
+		id: 7,
+		name: 'VSPACE Ed',
+		fullName: 'VSPACE Education',
+		image: '/images/vspace/vspace-img.png',
+		description:
+			'marketing website made for an educational institution that provides English courses to students of all abilities. 5000+ visits in first month launch of website. Framer Animations, Figma, and NextJS.',
+		status: 'down',
+		url: 'https://vspace.org.vn',
+		date: '06/2021 - 10/2021',
+	},
+	{
+		id: 8,
+		name: 'Lexi',
+		fullName: 'Lexi',
+		image: '/images/lexi/landing.png',
+		description:
+			'a quiz app that helps you learn English vocabulary. 1000+ users in first month of launch.',
+		status: 'deployed',
+		url: 'https://lexi.vercel.app',
+		date: '01/2021',
 	},
 	{
 		id: 10,
@@ -114,6 +117,7 @@ const projects = [
 			'a platform that matches prospective mentors and students through a strict set of criteria. built the recommendation system, and the feedback framework. won 3rd prize in city-wide scientific research competition.',
 		status: 'down',
 		url: '',
+		date: '03/2022',
 	},
 ];
 
@@ -360,7 +364,7 @@ function verticalLoop(items, config) {
 				ratio,
 				startProgress,
 				draggable,
-				dragSnap,
+				// dragSnap,
 				align = () =>
 					tl.progress(
 						wrap(startProgress + (draggable.startY - draggable.y) * ratio)
@@ -434,55 +438,95 @@ const ProjectSection = () => {
 	}, []);
 
 	return (
-		<Grid display="flex" alignItems="center" p={2} height="100vh">
-			<Box
+		<Grid display="flex" alignItems="center" p={2} height="100vh" container>
+			<Grid
 				sx={{
-					display: 'flex',
-					flexDirection: 'column',
 					height: '75vh',
-					overflowY: 'hidden',
 				}}
+				item
+				xs={6}
 			>
-				{projects.map((project, index) => (
-					<Typography
-						key={project.name}
-						variant="h1"
+				<Box
+					sx={{
+						display: 'flex',
+						flexDirection: 'column',
+						height: '75vh',
+						overflowY: 'hidden',
+					}}
+				>
+					{projects.map((project, index) => (
+						<Typography
+							key={project.name}
+							variant="h1"
+							sx={{
+								cursor: 'pointer',
+								fontFamily: 'Simplon Mono Medium Regular',
+								textTransform: 'uppercase',
+								fontWeight: '700',
+								lineHeight: '1.4',
+								letterSpacing: '0.05em',
+								filter:
+									selectedProject === index
+										? 'brightness(1)'
+										: 'brightness(0.6)',
+								transition: 'filter 0.3s ease-in-out',
+								fontSize: 'clamp(1.5rem, 6vw, 7rem)',
+							}}
+							className="projectPageName"
+							onClick={() => setSelectedProject(index)}
+						>
+							{project.name}
+						</Typography>
+					))}
+				</Box>
+			</Grid>
+			<Grid xs={6} item>
+				<Box
+					width="100%"
+					height="100%"
+					sx={{
+						display: 'flex',
+						flexDirection: 'column',
+						alignItems: 'center',
+						justifyContent: 'center',
+					}}
+				>
+					<Box
 						sx={{
-							cursor: 'pointer',
-							fontFamily: 'Simplon Mono Medium Regular',
-							textTransform: 'uppercase',
-							fontWeight: '700',
-							lineHeight: '1.4',
-							letterSpacing: '0.05em',
-							filter:
-								selectedProject === index ? 'brightness(1)' : 'brightness(0.6)',
-							transition: 'filter 0.3s ease-in-out',
+							position: 'relative',
+							height: '40vh',
+							aspectRatio: '16/9',
+							marginBottom: '32px',
+							display: 'flex',
+							alignItems: 'center',
+							justifyContent: 'center',
 						}}
-						className="projectPageName"
-						onClick={() => setSelectedProject(index)}
 					>
-						{project.name}
-					</Typography>
-				))}
-			</Box>
-			<Box>
-				<Card sx={{ maxWidth: 345 }}>
-					<CardMedia
-						component="img"
-						height="140"
-						image={selectedProject.image}
-						alt={selectedProject.name}
-					/>
-					<CardContent>
-						<Typography gutterBottom variant="h5" component="div">
-							{selectedProject.name}
+						{projects[selectedProject].image !== 'N/A' ? (
+							<Image
+								src={projects[selectedProject].image}
+								layout="fill"
+								objectFit="cover"
+							/>
+						) : (
+							<Typography sx={{ fontFamily: 'monospace' }}>
+								this project doesn&apos;t have an image ╥ᆺ╥； (yet!)
+							</Typography>
+						)}
+					</Box>
+					<Box width="100%" height="30vh">
+						<Typography
+							variant="h5"
+							sx={{ fontFamily: 'Simplon Mono Medium Regular' }}
+						>
+							{projects[selectedProject].fullName}
 						</Typography>
-						<Typography variant="body2" color="text.secondary">
-							{selectedProject.description}
+						<Typography sx={{ fontFamily: 'monospace' }}>
+							{projects[selectedProject].description}
 						</Typography>
-					</CardContent>
-				</Card>
-			</Box>
+					</Box>
+				</Box>
+			</Grid>
 		</Grid>
 	);
 };
