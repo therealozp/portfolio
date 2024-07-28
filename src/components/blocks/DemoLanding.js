@@ -386,7 +386,7 @@ const DemoLanding = () => {
 								<span style={{ color: accentColor }}>
 									turn ideas into reality
 								</span>{' '}
-								- if curiousity{' '}
+								- if curiosity{' '}
 								<span style={{ color: accentColor }}>couldn&apos;t</span> kill
 								the cat.
 							</Typography>

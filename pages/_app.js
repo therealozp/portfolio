@@ -30,6 +30,10 @@ export default function MyApp(props) {
 					name="google-site-verification"
 					content="iFEqvLmzfyfps9JTWDXWagjDL1EqTzG0MCTGs1dutSE"
 				/>
+				<meta
+					name="description"
+					content="Khang's developer portfolio. AI Intern @ Kyanon Digital. Full-stack web development @ many self-initated projects and other startups. Computer Science @ University of South Florida. "
+				/>
 			</Head>
 			{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
 			<CssBaseline />

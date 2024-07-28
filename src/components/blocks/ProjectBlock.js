@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { Box, Typography } from '@mui/material';
 import ProjectCard from '../projects/ProjectCard';
 import ScrollingText from '../fillers/ScrollingText';
+import Link from 'next/link';
 
 gsap.registerPlugin(ScrollTrigger);
 const projects = [
@@ -186,7 +187,9 @@ const ProjectBlock = () => {
 					/>
 				))}
 			</Box>
-
+			<Typography fontFamily={'monospace'} variant="h5" marginTop="10vh">
+				check out my other works <Link href="/projects">here!</Link>
+			</Typography>
 			<Box sx={{ height: '100vh' }} />
 		</Box>
 	);

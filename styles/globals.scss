@@ -72,7 +72,7 @@ body {
 			var(--color-one)
 		)
 		0 0 / 400% 100%;
-	font-family: Rubik;
+	font-family: 'Simplon Mono Medium Regular', monospace;
 	font-weight: 900;
 	letter-spacing: 2px;
 	font-size: 7vh;
@@ -80,6 +80,7 @@ body {
 	background-clip: text;
 	-webkit-background-clip: text;
 	animation: fancyText 10s infinite linear;
+	text-transform: uppercase;
 }
 
 @keyframes fancyText {

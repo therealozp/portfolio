@@ -33,7 +33,7 @@ const entries = [
 		icon: <EmailIcon fontSize="large" />,
 	},
 	{
-		href: '/Khang_Le_SWE_Resume_25.pdf',
+		href: '/Khang Le_Resume.pdf',
 		text: 'Resume',
 		description:
 			'Download my resume to get an overview of my educational background, skills, and professional experience.',

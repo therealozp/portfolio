@@ -238,7 +238,7 @@ const FullScreenAbout = () => {
 					>
 						one dev, <br /> unlimited paths.
 					</Typography>
-					<Box height="25vh" />
+					<Box height="25vh" onMouseEnter={() => setIsWindowVisible(false)} />
 					<Box
 						width="80%"
 						onMouseEnter={() => setIsWindowVisible(true)}
@@ -276,7 +276,7 @@ const FullScreenAbout = () => {
 						<Divider sx={{ background: 'white' }} />
 					</Box>
 				</Box>
-				<Box height="50vh" />
+				<Box height="50vh" onMouseEnter={() => setIsWindowVisible(false)} />
 			</Box>
 			<FloatingWindow
 				isShowing={isWindowVisible}

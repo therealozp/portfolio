@@ -19,6 +19,7 @@ const projects = [
 		status: 'deployed',
 		url: 'https://visual-dsa.vercel.app/',
 		date: '01/2024 - present',
+		imageAlt: 'a GIF of the A-star pathfinding algorithm on a grid',
 	},
 	{
 		id: 2,
@@ -41,6 +42,7 @@ const projects = [
 		status: 'github',
 		url: 'https://github.com/therealozp/cash-clams',
 		date: '09/2023',
+		imageAlt: 'a screenshot of the home page of the Cash Clams app.',
 	},
 	{
 		id: 3,
@@ -63,6 +65,7 @@ const projects = [
 		status: 'down',
 		url: 'https://chancemap.com/',
 		date: '06/2021 - 06/2022',
+		imageAlt: 'a screenshot of the home page of the ChanceMap app.',
 	},
 	{
 		id: 5,
@@ -74,6 +77,7 @@ const projects = [
 		status: 'down',
 		url: 'https://cureator.vercel.app/',
 		date: '06/2021 - 10/2021',
+		imageAlt: 'a design layout of multiple different screens of Cureator.',
 	},
 	{
 		id: 6,
@@ -85,6 +89,7 @@ const projects = [
 		status: 'down',
 		url: 'https://excellaca.org',
 		date: '06/2021 - 10/2022',
+		imageAlt: 'a preview of the Excellaca website.',
 	},
 	{
 		id: 7,
@@ -96,6 +101,7 @@ const projects = [
 		status: 'down',
 		url: 'https://vspace.org.vn',
 		date: '06/2021 - 10/2021',
+		imageAlt: 'a snippet of the VSPACE marketing website.',
 	},
 	{
 		id: 8,
@@ -107,6 +113,7 @@ const projects = [
 		status: 'deployed',
 		url: 'https://lexi.vercel.app',
 		date: '01/2021',
+		imageAlt: 'a screenshot of the landing page of the Lexi app.',
 	},
 	{
 		id: 10,
@@ -118,6 +125,7 @@ const projects = [
 		status: 'down',
 		url: '',
 		date: '03/2022',
+		imageAlt: 'an assortment of pages on Queb.',
 	},
 ];
 
@@ -514,6 +522,8 @@ const ProjectSection = () => {
 								src={projects[selectedProject].image}
 								layout="fill"
 								objectFit="cover"
+								// placeholder="blur"
+								alt={projects[selectedProject].imageAlt}
 							/>
 						) : (
 							<Typography sx={{ fontFamily: 'monospace' }}>

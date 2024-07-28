@@ -3,6 +3,7 @@ import { Box, Typography, Grid } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import NavigateNextRoundedIcon from '@mui/icons-material/NavigateNextRounded';
+import Link from 'next/link';
 
 const ContactSites = ({ iconComponent, website, url }) => {
 	const [hovered, setHovered] = useState(false);
@@ -118,19 +119,22 @@ const EmailComponent = () => {
 						transition: 'transform 0.15s ease-in-out',
 					}}
 				/>
-				<Typography
-					sx={{
-						fontSize: 'clamp(1rem, 4vw, 2rem)',
-						fontWeight: '500',
-						transform: textHovered ? 'translateX(-8px)' : 'translateX(-16px)',
-						willChange: 'transform, opacity',
-						transition:
-							'transform 0.15s ease-in-out, opacity 0.15s ease-in-out',
-						opacity: textHovered ? '0.6' : '1',
-					}}
-				>
-					anhkhang.le0910@gmail.com
-				</Typography>
+				<Link href="mailto:anhkhang.le0910@gmail.com">
+					<Typography
+						sx={{
+							fontSize: 'clamp(1rem, 4vw, 2rem)',
+							fontWeight: '500',
+							transform: textHovered ? 'translateX(-8px)' : 'translateX(-16px)',
+							willChange: 'transform, opacity',
+							transition:
+								'transform 0.15s ease-in-out, opacity 0.15s ease-in-out',
+							opacity: textHovered ? '0.6' : '1',
+							cursor: 'pointer',
+						}}
+					>
+						anhkhang.le0910@gmail.com
+					</Typography>
+				</Link>
 			</Box>
 		</>
 	);
