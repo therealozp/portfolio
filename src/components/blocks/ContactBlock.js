@@ -142,7 +142,7 @@ const EmailComponent = () => {
 
 const ContactBlock = () => {
 	return (
-		<Grid container>
+		<Grid container height="30vh">
 			<Grid md={3} xs={12} item>
 				<ContactSites
 					iconComponent={

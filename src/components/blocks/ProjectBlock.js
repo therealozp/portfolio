@@ -140,7 +140,6 @@ const ProjectBlock = () => {
 			<ScrollingText
 				reverse
 				text="projects"
-				tapeHeight="110px"
 				count={4}
 				fontFamily="Vanguard Extra"
 				textTransform="uppercase"

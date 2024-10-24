@@ -82,7 +82,6 @@ const ProjectCard = ({ name, description, index, status }) => {
 					willChange: 'transform',
 					display: 'flex',
 					flexDirection: 'column',
-					alignItems: 'center',
 					justifyContent: 'center',
 					padding: '24px',
 					transform: 'translateY(150px)',
