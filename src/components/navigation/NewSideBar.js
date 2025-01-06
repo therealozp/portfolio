@@ -58,7 +58,7 @@ const HackerText = ({ name, value, href }) => {
 					ref={textRef}
 					sx={{
 						fontFamily: 'monospace',
-						fontSize: 'clamp(1.5rem, 3vw, 3rem)',
+						fontSize: 'clamp(1.5rem, 2.5vw, 3rem)',
 						// fontWeight: '900',
 						letterSpacing: '5px',
 						color: 'inherit',

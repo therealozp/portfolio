@@ -161,8 +161,9 @@ const ProjectPage = () => {
 					<SmallProjectPageCard key={project.name} {...project} />
 				))}
 			</Box>
-			<ContactBlock />
-			<Box height="15vh"></Box>
+			<Box width="100%" padding="16px 32px">
+				<ContactBlock />
+			</Box>
 		</>
 	);
 };

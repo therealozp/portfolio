@@ -63,7 +63,6 @@ const HomePage = () => {
 								justifyContent: 'center',
 								alignItems: 'center',
 								overflow: 'hidden',
-								height: '100vh',
 								position: 'relative',
 							}}
 						>
@@ -94,7 +93,9 @@ const HomePage = () => {
 							>
 								shoot me a message
 							</Typography>
-							<ContactBlock />
+							<Box width="100%" padding="32px 16px">
+								<ContactBlock />
+							</Box>
 						</Box>
 					</Box>
 				</section>

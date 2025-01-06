@@ -19,20 +19,18 @@ const ContactSites = ({ iconComponent, website, url }) => {
 			<Box
 				sx={{
 					border: '2px solid #242424',
-					// width: '300px',
-					height: '175px',
 					'&:hover': {
 						border: '2px solid #2e2e2e',
-						// transform: 'scale(1.05)',
 					},
 					display: 'flex',
 					borderRadius: '12px',
 					padding: '16px',
-					margin: '16px',
 					willChange: 'border transform',
 					transition: 'border 0.15s ease-in-out, transform 0.15s ease-in-out',
 					alignItems: 'flex-end',
 					cursor: 'pointer',
+					height: '100%', // Set height to half of the Email component
+					width: '100%',
 				}}
 				onMouseEnter={() => setHovered(true)}
 				onMouseLeave={() => setHovered(false)}
@@ -142,51 +140,49 @@ const EmailComponent = () => {
 
 const ContactBlock = () => {
 	return (
-		<Grid container height="30vh">
-			<Grid md={3} xs={12} item>
-				<ContactSites
-					iconComponent={
-						<LinkedInIcon
-							sx={{
-								fontSize: '36px',
-								mixBlendMode: 'difference',
-							}}
-						/>
-					}
-					website="LinkedIn"
-					url="https://www.linkedin.com/in/anhkhang-le/"
-				/>
-				<ContactSites
-					iconComponent={
-						<GitHubIcon
-							sx={{
-								fontSize: '36px',
-								mixBlendMode: 'difference',
-							}}
-						/>
-					}
-					website="GitHub"
-					url="https://github.com/therealozp"
-				/>
+		<Grid
+			container
+			// padding="16px"
+			spacing={2}
+			// margin="16px"
+		>
+			<Grid container md={3} xs={12} item spacing={2} marginLeft={-2}>
+				<Grid item xs={12}>
+					<ContactSites
+						iconComponent={
+							<LinkedInIcon
+								sx={{
+									fontSize: '36px',
+									mixBlendMode: 'difference',
+								}}
+							/>
+						}
+						website="LinkedIn"
+						url="https://www.linkedin.com/in/anhkhang-le/"
+					/>
+				</Grid>
+				<Grid item xs={12}>
+					<ContactSites
+						iconComponent={
+							<GitHubIcon
+								sx={{
+									fontSize: '36px',
+									mixBlendMode: 'difference',
+								}}
+							/>
+						}
+						website="GitHub"
+						url="https://github.com/therealozp"
+					/>
+				</Grid>
 			</Grid>
-			<Grid
-				sx={{
-					padding: '16px',
-					paddingLeft: '8px',
-					width: '100%',
-					height: '100%',
-				}}
-				item
-				md={9}
-				xs={12}
-			>
-				<Grid
+			<Grid item md={9} xs={12}>
+				<Box
 					sx={{
 						border: '2px solid #242424',
+						borderRadius: '12px',
 						padding: '32px',
 						paddingLeft: '48px',
-						borderRadius: '12px',
-						height: '100%',
 					}}
 				>
 					<Typography
@@ -203,14 +199,14 @@ const ContactBlock = () => {
 						Feel free to contact me if you have any questions or just want to
 						say hi!
 					</Typography>
-					<Grid
+					<Box
 						sx={{
 							marginTop: '32px',
 						}}
 					>
 						<EmailComponent />
-					</Grid>
-				</Grid>
+					</Box>
+				</Box>
 			</Grid>
 		</Grid>
 	);

@@ -269,11 +269,11 @@ const FullScreenAbout = () => {
 							Operating Systems
 						</SkillTypography>
 						<Divider sx={{ background: 'white' }} />
-
+						{/* 
 						<SkillTypography onMouseEnter={() => setCurrentContent(5)}>
 							Data Analysis
 						</SkillTypography>
-						<Divider sx={{ background: 'white' }} />
+						<Divider sx={{ background: 'white' }} /> */}
 					</Box>
 				</Box>
 				<Box height="50vh" onMouseEnter={() => setIsWindowVisible(false)} />
