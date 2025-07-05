@@ -31,7 +31,7 @@ const HackerText = ({ name, value, href }) => {
 	};
 
 	return (
-		<Link href={href}>
+		<Link href={href} passHref>
 			<Box
 				component={'nav'}
 				sx={{
@@ -110,6 +110,7 @@ const NewSideBar = ({ open, setOpen }) => {
 			>
 				<HackerText value="HOME" name="test" href="/" />
 				<HackerText value="PROJECTS" name="proj" href="/projects" />
+				<HackerText value="BLOG" name="blog" href="/blog" />
 				{/* <HackerText value="ABOUT ME" name="me" href='/about'/> */}
 			</Box>
 		</Drawer>
