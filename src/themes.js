@@ -31,6 +31,7 @@ const myTheme = createTheme({
 			primary: '#FAF0F1',
 			creme: '#ece2d0',
 			greenCream: '#fffeb9',
+			secondary: '#d1d1d1',
 		},
 	},
 });

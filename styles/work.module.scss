@@ -1,0 +1,79 @@
+
+.expCardText {
+    word-wrap: break-word;
+    font-size: 0.8rem;
+    font-family: 'Simplon Mono', monospace;
+
+    // border: 1px solid #fff;
+
+    --x: 0px;
+    --y: 0px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    color: white;
+    font-weight: 500;
+    word-wrap: break-word;
+    opacity: 0;
+    transition: opacity 400ms;
+    mask-image: radial-gradient(calc(480px * 0.8) circle at var(--x) var(--y),
+            rgb(255 255 255) 20%,
+            rgb(255 255 255 / 25%),
+            transparent);
+}
+ 
+.card {
+    overflow: hidden;
+    color: #fff;
+
+    width: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    border-radius: 2rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card:hover .expCardText {
+    opacity: 1; }
+
+
+.cardImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 4;
+}
+
+.cardImage>img {
+    width: var(--logo-size);
+}
+
+.cardGradient {
+
+    --background-rgb: 2 6 23;
+    --background-light-rgb: 30 41 59;
+
+    --border-rgb: 255 255 255;
+    --border: 1px solid rgb(var(--border-rgb) / 20%);
+
+   
+
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: radial-gradient(rgb(var(--background-light-rgb)) 40%,
+            rgb(var(--main-rgb)) 50%,
+            rgb(var(--main-light-rgb)),
+            rgb(var(--secondary-rgb)));
+    mix-blend-mode: darken;
+    pointer-events: none;
+    z-index: 3;
+}

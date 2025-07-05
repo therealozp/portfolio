@@ -6,7 +6,8 @@ import ProfileAboutFiller from '../components/fillers/ProfileAboutFiller';
 import styles from '../../styles/shootingstars.module.scss';
 import ContactBlock from '../components/blocks/ContactBlock';
 import DemoLanding from '../components/blocks/DemoLanding';
-import FullScreenAbout from '../components/blocks/FullScreenAbout';
+// import FullScreenAbout from '../components/blocks/FullScreenAbout';
+import ExperienceSection from '../components/work/ExperienceSection';
 
 const HomePage = () => {
 	return (
@@ -25,9 +26,15 @@ const HomePage = () => {
 				<Box height="25vh" />
 				<ProfileAboutFiller />
 			</section>
+
 			<section>
 				<Box height="25vh" />
-				<FullScreenAbout />
+				<ExperienceSection />
+			</section>
+
+			<section>
+				<Box height="25vh" />
+				{/* <FullScreenAbout /> */}
 			</section>
 			<Box sx={{ background: 'linear-gradient(#994636 50%, #101312 50%)' }}>
 				<section>
