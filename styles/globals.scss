@@ -347,3 +347,11 @@ body {
 		url('../public/fonts/simplon-mono/Simplon\ Mono\ Medium\ Regular.woff')
 			format('woff');
 }
+
+@font-face {
+	font-family: 'Comic Cat';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Comic Cat'),
+		url('../public/fonts/comic-cat/Comic_CAT.otf') format('opentype');
+}

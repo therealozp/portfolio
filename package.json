@@ -15,7 +15,7 @@
 		"@mui/icons-material": "^5.0.5",
 		"@mui/material": "^5.0.6",
 		"@mui/styles": "^5.0.2",
-		"animejs": "^3.2.1",
+		"animejs": "^4.0.0",
 		"clsx": "^1.1.1",
 		"gray-matter": "^4.0.3",
 		"gsap": "^3.8.0",

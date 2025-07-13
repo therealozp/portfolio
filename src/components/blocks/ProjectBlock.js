@@ -9,38 +9,63 @@ import Link from 'next/link';
 gsap.registerPlugin(ScrollTrigger);
 const projects = [
 	{
+		name: 'diminshed Java compiler',
+		description:
+			'a fully functional for a mini-Java language, written from scratch using C. supports functions, classes, inheritance, and more.',
+		status: 'ready',
+		date: 'Jan - Apr 2025',
+	},
+	{
+		name: 'fingerprint generator',
+		description:
+			'a fingerprint generator based on Sfinge to generate fingerprints via a differentiable process, implemented using PyTorch, with a focus on realism.',
+		date: 'May 2025 - Present',
+		status: 'in development',
+	},
+	{
+		name: 'Resume Optim-AI-zer',
+		description:
+			'a local Ollama-powered resume optimization tool that analyzes resumes and job descriptions for maximum tailoring power, with a focus on ATS compatibility.',
+		date: 'Jan 2025 - Present',
+		status: 'in development',
+	},
+	{
+		name: 'Lazy3D',
+		description:
+			'a 3D model generator that uses ControlNet and Gemini Flash to generate 3D render images from user sketches, and TRELLIS for GLTF model generation.',
+		status: 'completed',
+		date: 'Apr 2025',
+	},
+	{
 		name: 'the last data structures visualizer you will ever need',
 		description:
 			'a data structures visualizer that is so good, you will never need another one. complete with data visualizers and a pathfinding sandbox!',
 		status: 'ready',
 		href: 'https://visual-dsa-theta.vercel.app/',
+		date: 'Jan 2024',
 	},
 	{
-		name: 'ARIS Web Viewer',
+		name: 'ARIS AR Toolkit',
 		description:
-			'An AR viewer implemented with model-viewer and AR.js that allows you to view your GLTF models in AR!',
+			'An AR viewer implemented with model-viewer and AR.js that allows viewing GLTF models in AR, with an optimized scene editing experience and asset bar.',
 		status: 'prototype',
-	},
-	{
-		name: 'Lexi',
-		description:
-			'Vocabulary web app, utilizes Dictionary API to help English learners in their vocabulary learning.',
-		status: 'ready',
-		href: 'https://lexi.vercel.app/',
+		date: 'Jun 2023 - Jun 2024',
 	},
 	{
 		name: 'Cureator',
 		description:
-			'A medical website, displays symptoms and curates medicine, built-in pharmacy locator',
+			'A medical service finding service. Allows searching for symptoms and curates medicine, with built-in pharmacy locator provided by Maps API.',
 		status: 'ready',
 		href: 'https://cureator.care/',
+		date: '2022',
 	},
 	{
-		name: 'ChanceMap',
+		name: 'Lexi',
 		description:
-			'A social media platform where students can find the extracurriculars that they are truly passionate about and discover new opportunities!',
-		status: 'unavailable',
-		href: '',
+			'Vocabulary web app, utilizes Oxford Dictionary API to help English learners in their vocabulary learning.',
+		status: 'ready',
+		href: 'https://lexi.vercel.app/',
+		date: '2022',
 	},
 ];
 
@@ -183,6 +208,7 @@ const ProjectBlock = () => {
 						href={d.href}
 						status={d.status}
 						index={i}
+						date={d.date}
 					/>
 				))}
 			</Box>

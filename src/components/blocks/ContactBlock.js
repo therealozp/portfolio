@@ -140,75 +140,78 @@ const EmailComponent = () => {
 
 const ContactBlock = () => {
 	return (
-		<Grid
-			container
-			// padding="16px"
-			spacing={2}
-			// margin="16px"
-		>
-			<Grid container md={3} xs={12} item spacing={2} marginLeft={-2}>
-				<Grid item xs={12}>
-					<ContactSites
-						iconComponent={
-							<LinkedInIcon
-								sx={{
-									fontSize: '36px',
-									mixBlendMode: 'difference',
-								}}
-							/>
-						}
-						website="LinkedIn"
-						url="https://www.linkedin.com/in/anhkhang-le/"
-					/>
+		<Box>
+			<Grid
+				container
+				// padding="16px"
+				spacing={2}
+				// margin="16px"
+			>
+				<Grid container md={3} xs={12} item spacing={2} marginLeft={-2}>
+					<Grid item xs={12}>
+						<ContactSites
+							iconComponent={
+								<LinkedInIcon
+									sx={{
+										fontSize: '36px',
+										mixBlendMode: 'difference',
+									}}
+								/>
+							}
+							website="LinkedIn"
+							url="https://www.linkedin.com/in/anhkhang-le/"
+						/>
+					</Grid>
+					<Grid item xs={12}>
+						<ContactSites
+							iconComponent={
+								<GitHubIcon
+									sx={{
+										fontSize: '36px',
+										mixBlendMode: 'difference',
+									}}
+								/>
+							}
+							website="GitHub"
+							url="https://github.com/therealozp"
+						/>
+					</Grid>
 				</Grid>
-				<Grid item xs={12}>
-					<ContactSites
-						iconComponent={
-							<GitHubIcon
-								sx={{
-									fontSize: '36px',
-									mixBlendMode: 'difference',
-								}}
-							/>
-						}
-						website="GitHub"
-						url="https://github.com/therealozp"
-					/>
-				</Grid>
-			</Grid>
-			<Grid item md={9} xs={12}>
-				<Box
-					sx={{
-						border: '2px solid #242424',
-						borderRadius: '12px',
-						padding: '32px',
-						paddingLeft: '48px',
-					}}
-				>
-					<Typography
-						sx={{
-							fontFamily: 'Rubik',
-							fontSize: 'clamp(2rem, 10vw, 4rem)',
-							fontWeight: '600',
-							// color: (theme) => theme.palette.text.greenCream,
-						}}
-					>
-						Let&apos;s chat!
-					</Typography>
-					<Typography>
-						Feel free to contact me if you have any questions or just want to
-						say hi!
-					</Typography>
+				<Grid item md={9} xs={12}>
 					<Box
 						sx={{
-							marginTop: '32px',
+							border: '2px solid #242424',
+							borderRadius: '12px',
+							padding: '32px',
+							paddingLeft: '48px',
 						}}
 					>
-						<EmailComponent />
+						<Typography
+							sx={{
+								fontFamily: 'Rubik',
+								fontSize: 'clamp(2rem, 10vw, 4rem)',
+								fontWeight: '600',
+								// color: (theme) => theme.palette.text.greenCream,
+							}}
+						>
+							Let&apos;s chat!
+						</Typography>
+						<Typography>
+							Feel free to contact me if you have any questions or just want to
+							say hi!
+						</Typography>
+						<Box
+							sx={{
+								marginTop: '32px',
+							}}
+						>
+							<EmailComponent />
+						</Box>
 					</Box>
-				</Box>
+				</Grid>
 			</Grid>
-		</Grid>
+			<Box sx={{ height: '100px' }} />
+		</Box>
 	);
 };
 

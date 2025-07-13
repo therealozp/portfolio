@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Box } from '@mui/system';
 import { Typography, Tooltip } from '@mui/material';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import gsap from 'gsap';
 
-const ProjectCard = ({ name, description, index, status }) => {
+const ProjectCard = ({ name, description, index, status, date }) => {
 	useEffect(() => {
 		gsap.config({
 			force3D: true,
@@ -54,10 +54,13 @@ const ProjectCard = ({ name, description, index, status }) => {
 			gsap.killTweensOf(`.developing-${index}`);
 		};
 	});
+
+	const innerContainer = useRef(null);
+
 	return (
 		<Box
 			sx={{
-				width: ['95vw', '80vw', '60vw'],
+				width: ['95vw', '80vw', '65vw'],
 				outline: (theme) =>
 					`${
 						status == 'prototype'
@@ -68,7 +71,7 @@ const ProjectCard = ({ name, description, index, status }) => {
 					} 2px solid`,
 				borderRadius: '6px',
 				display: 'grid',
-				gridTemplateColumns: { md: '90% 10%' },
+				gridTemplateColumns: '8fr 1fr',
 				padding: '12px',
 				margin: '48px',
 				minHeight: '120px',
@@ -84,22 +87,49 @@ const ProjectCard = ({ name, description, index, status }) => {
 					flexDirection: 'column',
 					justifyContent: 'center',
 					padding: '24px',
-					transform: 'translateY(150px)',
+					transform: `translateY(100%)`,
 					// position: 'absolute',
 					// marginTop: '90px',
 				}}
 				className={`infoBox-${index}`}
+				ref={innerContainer}
 			>
 				<Box>
-					<Typography
+					<Box
 						sx={{
-							marginBottom: ' 8px',
-							fontFamily: 'Inconsolata',
-							fontSize: '2em',
+							display: 'flex',
+							flexDirection: 'column',
+							justifyContent: 'space-between',
+							alignItems: 'baseline',
+							marginBottom: '8px',
 						}}
 					>
-						{name}
-					</Typography>
+						<Typography
+							sx={{
+								fontFamily:
+									'Simplon Mono Medium Regular, Inconsolata, monospace',
+								fontSize: '2em',
+								fontWeight: 700,
+							}}
+						>
+							{name}
+						</Typography>
+						{date && (
+							<Typography
+								sx={{
+									fontFamily:
+										'Simplon Mono Medium Regular, Inconsolata, monospace',
+									fontSize: '0.9em',
+									fontWeight: 500,
+									opacity: 0.8,
+									letterSpacing: '0.5px',
+									mb: 2,
+								}}
+							>
+								{date}
+							</Typography>
+						)}
+					</Box>
 					<Typography sx={{ fontSize: '1.05em' }}>{description}</Typography>
 				</Box>
 			</Box>
