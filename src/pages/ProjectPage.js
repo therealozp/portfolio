@@ -1,8 +1,6 @@
 import React, { useRef, useEffect } from 'react';
-import { SmallProjectPageCard } from '../components/projects/ProjectPageCard';
 import { Box, Typography } from '@mui/material';
 import ContactBlock from '../components/blocks/ContactBlock';
-import ProjectSection from '../components/projects/ProjectSection_v2';
 
 import { svg, utils, animate, createSpring } from 'animejs';
 import {
@@ -13,41 +11,8 @@ import {
 	EIGHT_WINGED_STAR,
 	POINTED_STAR,
 } from '../components/extra/constants';
-
-const sides = [
-	{
-		name: 'canvas notification API',
-		description:
-			'A simple API reminds you of upcoming due dates that sends email notificatins',
-		year: '2023',
-		tags: 'api',
-		href: 'https://github.com/therealozp/canvas-notis-api',
-	},
-	{
-		name: 'bank statement parser',
-		description:
-			'A simple Python script that parses bank statements for ease of management',
-		year: '2023',
-		tags: 'python',
-		href: 'https://github.com/therealozp/statements_parser',
-	},
-	{
-		name: 'ASCII art generator',
-		description: 'A webapp that converts images to ASCII art',
-		year: '2023',
-		tags: 'web',
-		href: 'https://github.com/therealozp/ascii-art-project-ichi',
-	},
-	{
-		name: 'rate-my-teammate',
-		description:
-			"A webapp that helps you find the perfect teammate (I didn't get to finish it)",
-		year: '2022',
-		tags: 'web',
-		href: 'https://github.com/therealozp/rate-my-teammate',
-	},
-];
-
+``;
+import ProjectSection_v3 from '../components/projects/ProjectSection_v3';
 const paths = [
 	FOUR_WINGED_STAR,
 	SQUARE,
@@ -56,44 +21,6 @@ const paths = [
 	TWELVE_WINGED_STAR,
 	POINTED_STAR,
 ];
-
-const MoreProjectsStatement = () => {
-	return (
-		<Box
-			sx={{
-				display: 'flex',
-				flexDirection: 'column',
-				justifyContent: 'center',
-				alignItems: 'center',
-				height: '75vh',
-				position: 'relative',
-			}}
-		>
-			<Typography
-				sx={{
-					fontSize: '3rem',
-					fontFamily: 'Rubik',
-					fontWeight: '900',
-					textAlign: 'center',
-				}}
-			>
-				But why stop there?
-			</Typography>
-			<Box
-				sx={{
-					width: '50vw',
-					textAlign: 'center',
-				}}
-			>
-				<Typography>
-					I am also working on many other, non-web-dev, side projects.
-					<br></br> This year, I am throwing myself into new waters, so follow
-					me along in my journey!
-				</Typography>
-			</Box>
-		</Box>
-	);
-};
 
 const SpinningAnimation = () => {
 	const pathEl = useRef(null);
@@ -297,20 +224,8 @@ const ProjectPage = () => {
 			>
 				<ProjectIntro />
 			</Box>
-			<ProjectSection />
-			<MoreProjectsStatement />
-			<Box
-				sx={{
-					display: 'flex',
-					flexDirection: 'column',
-					alignItems: 'center',
-					minHeight: '50vh',
-				}}
-			>
-				{sides.map((project) => (
-					<SmallProjectPageCard key={project.name} {...project} />
-				))}
-			</Box>
+			<ProjectSection_v3 />
+			<Box sx={{ height: '25vh' }} />
 			<Box width="100%" padding="16px 32px">
 				<ContactBlock />
 			</Box>

@@ -117,7 +117,7 @@ const EmailComponent = () => {
 						transition: 'transform 0.15s ease-in-out',
 					}}
 				/>
-				<Link href="mailto:anhkhang.le0910@gmail.com">
+				<Link href="mailto:anhkhang.le0910@gmail.com" passHref>
 					<Typography
 						sx={{
 							fontSize: 'clamp(1rem, 4vw, 2rem)',

@@ -18,6 +18,179 @@ const EIGHT_WINGED_STAR =
 
 const POINTED_STAR =
 	'M50.0000 0.0000L52.9166 35.3373L69.1342 3.8060L58.3058 37.5695L85.3553 14.6447L62.4305 41.6942L96.1940 30.8658L64.6627 47.0834L100.0000 50.0000L64.6627 52.9166L96.1940 69.1342L62.4305 58.3058L85.3553 85.3553L58.3058 62.4305L69.1342 96.1940L52.9166 64.6627L50.0000 100.0000L47.0834 64.6627L30.8658 96.1940L41.6942 62.4305L14.6447 85.3553L37.5695 58.3058L3.8060 69.1342L35.3373 52.9166L0.0000 50.0000L35.3373 47.0834L3.8060 30.8658L37.5695 41.6942L14.6447 14.6447L41.6942 37.5695L30.8658 3.8060L47.0834 35.3373L50.0000 0.0000Z';
+
+const projects = [
+	{
+		name: 'diminshed Java compiler',
+		description:
+			'a fully functional for a mini-Java language, written from scratch using C. supports functions, classes, inheritance, and more.',
+		status: 'featured',
+		date: 'Jan - Apr 2025',
+		category: 'systems',
+		year: 2025,
+	},
+	{
+		name: 'fingerprint generator',
+		description:
+			'a fingerprint generator based on Sfinge to generate fingerprints via a differentiable process, implemented using PyTorch, with a focus on realism.',
+		date: 'May 2025 - Present',
+		status: 'featured',
+		category: 'ML',
+		year: 2025,
+	},
+	{
+		name: 'Resume Optim-AI-zer',
+		description:
+			'a local Ollama-powered resume optimization tool that analyzes resumes and job descriptions for maximum tailoring power, with a focus on ATS compatibility.',
+		date: 'Jan 2025 - Present',
+		status: 'featured',
+		category: 'ML',
+		year: 2025,
+	},
+	{
+		name: 'Lazy3D',
+		description:
+			'a 3D model generator that uses ControlNet and Gemini Flash to generate 3D render images from user sketches, and TRELLIS for GLTF model generation.',
+		status: 'featured',
+		date: 'Apr 2025',
+		category: 'ML',
+		year: 2025,
+	},
+	{
+		name: 'tldvuwen',
+		fullName: 'the last data structures visualizer you will ever need',
+		image: '/images/dsa-viz/dsa-viz-astar.gif',
+		description:
+			'Vite + raw data structures knowledge. a data structures visualizer that is actually interactive, and a pathfinder that I am especially proud of.',
+		status: 'featured',
+		link: 'https://visual-dsa-theta.vercel.app/',
+		date: '01/2024 - present',
+		imageAlt: 'a GIF of the A-star pathfinding algorithm on a grid',
+		category: 'web',
+		year: 2024,
+	},
+	{
+		name: 'LegAI',
+		fullName: 'LegAI',
+		image: 'N/A',
+		description:
+			'an AI retrieval system for legal documents. per-case information retrieval with Chroma and Postgres, complete with a NextJS frontend. runner up for Morgan & Morgan AI challenge.',
+		status: 'featured',
+		link: '',
+		date: '10/2023',
+		category: 'ML',
+		year: 2023,
+	},
+	{
+		name: 'Cash Clams',
+		fullName: 'Cash Clams',
+		image: '/images/cash-clams/cash-clams.png',
+		description:
+			'ShellHacks hackathon submission. a finance literacy app that allows user to pick a theme, and develop 10 section courses on that very theme to learn finance concepts. includes a quiz module.',
+		status: 'legacy',
+		link: 'https://github.com/therealozp/cash-clams',
+		date: '09/2023',
+		imageAlt: 'a screenshot of the home page of the Cash Clams app.',
+		category: 'web',
+		year: 2023,
+	},
+	{
+		name: 'ARIS',
+		fullName: 'ARIS AR Toolkit',
+		image: 'N/A',
+		description:
+			"a custom 3D editor for 3D models using ThreeJS that allows for scene editing. AR viewer created with Google's model-viewer.",
+		status: 'featured',
+		link: '',
+		date: '06/2023 - present',
+		category: 'web',
+		year: 2023,
+	},
+	{
+		name: 'ChanceMap',
+		fullName: 'ChanceMap',
+		image: '/images/chancemap/chancemap.png',
+		description:
+			'a social media for college students and high school students who are looking for extracurricular opportunities. 1000+ users in first iteration.',
+		status: 'legacy',
+		link: 'https://chancemap.com/',
+		date: '06/2021 - 06/2022',
+		imageAlt: 'a screenshot of the home page of the ChanceMap app.',
+		category: 'web',
+		year: 2021,
+	},
+	{
+		name: 'Cureator',
+		fullName: 'Cureator',
+		image: '/images/cureator/Cureator.png',
+		description:
+			'a medicine and pharmacy finder for the Vietnamese market. includes local and international medicine, breakdowns of causes and common symptoms. made as a PWA with NextJS and custom backend with GraphQL and Go.',
+		status: 'legacy',
+		link: 'https://cureator.vercel.app/',
+		date: '06/2021 - 10/2021',
+		imageAlt: 'a design layout of multiple different screens of Cureator.',
+		category: 'web',
+		year: 2021,
+	},
+	{
+		name: 'Excellaca',
+		fullName: 'Excel Academy',
+		image: '/images/excellaca/excellaca-mockup.png',
+		description:
+			'a learning platform that is made by students, for students. includes video courses, a discussion community, and other nifty features. 100+ weekly users when active.',
+		status: 'legacy',
+		link: 'https://excellaca.org',
+		date: '06/2021 - 10/2022',
+		imageAlt: 'a preview of the Excellaca website.',
+		category: 'web',
+		year: 2021,
+	},
+	{
+		name: 'VSPACE Ed',
+		fullName: 'VSPACE Education',
+		image: '/images/vspace/vspace-img.png',
+		description:
+			'marketing website made for an educational institution that provides English courses to students of all abilities. 5000+ visits in first month launch of website. Framer Animations, Figma, and NextJS.',
+		status: 'legacy',
+		link: 'https://vspace.org.vn',
+		date: '06/2021 - 10/2021',
+		imageAlt: 'a snippet of the VSPACE marketing website.',
+		category: 'web',
+		year: 2021,
+	},
+	{
+		name: 'Lexi',
+		fullName: 'Lexi',
+		image: '/images/lexi/landing.png',
+		description:
+			'a quiz app that helps you learn English vocabulary. 1000+ users in first month of launch.',
+		status: 'legacy',
+		link: 'https://lexi.vercel.app',
+		date: '01/2021',
+		imageAlt: 'a screenshot of the landing page of the Lexi app.',
+		category: 'web',
+		year: 2021,
+	},
+	{
+		name: 'canvas notification API',
+		description:
+			'A simple API reminds you of upcoming due dates that sends email notificatins',
+		year: '2023',
+		status: 'legacy',
+		tags: 'api',
+		href: 'https://github.com/therealozp/canvas-notis-api',
+	},
+	{
+		name: 'bank statement parser',
+		description:
+			'A simple Python script that parses bank statements for ease of management',
+		year: '2023',
+		status: 'legacy',
+		tags: 'python',
+		href: 'https://github.com/therealozp/statements_parser',
+	},
+];
+
 export {
 	TRIANGLE,
 	PENTAGON,
@@ -26,4 +199,5 @@ export {
 	TWELVE_WINGED_STAR,
 	EIGHT_WINGED_STAR,
 	POINTED_STAR,
+	projects,
 };
