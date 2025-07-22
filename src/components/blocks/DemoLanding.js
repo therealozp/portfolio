@@ -397,7 +397,7 @@ const DemoLanding = () => {
 					</Grid>
 					<Grid xs={5}>
 						<Box display="flex" width="100%" justifyContent="flex-end">
-							<Link href="/Khang Le_Resume.pdf" style={{}}>
+							<Link href="/Khang Le Resume.pdf" passHref>
 								<Typography
 									fontFamily="monospace"
 									sx={{
